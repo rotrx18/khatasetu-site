@@ -9,7 +9,18 @@
 <meta name="description" content="KhataSetu is a smart digital ledger app to manage credit & debit records securely with cloud sync.">
 <meta name="keywords" content="KhataSetu, digital ledger, business app, khata app India">
 <meta name="author" content="Rejabul Sk">
-<link rel="canonical" href="https://khatasetu.com/">
+
+<!-- Canonical (GitHub Pages) -->
+<link rel="canonical" href="https://rotrx18.github.io/">
+
+<!-- Open Graph -->
+<meta property="og:title" content="KhataSetu - Smart Digital Ledger App">
+<meta property="og:description" content="Manage credit & debit records securely with KhataSetu.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://rotrx18.github.io/">
+<meta property="og:image" content="hero-devices.png">
+
+<link rel="icon" type="image/png" href="1.png">
 
 <link rel="stylesheet" href="style.css">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
@@ -20,7 +31,7 @@
 <!-- ================= NAVBAR ================= -->
 <nav class="navbar">
   <div class="logo">
-    <span class="logo-icon">📘</span> KhataSetu
+    📘 KhataSetu
   </div>
 
   <div class="nav-links">
@@ -35,9 +46,8 @@
   <button id="themeToggle">🌙</button>
 </nav>
 
-<!-- ================= HERO SECTION ================= -->
+<!-- ================= HERO ================= -->
 <section id="home" class="hero">
-
   <div class="hero-content">
     <h1>Smart Digital Ledger<br>for Modern Businesses</h1>
 
@@ -51,37 +61,29 @@
     </a>
 
     <div class="store-buttons">
-
-      <!-- ANDROID -->
-      <a href="https://play.google.com/store/apps/details?id=YOUR_PACKAGE_NAME"
-         target="_blank"
-         class="store-btn android">
+      <a href="https://play.google.com/store/apps/details?id=com.rotrxitsolution.khatasetu"
+         target="_blank">
          <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg">
       </a>
 
-      <!-- IOS -->
-      <div class="store-btn ios disabled">
-         <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg">
-         <span class="coming">Coming Soon</span>
+      <div class="ios-coming">
+         <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+              class="store-badge disabled">
+         <p>Coming Soon</p>
       </div>
-
     </div>
   </div>
 
-  <!-- Device Image -->
   <div class="hero-image">
     <img src="hero-devices.png" alt="KhataSetu App Preview">
   </div>
-
 </section>
 
 <!-- ================= FEATURES ================= -->
 <section id="features" class="features">
-
   <h2>Why Choose KhataSetu?</h2>
 
   <div class="feature-grid">
-
     <div class="feature-card">
       <h3>📊 Easy Tracking</h3>
       <p>Track customer balances, credit & debit instantly.</p>
@@ -96,17 +98,14 @@
       <h3>🔒 Secure</h3>
       <p>Encrypted database ensures your business data stays safe.</p>
     </div>
-
   </div>
-
 </section>
 
 <!-- ================= APP SCREENS ================= -->
 <section class="carousel-section">
   <h2>App Screens</h2>
-
   <div class="carousel">
-    <img src="1.png" class="carousel-item active">
+    <img src="1.png" class="carousel-item">
     <img src="2.png" class="carousel-item">
     <img src="3.png" class="carousel-item">
     <img src="4.png" class="carousel-item">
@@ -117,11 +116,9 @@
 
 <!-- ================= DOWNLOAD ================= -->
 <section id="download" class="download">
-
   <h2>Download KhataSetu</h2>
 
   <div class="store-buttons">
-
     <a href="https://play.google.com/store/apps/details?id=com.rotrxitsolution.khatasetu"
        target="_blank">
        <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
@@ -133,24 +130,20 @@
            class="store-badge disabled">
       <p>Coming Soon</p>
     </div>
-
   </div>
-
 </section>
 
 <!-- ================= CONTACT ================= -->
 <section id="contact" class="contact">
-
   <h2>Contact Us</h2>
 
-  <form id="contactForm" class="contact-form">
-    <input type="text" placeholder="Your Name" required>
-    <input type="email" placeholder="Your Email" required>
-    <textarea placeholder="Your Message" required></textarea>
+  <!-- Static mailto version (No backend needed) -->
+  <form action="mailto:support@rotrxitsolution.com" method="POST" enctype="text/plain" class="contact-form">
+    <input type="text" name="Name" placeholder="Your Name" required>
+    <input type="email" name="Email" placeholder="Your Email" required>
+    <textarea name="Message" placeholder="Your Message" required></textarea>
     <button type="submit">Send Message</button>
   </form>
-
-  <p id="formStatus"></p>
 
 </section>
 
@@ -164,7 +157,6 @@
 </footer>
 
 <script src="script.js"></script>
-<script src="firebase.js"></script>
 
 </body>
 </html>
