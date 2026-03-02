@@ -79,16 +79,40 @@ please reach out to us.
 
 <h2>Send Us a Message</h2>
 
-<form action="mailto:support@rotrxitsolution.com"
-      method="POST"
-      enctype="text/plain"
+<form action="https://formspree.io/f/maqdzgzk" 
+      method="POST" 
       class="contact-form">
 
-  <input type="text" name="Name" placeholder="Your Name" required>
+  <input 
+    type="text" 
+    name="name" 
+    placeholder="Full Name" 
+    required 
+    minlength="3">
 
-  <input type="email" name="Email" placeholder="Your Email Address" required>
+  <input 
+    type="tel" 
+    name="mobile" 
+    placeholder="Mobile Number" 
+    required 
+    pattern="[0-9]{10,15}" 
+    title="Enter valid mobile number">
 
-  <textarea name="Message" placeholder="Your Message" rows="6" required></textarea>
+  <input 
+    type="email" 
+    name="email" 
+    placeholder="Email Address" 
+    required>
+
+  <textarea 
+    name="message" 
+    placeholder="Your Message" 
+    rows="6" 
+    required 
+    minlength="10"></textarea>
+
+  <!-- Anti Spam Hidden Field -->
+  <input type="text" name="_gotcha" style="display:none">
 
   <button type="submit" class="btn">
     Send Message
