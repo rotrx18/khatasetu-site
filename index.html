@@ -9,7 +9,6 @@
 <title>KhataSetu – Smart Digital Ledger App for Small Businesses Worldwide</title>
 
 <meta name="description" content="KhataSetu is a powerful digital ledger app for small businesses worldwide. Manage credit, debit, customer balances and bookkeeping securely with cloud sync.">
-
 <meta name="robots" content="index, follow">
 <meta name="author" content="KhataSetu Team">
 
@@ -17,16 +16,22 @@
 <meta property="og:title" content="KhataSetu – Smart Digital Ledger App Worldwide">
 <meta property="og:description" content="Manage credit, debit and bookkeeping securely with KhataSetu digital ledger app.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://khatasetu.com/">
-<meta property="og:image" content="https://khatasetu.com/hero-devices.png">
+<meta property="og:url" content="https://www.khatasetu.com/">
+<meta property="og:image" content="https://www.khatasetu.com/hero-devices.webp">
 
-<!-- Fonts -->
+<!-- Preload Critical Assets -->
+<link rel="preload" as="image" href="hero-devices.webp" type="image/webp" fetchpriority="high">
+
+<!-- Fonts (Optimized) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="style.css">
+<link rel="preload" href="style.css" as="style">
 <link rel="icon" href="logo.png" type="image/png">
+
+<!-- Security -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; img-src 'self' https: data:; script-src 'self' https://pagead2.googlesyndication.com; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src https://fonts.gstatic.com;">
 
 <!-- Google AdSense -->
 <script async
@@ -47,6 +52,8 @@ crossorigin="anonymous"></script>
   </nav>
 </header>
 
+<main>
+
 <!-- HERO SECTION -->
 <section class="hero">
 
@@ -62,18 +69,20 @@ crossorigin="anonymous"></script>
 
       <a href="https://play.google.com/store/apps/details?id=com.rotrxitsolution.khatasetu"
          target="_blank"
-         rel="noopener">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
-             alt="Get it on Google Play"
+         rel="noopener noreferrer">
+        <img src="play-badge.webp"
+             alt="Get KhataSetu on Google Play"
              width="180"
-             height="54">
+             height="54"
+             loading="lazy">
       </a>
 
       <div class="ios-coming">
-        <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
-             alt="Download on the App Store"
+        <img src="appstore-badge.webp"
+             alt="Download on the App Store (Coming Soon)"
              width="180"
-             height="54">
+             height="54"
+             loading="lazy">
         <span class="coming-text">Coming Soon</span>
       </div>
 
@@ -81,10 +90,17 @@ crossorigin="anonymous"></script>
   </div>
 
   <div class="hero-image">
-    <img src="hero-devices.png"
-         alt="KhataSetu digital ledger mobile app interface"
-         width="500"
-         height="600">
+    <picture>
+      <source srcset="hero-devices.webp" type="image/webp">
+      <img 
+        src="hero-devices.webp"
+        alt="KhataSetu digital ledger mobile and desktop app interface"
+        width="500"
+        height="600"
+        loading="eager"
+        fetchpriority="high"
+        decoding="async">
+    </picture>
   </div>
 
 </section>
@@ -96,20 +112,20 @@ crossorigin="anonymous"></script>
 
   <div class="grid">
 
-    <div class="card">
+    <article class="card">
       <h3>📊 Smart Transaction Tracking</h3>
       <p>Track every credit and debit transaction with accuracy and ease.</p>
-    </div>
+    </article>
 
-    <div class="card">
+    <article class="card">
       <h3>☁️ Secure Cloud Backup</h3>
       <p>Automatic cloud synchronization ensures your data is safe and accessible.</p>
-    </div>
+    </article>
 
-    <div class="card">
+    <article class="card">
       <h3>🔒 Advanced Data Security</h3>
       <p>Enterprise-grade encryption keeps your financial records protected.</p>
-    </div>
+    </article>
 
   </div>
 
@@ -122,12 +138,14 @@ crossorigin="anonymous"></script>
 
   <a href="https://play.google.com/store/apps/details?id=com.rotrxitsolution.khatasetu"
      target="_blank"
-     rel="noopener"
+     rel="noopener noreferrer"
      class="btn">
      Download KhataSetu Free
   </a>
 
 </section>
+
+</main>
 
 <footer>
   <p>
@@ -137,7 +155,7 @@ crossorigin="anonymous"></script>
   </p>
 </footer>
 
-<script src="script.js"></script>
+<script src="script.js" defer></script>
 
 </body>
 </html>
