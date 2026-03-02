@@ -2,11 +2,6 @@
 <html lang="en">
 <head>
 
-<link rel="manifest" href="/manifest.json">
-<meta name="theme-color" content="#2563eb">
-<link rel="apple-touch-icon" href="/logo-192.png">
-<meta name="msapplication-config" content="/browserconfig.xml">
-
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,23 +14,29 @@
 <meta name="author" content="KhataSetu Team">
 <link rel="canonical" href="https://khatasetu.com/">
 
+<!-- Preload Hero Image (Improves LCP) -->
+<link rel="preload" as="image" href="/hero-devices.webp">
+
 <!-- Open Graph -->
 <meta property="og:title" content="KhataSetu – Smart Digital Ledger App Worldwide">
 <meta property="og:description" content="Manage credit, debit and bookkeeping securely with KhataSetu digital ledger app.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://khatasetu.com/">
-<meta property="og:image" content="https://khatasetu.com/hero-devices.png">
+<meta property="og:image" content="https://khatasetu.com/hero-devices.webp">
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="KhataSetu – Digital Ledger App">
 <meta name="twitter:description" content="Secure cloud-based ledger app for small businesses worldwide.">
-<meta name="twitter:image" content="https://khatasetu.com/hero-devices.png">
+<meta name="twitter:image" content="https://khatasetu.com/hero-devices.webp">
 
-<!-- Fonts -->
+<!-- Fonts (Optimized to Reduce CLS) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="preload" as="style"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet">
 
 <link rel="stylesheet" href="style.css">
 <link rel="icon" href="/logo.png" type="image/png">
@@ -56,9 +57,11 @@
  }
 }
 </script>
-<!-- ✅ Google AdSense -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7094776728416254"
-     crossorigin="anonymous"></script>
+
+<!-- Google AdSense -->
+<script async
+src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7094776728416254"
+crossorigin="anonymous"></script>
 
 </head>
 
@@ -114,11 +117,15 @@
   </div>
 
   <div class="hero-image">
-    <img src="/hero-devices.png"
-         alt="KhataSetu digital ledger mobile app interface"
-         width="500"
-         height="600"
-         loading="eager">
+    <picture>
+      <source srcset="/hero-devices.webp" type="image/webp">
+      <img src="/hero-devices.png"
+           alt="KhataSetu digital ledger mobile app interface"
+           width="500"
+           height="600"
+           loading="eager"
+           decoding="async">
+    </picture>
   </div>
 
 </section>
@@ -171,7 +178,7 @@
   </p>
 </footer>
 
-<script src="script.js"></script>
+<script src="script.js" defer></script>
 
 </body>
 </html>
