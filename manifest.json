@@ -1,0 +1,28 @@
+{
+  "name": "KhataSetu - Smart Digital Ledger App",
+  "short_name": "KhataSetu",
+  "description": "KhataSetu is a secure cloud-based digital ledger app designed for small businesses worldwide. Track credit, debit and manage bookkeeping easily.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#ffffff",
+  "theme_color": "#2563eb",
+  "lang": "en",
+  "dir": "ltr",
+  "categories": ["business", "finance", "productivity"],
+  "icons": [
+    {
+      "src": "/logo-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/logo-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

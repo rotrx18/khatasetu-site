@@ -1,0 +1,14 @@
+# KhataSetu Security Policy
+
+Contact: mailto:support@rotrxitsolution.com
+Expires: 2027-12-31T23:59:59.000Z
+Preferred-Languages: en
+Canonical: https://khatasetu.com/.well-known/security.txt
+Policy: https://khatasetu.com/privacy-policy.html
+
+# Reporting Guidelines
+# Please include detailed steps to reproduce any vulnerability.
+# We aim to respond within 48 hours.
+
+Acknowledgments: https://khatasetu.com/
+Hiring: https://khatasetu.com/

@@ -1,4 +1,19 @@
+# ============================================
+# KhataSetu Robots.txt
+# ============================================
+
 User-agent: *
 Allow: /
 
+# Allow important resources
+Allow: /blog/
+Allow: /style.css
+Allow: /script.js
+
+# Disallow sensitive or system files (if any added later)
+Disallow: /cgi-bin/
+Disallow: /*.json$
+Disallow: /*?*
+
+# Sitemap Location
 Sitemap: https://khatasetu.com/sitemap.xml

@@ -1,297 +1,7 @@
-/* ================= RESET ================= */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Poppins', sans-serif;
-  background: #f9fafb;
-  color: #111;
-  transition: 0.3s;
-  scroll-behavior: smooth;
-}
-
-body.dark {
-  background: #0f172a;
-  color: white;
-}
-
-/* ================= NAVBAR ================= */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 8%;
-  position: sticky;
-  top: 0;
-  background: white;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-  z-index: 1000;
-}
-
-body.dark .navbar {
-  background: #1e293b;
-}
-
-.logo {
-  font-size: 22px;
-  font-weight: 600;
-}
-
-.nav-links a {
-  margin-left: 20px;
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
-  transition: 0.3s;
-}
-
-body.dark .nav-links a {
-  color: #ddd;
-}
-
-.nav-links a:hover {
-  color: #2563eb;
-}
-
-#themeToggle {
-  background: none;
-  border: none;
-  font-size: 20px;
-  cursor: pointer;
-}
-
-/* ================= HERO ================= */
-.hero {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 100px 8%;
-  background: linear-gradient(120deg, #2563eb, #4f46e5, #7c3aed);
-  color: white;
-  border-radius: 20px;
-  margin: 40px;
-  flex-wrap: wrap;
-}
-
-.hero-content {
-  max-width: 550px;
-}
-
-.hero h1 {
-  font-size: 42px;
-  line-height: 1.2;
-  margin-bottom: 20px;
-}
-
-.hero p {
-  font-size: 18px;
-  opacity: 0.9;
-  margin-bottom: 25px;
-}
-
-.btn-primary {
-  background: white;
-  color: #2563eb;
-  padding: 14px 28px;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: 600;
-  display: inline-block;
-  margin-bottom: 25px;
-  transition: 0.3s;
-}
-
-.btn-primary:hover {
-  transform: translateY(-3px);
-}
-
-.hero-image img {
-  width: 500px;
-  max-width: 100%;
-}
-
-/* ================= FEATURES ================= */
-.features {
-  padding: 80px 8%;
-  text-align: center;
-}
-
-.features h2 {
-  font-size: 32px;
-  margin-bottom: 40px;
-}
-
-.feature-grid {
-  display: flex;
-  gap: 30px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.feature-card {
-  background: white;
-  padding: 30px;
-  border-radius: 16px;
-  width: 280px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-  transition: 0.3s;
-}
-
-body.dark .feature-card {
-  background: #1e293b;
-}
-
-.feature-card:hover {
-  transform: translateY(-8px);
-}
-
-.feature-card h3 {
-  margin-bottom: 10px;
-}
-
-/* ================= CAROUSEL ================= */
-.carousel-section {
-  padding: 80px 8%;
-  text-align: center;
-}
-
-.carousel-section h2 {
-  margin-bottom: 40px;
-}
-
-.carousel {
-  display: flex;
-  gap: 20px;
-  overflow-x: auto;
-  justify-content: center;
-}
-
-.carousel-item {
-  width: 220px;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-}
-
-/* ================= DOWNLOAD ================= */
-.download {
-  padding: 80px 20px;
-  text-align: center;
-}
-
-.download h2 {
-  margin-bottom: 30px;
-}
-
-.store-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap;
-}
-
-.store-badge {
-  width: 200px;
-  transition: 0.3s;
-}
-
-.store-badge:hover {
-  transform: scale(1.05);
-}
-
-.disabled {
-  opacity: 0.6;
-  position: relative;
-}
-
-.ios-coming {
-  text-align: center;
-}
-
-.ios-coming p {
-  font-size: 14px;
-  margin-top: 8px;
-  color: #ef4444;
-}
-
-/* ================= CONTACT ================= */
-.contact {
-  padding: 80px 8%;
-  text-align: center;
-}
-
-.contact-form {
-  max-width: 450px;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.contact-form input,
-.contact-form textarea {
-  padding: 12px;
-  border-radius: 8px;
-  border: 1px solid #ddd;
-  font-size: 14px;
-}
-
-.contact-form button {
-  padding: 12px;
-  background: #2563eb;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.contact-form button:hover {
-  background: #1e40af;
-}
-
-/* ================= FOOTER ================= */
-footer {
-  padding: 30px;
-  text-align: center;
-  background: #111;
-  color: white;
-}
-
-footer a {
-  color: #ccc;
-  text-decoration: none;
-}
-
-footer a:hover {
-  color: white;
-}
-
-/* ================= RESPONSIVE ================= */
-@media (max-width: 900px) {
-
-  .hero {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .hero-image {
-    margin-top: 40px;
-  }
-
-  .hero h1 {
-    font-size: 32px;
-  }
-
-  .feature-grid {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-/* ================= RESET ================= */
-* {
+/* ================= GLOBAL RESET ================= */
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -303,17 +13,17 @@ img {
   display: block;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Poppins', sans-serif;
   background: #f9fafb;
   color: #111;
-  transition: 0.3s;
-  scroll-behavior: smooth;
-}
-
-body.dark {
-  background: #0f172a;
-  color: white;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 /* ================= NAVBAR ================= */
@@ -321,50 +31,35 @@ body.dark {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 8%;
+  padding: 18px 8%;
+  background: #ffffff;
   position: sticky;
   top: 0;
-  background: white;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
   z-index: 1000;
-  flex-wrap: wrap;
-}
-
-body.dark .navbar {
-  background: #1e293b;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
 .logo {
   font-size: 22px;
   font-weight: 600;
+  letter-spacing: 0.5px;
 }
 
-.nav-links {
+.navbar nav {
   display: flex;
   flex-wrap: wrap;
 }
 
-.nav-links a {
-  margin-left: 20px;
+.navbar a {
+  margin-left: 24px;
   text-decoration: none;
   color: #333;
   font-weight: 500;
-  transition: 0.3s;
+  transition: all 0.25s ease;
 }
 
-body.dark .nav-links a {
-  color: #ddd;
-}
-
-.nav-links a:hover {
+.navbar a:hover {
   color: #2563eb;
-}
-
-#themeToggle {
-  background: none;
-  border: none;
-  font-size: 20px;
-  cursor: pointer;
 }
 
 /* ================= HERO ================= */
@@ -372,47 +67,30 @@ body.dark .nav-links a {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 100px 8%;
-  background: linear-gradient(120deg, #2563eb, #4f46e5, #7c3aed);
-  color: white;
-  border-radius: 20px;
-  margin: 40px;
-  gap: 40px;
+  padding: 110px 8%;
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+  color: #fff;
   flex-wrap: wrap;
+  gap: 50px;
 }
 
-.hero-content {
+.hero-text {
   flex: 1;
   min-width: 280px;
-  max-width: 550px;
+  max-width: 540px;
 }
 
 .hero h1 {
-  font-size: 42px;
+  font-size: 44px;
   line-height: 1.2;
-  margin-bottom: 20px;
+  margin-bottom: 22px;
+  font-weight: 700;
 }
 
 .hero p {
   font-size: 18px;
-  opacity: 0.9;
-  margin-bottom: 25px;
-}
-
-.btn-primary {
-  background: white;
-  color: #2563eb;
-  padding: 14px 28px;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: 600;
-  display: inline-block;
-  margin-bottom: 25px;
-  transition: 0.3s;
-}
-
-.btn-primary:hover {
-  transform: translateY(-3px);
+  margin-bottom: 32px;
+  opacity: 0.95;
 }
 
 .hero-image {
@@ -422,211 +100,140 @@ body.dark .nav-links a {
 }
 
 .hero-image img {
-  width: 500px;
+  max-width: 520px;
 }
 
-/* ================= FEATURES ================= */
-.features {
-  padding: 80px 8%;
+/* ================= BUTTON ================= */
+.btn {
+  display: inline-block;
+  padding: 14px 30px;
+  border-radius: 50px;
+  background: #ffffff;
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+}
+
+/* ================= SECTIONS ================= */
+.section {
+  padding: 90px 8%;
   text-align: center;
 }
 
-.features h2 {
-  font-size: 32px;
-  margin-bottom: 40px;
+.section.light {
+  background: #f1f5f9;
 }
 
-.feature-grid {
+.section h2 {
+  font-size: 34px;
+  margin-bottom: 45px;
+  font-weight: 600;
+}
+
+/* ================= GRID CARDS ================= */
+.grid {
   display: flex;
-  gap: 30px;
   justify-content: center;
+  gap: 35px;
   flex-wrap: wrap;
 }
 
-.feature-card {
-  background: white;
-  padding: 30px;
-  border-radius: 16px;
-  width: 280px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-  transition: 0.3s;
+.card {
+  background: #ffffff;
+  padding: 35px;
+  width: 300px;
+  border-radius: 18px;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-body.dark .feature-card {
-  background: #1e293b;
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 45px rgba(0,0,0,0.12);
 }
 
-.feature-card:hover {
-  transform: translateY(-8px);
+.card h3 {
+  margin-bottom: 14px;
+  font-size: 20px;
 }
 
-.feature-card h3 {
-  margin-bottom: 10px;
-}
-
-/* ================= CAROUSEL ================= */
-.carousel-section {
-  padding: 80px 8%;
+/* ================= CTA ================= */
+.cta {
+  padding: 90px 8%;
   text-align: center;
+  background: #111;
+  color: #ffffff;
 }
 
-.carousel-section h2 {
-  margin-bottom: 40px;
-}
-
-.carousel {
-  display: flex;
-  gap: 20px;
-  overflow-x: auto;
-  padding-bottom: 10px;
-}
-
-.carousel-item {
-  width: 220px;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-}
-
-/* ================= DOWNLOAD ================= */
-.download {
-  padding: 80px 20px;
-  text-align: center;
-}
-
-.download h2 {
+.cta h2 {
   margin-bottom: 30px;
-}
-
-.store-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap;
-}
-
-.store-badge {
-  width: 200px;
-  transition: 0.3s;
-}
-
-.store-badge:hover {
-  transform: scale(1.05);
-}
-
-.disabled {
-  opacity: 0.6;
-}
-
-.ios-coming {
-  text-align: center;
-}
-
-.ios-coming p {
-  font-size: 14px;
-  margin-top: 8px;
-  color: #ef4444;
-}
-
-/* ================= CONTACT ================= */
-.contact {
-  padding: 80px 8%;
-  text-align: center;
-}
-
-.contact-form {
-  max-width: 450px;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.contact-form input,
-.contact-form textarea {
-  padding: 12px;
-  border-radius: 8px;
-  border: 1px solid #ddd;
-  font-size: 14px;
-}
-
-.contact-form button {
-  padding: 12px;
-  background: #2563eb;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.contact-form button:hover {
-  background: #1e40af;
+  font-size: 32px;
 }
 
 /* ================= FOOTER ================= */
 footer {
-  padding: 30px;
+  padding: 35px;
   text-align: center;
-  background: #111;
-  color: white;
+  background: #000;
+  color: #ffffff;
+  font-size: 14px;
 }
 
 footer a {
-  color: #ccc;
+  color: #cccccc;
   text-decoration: none;
+  margin: 0 8px;
 }
 
 footer a:hover {
-  color: white;
+  color: #ffffff;
 }
 
 /* ================= RESPONSIVE ================= */
+
 @media (max-width: 1024px) {
   .hero {
-    margin: 20px;
-    padding: 70px 6%;
+    padding: 90px 6%;
   }
 }
 
 @media (max-width: 900px) {
-
   .hero {
     flex-direction: column;
     text-align: center;
   }
 
   .hero h1 {
-    font-size: 32px;
+    font-size: 34px;
   }
 
-  .hero-image {
-    margin-top: 40px;
-  }
-
-  .feature-grid {
-    flex-direction: column;
-    align-items: center;
+  .hero-image img {
+    max-width: 420px;
   }
 }
 
 @media (max-width: 600px) {
-
   .navbar {
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
   }
 
-  .nav-links {
+  .navbar nav {
     justify-content: center;
   }
 
-  .nav-links a {
-    margin: 8px;
+  .navbar a {
+    margin: 6px 10px;
   }
 
   .hero {
-    margin: 15px;
-    padding: 50px 20px;
+    padding: 70px 20px;
   }
 
   .hero h1 {
@@ -637,11 +244,8 @@ footer a:hover {
     font-size: 15px;
   }
 
-  .store-badge {
-    width: 170px;
-  }
-
-  .carousel-item {
-    width: 180px;
+  .card {
+    width: 100%;
+    max-width: 340px;
   }
 }

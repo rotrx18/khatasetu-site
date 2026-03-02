@@ -1,26 +1,63 @@
-// HERO SLIDER
-let slides = document.querySelectorAll(".slide");
-let currentSlide = 0;
+// ===============================
+// KhataSetu Production Script
+// ===============================
 
-setInterval(() => {
-  slides[currentSlide].classList.remove("active");
-  currentSlide = (currentSlide + 1) % slides.length;
-  slides[currentSlide].classList.add("active");
-}, 3000);
+document.addEventListener("DOMContentLoaded", function () {
 
-// CAROUSEL
-let images = document.querySelectorAll(".carousel-item");
-let currentImage = 0;
+  // ===============================
+  // 🌙 Dark Mode Toggle
+  // ===============================
 
-setInterval(() => {
-  images[currentImage].classList.remove("active");
-  currentImage = (currentImage + 1) % images.length;
-  images[currentImage].classList.add("active");
-}, 2500);
+  const themeToggle = document.getElementById("themeToggle");
 
-// DARK LIGHT TOGGLE
-const toggleBtn = document.getElementById("themeToggle");
-toggleBtn.addEventListener("click", () => {
-  document.body.classList.toggle("dark");
-  document.body.classList.toggle("light");
+  // Load saved theme
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.body.classList.add("dark");
+  }
+
+  if (themeToggle) {
+    themeToggle.addEventListener("click", () => {
+      document.body.classList.toggle("dark");
+
+      if (document.body.classList.contains("dark")) {
+        localStorage.setItem("theme", "dark");
+        themeToggle.textContent = "☀️";
+      } else {
+        localStorage.setItem("theme", "light");
+        themeToggle.textContent = "🌙";
+      }
+    });
+  }
+
+  // ===============================
+  // 📌 Active Navbar Link Highlight
+  // ===============================
+
+  const navLinks = document.querySelectorAll(".navbar a");
+  const currentPath = window.location.pathname;
+
+  navLinks.forEach(link => {
+    if (link.getAttribute("href") === currentPath) {
+      link.style.color = "#2563eb";
+      link.style.fontWeight = "600";
+    }
+  });
+
+  // ===============================
+  // 🚀 Smooth Anchor Scroll
+  // ===============================
+
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener("click", function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute("href"));
+      if (target) {
+        target.scrollIntoView({
+          behavior: "smooth"
+        });
+      }
+    });
+  });
+
 });
