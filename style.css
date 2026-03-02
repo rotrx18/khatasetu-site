@@ -302,3 +302,65 @@ footer a:hover {
     justify-content: center;
   }
 }
+/* ===== Modern Contact Form ===== */
+
+.contact-wrapper {
+  max-width: 600px;
+  margin: auto;
+  background: #ffffff;
+  padding: 50px 40px;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+.contact-wrapper h1 {
+  margin-bottom: 30px;
+  font-size: 30px;
+}
+
+.contact-form-modern {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-row input,
+.form-row textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  font-size: 15px;
+  transition: 0.3s ease;
+}
+
+.form-row input:focus,
+.form-row textarea:focus {
+  border-color: #2563eb;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(37,99,235,0.15);
+}
+
+.btn-submit {
+  padding: 14px;
+  border-radius: 50px;
+  background: #2563eb;
+  color: white;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.btn-submit:hover {
+  background: #1e40af;
+  transform: translateY(-3px);
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .contact-wrapper {
+    padding: 35px 20px;
+  }
+}
