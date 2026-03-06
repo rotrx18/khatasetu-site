@@ -9,32 +9,47 @@
 <title>KhataSetu – Smart Digital Ledger App for Small Businesses Worldwide</title>
 
 <meta name="description" content="KhataSetu is a powerful digital ledger app for small businesses worldwide. Manage credit, debit, customer balances and bookkeeping securely with cloud sync.">
+
 <meta name="robots" content="index, follow">
 <meta name="author" content="KhataSetu Team">
+<meta name="theme-color" content="#1a73e8">
 
-<!-- Open Graph -->
 <meta property="og:title" content="KhataSetu – Smart Digital Ledger App Worldwide">
 <meta property="og:description" content="Manage credit, debit and bookkeeping securely with KhataSetu digital ledger app.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.khatasetu.com/">
 <meta property="og:image" content="https://www.khatasetu.com/hero-devices.webp">
 
-<!-- Preload Critical Assets -->
-<link rel="preload" as="image" href="hero-devices.webp" type="image/webp" fetchpriority="high">
+<link rel="preload" as="image" href="hero-devices.webp" fetchpriority="high">
 
-<!-- Fonts (Optimized) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap&display=swap" rel="stylesheet">
+
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" as="style">
+<link rel="stylesheet"
+href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+media="print"
+onload="this.media='all'">
 
 <link rel="preload" href="style.css" as="style">
 <link rel="stylesheet" href="style.css">
+
 <link rel="icon" href="logo.png" type="image/png">
 
-<!-- Security -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; img-src 'self' https: data:; script-src 'self' https://pagead2.googlesyndication.com; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src https://fonts.gstatic.com;">
+<link rel="preconnect" href="https://pagead2.googlesyndication.com">
+<link rel="preconnect" href="https://googleads.g.doubleclick.net">
 
-<!-- Google AdSense -->
+<meta http-equiv="Content-Security-Policy"
+content="
+default-src 'self' https:;
+img-src 'self' https: data:;
+script-src 'self' https://pagead2.googlesyndication.com https://fundingchoicesmessages.google.com https://www.googletagmanager.com 'unsafe-inline';
+style-src 'self' https://fonts.googleapis.com 'unsafe-inline';
+font-src https://fonts.gstatic.com;
+frame-src https://googleads.g.doubleclick.net https://fundingchoicesmessages.google.com;
+connect-src 'self' https:;
+">
+
 <script async
 src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7094776728416254"
 crossorigin="anonymous"></script>
@@ -44,117 +59,130 @@ crossorigin="anonymous"></script>
 <body>
 
 <header class="navbar">
-  <div class="logo">📘 KhataSetu</div>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="features.html">Features</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+<div class="logo">📘 KhataSetu</div>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="features.html">Features</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+</nav>
 </header>
 
 <main>
 
-<!-- HERO SECTION -->
 <section class="hero">
 
-  <div class="hero-text">
-    <h1>Smart Digital Ledger App for Modern Businesses</h1>
+<div class="hero-text">
 
-    <p>
-      Manage credit, debit & business records securely with cloud sync.
-      Built for small businesses worldwide.
-    </p>
+<h1>Smart Digital Ledger App for Modern Businesses</h1>
 
-    <div class="store-buttons">
+<p>
+Manage credit, debit & business records securely with cloud sync.
+Built for small businesses worldwide.
+</p>
 
-  <a href="https://play.google.com/store/apps/details?id=com.rotrxitsolution.khatasetu"
-     target="_blank"
-     rel="noopener noreferrer"
-     aria-label="Download KhataSetu on Google Play">
-    <img src="play-badge.webp"
-         alt="Get KhataSetu on Google Play"
-         width="180"
-         height="54"
-         decoding="async">
-  </a>
+<div class="store-buttons">
 
-  <div class="ios-coming">
-    <img src="appstore-badge.webp"
-         alt="Download on the App Store (Coming Soon)"
-         width="180"
-         height="54"
-         decoding="async">
-    <span class="coming-text"></span>
-  </div>
+<a href="https://play.google.com/store/apps/details?id=com.rotrxitsolution.khatasetu"
+target="_blank"
+rel="noopener noreferrer"
+aria-label="Download KhataSetu on Google Play">
+
+<img src="play-badge.webp"
+alt="Get KhataSetu on Google Play"
+width="180"
+height="54"
+loading="lazy"
+decoding="async">
+
+</a>
+
+<div class="ios-coming">
+
+<img src="appstore-badge.webp"
+alt="Download on the App Store"
+width="180"
+height="54"
+loading="lazy"
+decoding="async">
 
 </div>
-  </div>
 
-  <div class="hero-image">
-    <picture>
-      <source srcset="hero-devices.webp" type="image/webp">
-      <img 
-        src="hero-devices.webp"
-        alt="KhataSetu digital ledger mobile and desktop app interface"
-        width="500"
-        height="600"
-        loading="eager"
-        fetchpriority="high"
-        decoding="async">
-    </picture>
-  </div>
+</div>
+
+</div>
+
+<div class="hero-image">
+
+<picture>
+
+<source srcset="hero-devices.webp" type="image/webp">
+
+<img
+src="hero-devices.webp"
+alt="KhataSetu digital ledger mobile and desktop app interface"
+width="500"
+height="600"
+sizes="(max-width:768px) 90vw, 500px"
+loading="eager"
+fetchpriority="high"
+decoding="async">
+
+</picture>
+
+</div>
 
 </section>
 
-<!-- FEATURES -->
 <section class="section">
 
-  <h2>Why Businesses Choose KhataSetu</h2>
+<h2>Why Businesses Choose KhataSetu</h2>
 
-  <div class="grid">
+<div class="grid">
 
-    <article class="card">
-      <h3>📊 Smart Transaction Tracking</h3>
-      <p>Track every credit and debit transaction with accuracy and ease.</p>
-    </article>
+<article class="card">
+<h3>📊 Smart Transaction Tracking</h3>
+<p>Track every credit and debit transaction with accuracy and ease.</p>
+</article>
 
-    <article class="card">
-      <h3>☁️ Secure Cloud Backup</h3>
-      <p>Automatic cloud synchronization ensures your data is safe and accessible.</p>
-    </article>
+<article class="card">
+<h3>☁️ Secure Cloud Backup</h3>
+<p>Automatic cloud synchronization ensures your data is safe and accessible.</p>
+</article>
 
-    <article class="card">
-      <h3>🔒 Advanced Data Security</h3>
-      <p>Enterprise-grade encryption keeps your financial records protected.</p>
-    </article>
+<article class="card">
+<h3>🔒 Advanced Data Security</h3>
+<p>Enterprise-grade encryption keeps your financial records protected.</p>
+</article>
 
-  </div>
+</div>
 
 </section>
 
-<!-- CTA -->
 <section class="cta">
 
-  <h2>Start Managing Your Business Smarter Today</h2>
+<h2>Start Managing Your Business Smarter Today</h2>
 
-  <a href="https://play.google.com/store/apps/details?id=com.rotrxitsolution.khatasetu"
-     target="_blank"
-     rel="noopener noreferrer"
-     class="btn">
-     Download KhataSetu Free
-  </a>
+<a href="https://play.google.com/store/apps/details?id=com.rotrxitsolution.khatasetu"
+target="_blank"
+rel="noopener noreferrer"
+class="btn">
+Download KhataSetu Free
+</a>
 
 </section>
 
 </main>
 
 <footer>
-  <p>
-    © 2026 KhataSetu |
-    <a href="privacy-policy.html">Privacy Policy</a> |
-    <a href="terms.html">Terms</a>
-  </p>
+
+<p>
+© 2026 KhataSetu |
+<a href="privacy-policy.html">Privacy Policy</a> |
+<a href="terms.html">Terms</a>
+</p>
+
 </footer>
 
 <script src="script.js" defer></script>
