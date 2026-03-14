@@ -11,19 +11,41 @@
 
 <meta name="description" content="KhataSetu is a powerful digital ledger app for small businesses worldwide. Manage credit, debit, customer balances and bookkeeping securely with cloud sync.">
 
+<link rel="author" href="/humans.txt">
+
 <meta name="robots" content="index, follow">
 <meta name="author" content="KhataSetu Team">
-<meta name="theme-color" content="#1a73e8">
+<meta name="theme-color" content="#2563eb">
 
 <link rel="canonical" href="https://khatasetu.com/">
+
+<!-- Open Graph -->
 
 <meta property="og:title" content="KhataSetu – Smart Digital Ledger App Worldwide">
 <meta property="og:description" content="Manage credit, debit and bookkeeping securely with KhataSetu digital ledger app.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://www.khatasetu.com/">
-<meta property="og:image" content="https://www.khatasetu.com/hero-devices.webp">
+<meta property="og:url" content="https://khatasetu.com/">
+<meta property="og:image" content="https://khatasetu.com/hero-devices.webp">
 
-<link rel="preload" as="image" href="hero-devices.webp" fetchpriority="high">
+<!-- Twitter Card -->
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="KhataSetu – Smart Digital Ledger App">
+<meta name="twitter:description" content="Manage credit, debit and bookkeeping securely with KhataSetu.">
+<meta name="twitter:image" content="https://khatasetu.com/hero-devices.webp">
+
+<!-- PWA -->
+
+<link rel="manifest" href="/manifest.json">
+
+<!-- Icons -->
+
+<link rel="icon" href="/logo.png" type="image/png">
+<link rel="apple-touch-icon" href="/logo-192.png">
+
+<!-- Performance -->
+
+<link rel="preload" as="image" href="/hero-devices.webp" fetchpriority="high">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,13 +59,13 @@ href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=
 media="print"
 onload="this.media='all'">
 
-<link rel="preload" href="style.css" as="style">
-<link rel="stylesheet" href="style.css">
-
-<link rel="icon" href="logo.png" type="image/png">
+<link rel="preload" href="/style.css" as="style">
+<link rel="stylesheet" href="/style.css">
 
 <link rel="preconnect" href="https://pagead2.googlesyndication.com">
 <link rel="preconnect" href="https://googleads.g.doubleclick.net">
+
+<!-- Content Security Policy -->
 
 <meta http-equiv="Content-Security-Policy"
 content="
@@ -57,20 +79,21 @@ connect-src 'self' https:;
 ">
 
 <!-- Google AdSense -->
+
 <script async
 src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7094776728416254"
 crossorigin="anonymous"></script>
 
 </head>
 
-
 <body>
 
 <!-- Navbar -->
 <div id="navbar"></div>
 
-
 <main>
+
+<!-- HERO -->
 
 <section class="hero">
 
@@ -90,7 +113,8 @@ target="_blank"
 rel="noopener noreferrer"
 aria-label="Download KhataSetu on Google Play">
 
-<img src="play-badge.webp"
+<img
+src="/play-badge.webp"
 alt="Get KhataSetu on Google Play"
 width="180"
 height="54"
@@ -101,7 +125,8 @@ decoding="async">
 
 <div class="ios-coming">
 
-<img src="appstore-badge.webp"
+<img
+src="/appstore-badge.webp"
 alt="Download on the App Store"
 width="180"
 height="54"
@@ -114,15 +139,14 @@ decoding="async">
 
 </div>
 
-
 <div class="hero-image">
 
 <picture>
 
-<source srcset="hero-devices.webp" type="image/webp">
+<source srcset="/hero-devices.webp" type="image/webp">
 
 <img
-src="hero-devices.webp"
+src="/hero-devices.webp"
 alt="KhataSetu digital ledger mobile and desktop app interface"
 width="500"
 height="600"
@@ -137,6 +161,7 @@ decoding="async">
 
 </section>
 
+<!-- FEATURES -->
 
 <section class="section">
 
@@ -163,6 +188,7 @@ decoding="async">
 
 </section>
 
+<!-- CTA -->
 
 <section class="cta">
 
@@ -179,10 +205,11 @@ Download KhataSetu Free
 
 </main>
 
-
 <!-- Footer -->
+
 <div id="footer"></div>
 
+<!-- Navbar + Footer Loader -->
 
 <script>
 
@@ -199,9 +226,24 @@ loadComponent("footer","/footer.html");
 
 </script>
 
+<script src="/script.js" defer></script>
 
-<script src="script.js" defer></script>
+<!-- Organization Structured Data -->
 
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "Organization",
+"name": "KhataSetu",
+"url": "https://khatasetu.com",
+"logo": "https://khatasetu.com/logo.png",
+"description": "KhataSetu is a cloud based digital ledger app helping small businesses manage bookkeeping and financial records worldwide.",
+"founder": {
+"@type": "Person",
+"name": "Rejabul Sk"
+}
+}
+</script>
 
 </body>
 </html>

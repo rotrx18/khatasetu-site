@@ -1,11 +1,14 @@
 /* TEAM */
+
 Founder: Rejabul Sk
 Organization: Rotrx IT Solution
 Product: KhataSetu - Smart Digital Ledger App
 Website: https://khatasetu.com
 Contact: support@rotrxitsolution.com
 
+
 /* SITE */
+
 Domain: khatasetu.com
 Launch Year: 2026
 Category: Business, Finance, Productivity
@@ -13,11 +16,15 @@ Audience: Small Businesses Worldwide
 Primary Language: English
 Global Availability: Yes
 
+
 /* TECHNOLOGY */
+
 Frontend: HTML5, CSS3, JavaScript
-Hosting: Cloud-based static hosting
-SEO: Structured Data, Sitemap, Robots.txt
-Performance: Optimized for 95+ Lighthouse
+Hosting: Cloud-based Static Hosting
+SEO: Structured Data, XML Sitemap, Robots.txt
+Performance: Optimized for 95+ Lighthouse Score
+
 
 /* THANKS */
+
 To small business owners worldwide for trusting KhataSetu.

@@ -12,12 +12,12 @@
 
 <meta name="robots" content="index, follow">
 
-<link rel="canonical" href="https://khatasetu.com/blog.html">
+<link rel="canonical" href="https://khatasetu.com/blog/">
 
 <meta property="og:title" content="KhataSetu Blog – Accounting & Ledger Guides">
 <meta property="og:description" content="Guides and insights on digital ledger apps and small business accounting.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://khatasetu.com/blog.html">
+<meta property="og:url" content="https://khatasetu.com/blog/">
 <meta property="og:image" content="https://khatasetu.com/hero.png">
 
 <link rel="stylesheet" href="/style.css">
@@ -33,6 +33,8 @@ crossorigin="anonymous"></script>
 
 <!-- Navbar -->
 <div id="navbar"></div>
+
+<main>
 
 <section class="section">
 
@@ -51,36 +53,38 @@ Expert insights on digital ledger apps, bookkeeping, and small business accounti
 <div class="card">
 <h3>Complete Bookkeeping Guide</h3>
 <p>The ultimate guide to small business bookkeeping, accounting basics and digital ledger tools.</p>
-<a href="/blog/bookkeeping-guide.html" class="btn">Read Guide</a>
+<a href="/blog/bookkeeping-guide/" class="btn">Read Guide</a>
 </div>
 
 <div class="card">
 <h3>Best Digital Ledger App for Small Businesses</h3>
 <p>Discover how digital ledger apps simplify business accounting.</p>
-<a href="/blog/best-digital-ledger-app.html" class="btn">Read More</a>
+<a href="/blog/best-digital-ledger-app/" class="btn">Read More</a>
 </div>
 
 <div class="card">
 <h3>How to Manage Small Business Bookkeeping</h3>
 <p>Complete guide to managing business finances efficiently.</p>
-<a href="/blog/small-business-bookkeeping-guide.html" class="btn">Read More</a>
+<a href="/blog/small-business-bookkeeping-guide/" class="btn">Read More</a>
 </div>
 
 <div class="card">
 <h3>Benefits of Cloud Accounting Software</h3>
 <p>Why cloud-based accounting is the future of business management.</p>
-<a href="/blog/cloud-accounting-benefits.html" class="btn">Read More</a>
+<a href="/blog/cloud-accounting-benefits/" class="btn">Read More</a>
 </div>
 
 <div class="card">
 <h3>Paper Ledger vs Digital Ledger</h3>
 <p>Compare traditional khata books and modern digital ledger apps for small businesses.</p>
-<a href="/blog/paper-ledger-vs-digital-ledger.html" class="btn">Read More</a>
+<a href="/blog/paper-ledger-vs-digital-ledger/" class="btn">Read More</a>
 </div>
 
 </div>
 
 </section>
+
+</main>
 
 <!-- Footer -->
 <div id="footer"></div>
@@ -100,6 +104,8 @@ loadComponent("footer","/footer.html");
 
 </script>
 
+<script src="/script.js" defer></script>
+
 <!-- Blog Structured Data -->
 
 <script type="application/ld+json">
@@ -107,7 +113,7 @@ loadComponent("footer","/footer.html");
  "@context": "https://schema.org",
  "@type": "Blog",
  "name": "KhataSetu Blog",
- "url": "https://khatasetu.com/blog.html",
+ "url": "https://khatasetu.com/blog/",
  "description": "Guides about digital ledger apps, bookkeeping and small business accounting.",
  "publisher": {
    "@type": "Organization",
@@ -117,6 +123,26 @@ loadComponent("footer","/footer.html");
      "url": "https://khatasetu.com/logo.png"
    }
  }
+}
+</script>
+
+<!-- Breadcrumb Structured Data -->
+
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ "itemListElement": [{
+   "@type": "ListItem",
+   "position": 1,
+   "name": "Home",
+   "item": "https://khatasetu.com"
+ },{
+   "@type": "ListItem",
+   "position": 2,
+   "name": "Blog",
+   "item": "https://khatasetu.com/blog/"
+ }]
 }
 </script>
 

@@ -5,15 +5,7 @@
 User-agent: *
 Allow: /
 
-# Allow important directories
-Allow: /blog/
-
-# Allow core assets
-Allow: /style.css
-Allow: /script.js
-Allow: /logo.png
-
-# Block system or server folders if they exist
+# Block server/system folders if ever added
 Disallow: /cgi-bin/
 
 # Sitemap location

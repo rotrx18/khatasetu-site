@@ -43,33 +43,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   // ============================================
-  // 📌 Active Navbar Link Highlight
-  // ============================================
-
-  const navLinks = document.querySelectorAll(".navbar a");
-  let currentPath = window.location.pathname;
-
-  // Fix homepage matching
-  if (currentPath === "/") {
-    currentPath = "/index.html";
-  }
-
-  navLinks.forEach(link => {
-
-    let linkPath = link.getAttribute("href");
-
-    if (linkPath === "/" || linkPath === "index.html") {
-      linkPath = "/index.html";
-    }
-
-    if (currentPath.includes(linkPath)) {
-      link.classList.add("active-link");
-    }
-
-  });
-
-
-  // ============================================
   // 🚀 Smooth Anchor Scroll
   // ============================================
 
