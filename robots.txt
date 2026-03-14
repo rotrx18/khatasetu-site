@@ -5,15 +5,16 @@
 User-agent: *
 Allow: /
 
-# Allow important resources
+# Allow important directories
 Allow: /blog/
+
+# Allow core assets
 Allow: /style.css
 Allow: /script.js
+Allow: /logo.png
 
-# Disallow sensitive or system files (if any added later)
+# Block system or server folders if they exist
 Disallow: /cgi-bin/
-Disallow: /*.json$
-Disallow: /*?*
 
-# Sitemap Location
+# Sitemap location
 Sitemap: https://khatasetu.com/sitemap.xml

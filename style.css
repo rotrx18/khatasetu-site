@@ -1,3 +1,5 @@
+/* ================= GLOBAL RESET ================= */
+
 *,*::before,*::after{
 margin:0;
 padding:0;
@@ -21,6 +23,19 @@ color:#111;
 line-height:1.7;
 -webkit-font-smoothing:antialiased;
 text-rendering:optimizeLegibility
+}
+
+/* ================= CONTAINER ================= */
+
+.container{
+max-width:1100px;
+margin:auto;
+padding:0 20px
+}
+
+.center{
+max-width:700px;
+margin:auto
 }
 
 /* ================= NAVBAR ================= */
@@ -252,6 +267,14 @@ footer a:hover{
 color:#fff
 }
 
+.footer-note{
+max-width:800px;
+margin:auto;
+font-size:14px;
+color:#6b7280;
+padding:40px 20px
+}
+
 /* ================= CONTACT ================= */
 
 .contact-wrapper{
@@ -306,6 +329,182 @@ transition:.3s
 .btn-submit:hover{
 background:#1e40af;
 transform:translateY(-3px)
+}
+
+/* ================= LEGAL PAGES ================= */
+
+.container{
+max-width:900px;
+margin:auto;
+padding:40px 20px;
+line-height:1.8;
+font-size:16px;
+color:#1f2937
+}
+
+.container h1{
+font-size:34px;
+margin-bottom:20px;
+color:#0f172a;
+text-align:center
+}
+
+.container h2{
+font-size:22px;
+margin-top:35px;
+margin-bottom:12px;
+color:#111827
+}
+
+.container h3{
+font-size:18px;
+margin-top:25px;
+margin-bottom:10px;
+color:#1f2937
+}
+
+.container p{
+margin-bottom:16px
+}
+
+.container ul{
+margin:15px 0 20px 22px
+}
+
+.container li{
+margin-bottom:8px
+}
+
+.container hr{
+margin:40px 0;
+border:none;
+border-top:1px solid #e5e7eb
+}
+
+/* legal footer note */
+
+.footer-note{
+margin-top:40px;
+font-size:14px;
+color:#6b7280;
+line-height:1.6
+}
+
+/* ================= MODERN SAAS IMPROVEMENTS ================= */
+
+/* smoother fonts */
+
+body{
+letter-spacing:0.2px;
+}
+
+/* glass style navbar */
+
+.navbar{
+backdrop-filter:blur(12px);
+background:rgba(255,255,255,0.85);
+border-bottom:1px solid rgba(0,0,0,0.05);
+}
+
+/* section spacing upgrade */
+
+.section{
+padding:100px 8%;
+}
+
+/* softer card design */
+
+.card{
+background:#fff;
+padding:35px;
+width:300px;
+border-radius:20px;
+box-shadow:0 10px 40px rgba(0,0,0,.06);
+transition:all .35s ease;
+border:1px solid rgba(0,0,0,.04);
+}
+
+.card:hover{
+transform:translateY(-12px);
+box-shadow:0 30px 60px rgba(0,0,0,.12);
+}
+
+/* nicer headings */
+
+.section h2{
+font-size:36px;
+font-weight:700;
+letter-spacing:-0.3px;
+}
+
+/* modern button */
+
+.btn{
+background:#fff;
+color:#2563eb;
+border-radius:999px;
+padding:14px 32px;
+font-weight:600;
+transition:all .3s ease;
+}
+
+.btn:hover{
+transform:translateY(-4px);
+box-shadow:0 15px 40px rgba(0,0,0,.15);
+}
+
+/* subtle fade animation */
+
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(20px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+.hero-text{
+animation:fadeUp .9s ease forwards;
+}
+
+.card{
+animation:fadeUp .8s ease forwards;
+}
+
+/* nicer footer */
+
+footer{
+background:#020617;
+padding:45px 20px;
+}
+
+/* improve link hover */
+
+a{
+transition:.25s ease;
+}
+
+a:hover{
+opacity:.85;
+}
+
+/* ================= REMOVE LINK UNDERLINE ================= */
+
+a{
+text-decoration:none;
+color:inherit;
+}
+
+a:hover{
+text-decoration:none;
+}
+
+.active-link{
+color:#2563eb;
+font-weight:600;
 }
 
 /* ================= RESPONSIVE ================= */
