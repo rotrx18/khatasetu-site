@@ -26,6 +26,18 @@ letter-spacing:0.2px;
 text-rendering:optimizeLegibility;
 }
 
+/* ================= LINKS ================= */
+
+a{
+text-decoration:none;
+color:inherit;
+transition:.25s ease;
+}
+
+a:hover{
+opacity:.85;
+}
+
 /* ================= CONTAINER ================= */
 
 .container{
@@ -37,6 +49,7 @@ padding:40px 20px;
 .center{
 max-width:700px;
 margin:auto;
+text-align:center;
 }
 
 /* ================= NAVBAR ================= */
@@ -64,26 +77,23 @@ letter-spacing:.5px;
 }
 
 .logo a{
-text-decoration:none;
 color:#111;
 }
 
 .navbar nav{
 display:flex;
 flex-wrap:wrap;
+align-items:center;
 }
 
 .navbar a{
 margin-left:24px;
 color:#333;
 font-weight:500;
-text-decoration:none;
-transition:.25s ease;
 }
 
 .navbar a:hover{
 transform:translateY(-2px);
-opacity:.85;
 }
 
 .active-link{
@@ -194,7 +204,7 @@ font-weight:700;
 letter-spacing:-0.3px;
 }
 
-/* ================= ARTICLE / BLOG LAYOUT ================= */
+/* ================= ARTICLE / BLOG ================= */
 
 .article{
 max-width:760px;
@@ -232,6 +242,23 @@ padding-left:24px;
 
 .article li{
 margin-bottom:10px;
+}
+
+.article table{
+width:100%;
+border-collapse:collapse;
+margin-top:20px;
+}
+
+.article th,
+.article td{
+border:1px solid #ddd;
+padding:10px;
+text-align:left;
+}
+
+.article th{
+background:#f3f4f6;
 }
 
 /* ================= GRID ================= */
@@ -282,20 +309,33 @@ font-size:32px;
 
 /* ================= FOOTER ================= */
 
-footer{
+.site-footer{
 background:#020617;
-padding:45px 20px;
-text-align:center;
 color:#fff;
+padding:60px 20px;
+margin-top:80px;
+}
+
+.footer-note{
+max-width:800px;
+margin:auto;
+font-size:14px;
+line-height:1.6;
+color:#cbd5f5;
+margin-bottom:25px;
+}
+
+.footer-links{
+text-align:center;
 font-size:14px;
 }
 
-footer a{
+.footer-links a{
 color:#ccc;
-margin:0 8px;
+margin:0 6px;
 }
 
-footer a:hover{
+.footer-links a:hover{
 color:#fff;
 }
 
@@ -346,6 +386,10 @@ flex-direction:column;
 gap:12px;
 }
 
+.navbar a{
+margin:6px 10px;
+}
+
 .hero{
 padding:70px 20px;
 }
@@ -357,6 +401,10 @@ font-size:26px;
 .card{
 width:100%;
 max-width:340px;
+}
+
+.section{
+padding:70px 20px;
 }
 
 }
