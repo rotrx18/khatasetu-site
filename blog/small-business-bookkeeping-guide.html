@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
@@ -19,23 +20,21 @@
 <meta property="og:image" content="https://www.khatasetu.com/hero.png">
 
 <link rel="stylesheet" href="/style.css">
-<!-- ✅ Google AdSense -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7094776728416254"
-     crossorigin="anonymous"></script>
+
+<link rel="icon" href="/logo.png">
+
+<!-- Google AdSense -->
+<script async
+src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7094776728416254"
+crossorigin="anonymous"></script>
 
 </head>
 
 <body>
 
-<header class="navbar">
-  <div class="logo">📘 KhataSetu</div>
-  <nav>
-    <a href="/">Home</a>
-    <a href="/features.html">Features</a>
-    <a href="/blog.html">Blog</a>
-    <a href="/contact.html">Contact</a>
-  </nav>
-</header>
+<!-- Navbar -->
+<div id="navbar"></div>
+
 
 <section class="section">
 
@@ -47,6 +46,7 @@ Whether you operate a retail shop, service agency, or online store,
 accurate bookkeeping ensures long-term growth and financial stability.
 </p>
 
+
 <h2>What Is Bookkeeping?</h2>
 
 <p>
@@ -54,6 +54,7 @@ Bookkeeping is the process of recording daily financial transactions,
 including sales, expenses, payments, and customer balances.
 It provides clarity on profit, cash flow, and overall business health.
 </p>
+
 
 <h2>Why Bookkeeping Is Important for Small Businesses</h2>
 
@@ -64,6 +65,7 @@ It provides clarity on profit, cash flow, and overall business health.
 <li>Helps manage cash flow</li>
 <li>Supports better decision making</li>
 </ul>
+
 
 <h2>Manual vs Digital Bookkeeping</h2>
 
@@ -77,6 +79,7 @@ Digital bookkeeping apps automate calculations,
 store data securely in the cloud,
 and allow instant access from anywhere in the world.
 </p>
+
 
 <h2>Essential Bookkeeping Steps</h2>
 
@@ -108,6 +111,7 @@ Modern digital ledger apps like KhataSetu simplify bookkeeping,
 reduce errors, and provide cloud backup security.
 </p>
 
+
 <h2>Common Bookkeeping Mistakes</h2>
 
 <ul>
@@ -116,6 +120,7 @@ reduce errors, and provide cloud backup security.
 <li>Ignoring unpaid invoices</li>
 <li>Not backing up financial records</li>
 </ul>
+
 
 <h2>How Digital Ledger Apps Improve Bookkeeping</h2>
 
@@ -130,6 +135,7 @@ Cloud-based systems allow business owners to access
 financial data securely from anywhere.
 </p>
 
+
 <h2>Conclusion</h2>
 
 <p>
@@ -139,37 +145,61 @@ By adopting digital bookkeeping tools,
 small businesses can scale efficiently in 2026 and beyond.
 </p>
 
+
 <a href="https://play.google.com/store/apps/details?id=com.rotrxitsolution.khatasetu"
-   target="_blank"
-   class="btn">
-   Try KhataSetu Free
+target="_blank"
+class="btn">
+Try KhataSetu Free
 </a>
 
 </section>
 
-<footer>
-  <p>
-    © 2026 KhataSetu |
-    <a href="/privacy-policy.html">Privacy Policy</a> |
-    <a href="/terms.html">Terms</a>
-  </p>
-</footer>
+
+<!-- Footer -->
+<div id="footer"></div>
+
+
+
+<script>
+
+function loadComponent(id,file){
+fetch(file)
+.then(res=>res.text())
+.then(data=>{
+document.getElementById(id).innerHTML=data;
+});
+}
+
+loadComponent("navbar","/navbar.html");
+loadComponent("footer","/footer.html");
+
+</script>
+
+
+<!-- Article Schema -->
 
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
  "@type": "Article",
  "headline": "Small Business Bookkeeping Guide 2026",
+ "description": "Complete small business bookkeeping guide for 2026.",
  "author": {
    "@type": "Person",
    "name": "Rejabul Sk"
  },
  "publisher": {
    "@type": "Organization",
-   "name": "KhataSetu"
- }
+   "name": "KhataSetu",
+   "logo": {
+     "@type": "ImageObject",
+     "url": "https://khatasetu.com/logo.png"
+   }
+ },
+ "mainEntityOfPage": "https://khatasetu.com/blog/small-business-bookkeeping-guide.html"
 }
 </script>
+
 
 </body>
 </html>

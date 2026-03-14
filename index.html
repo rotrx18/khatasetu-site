@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
@@ -27,7 +28,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" as="style">
+<link rel="preload"
+href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+as="style">
+
 <link rel="stylesheet"
 href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
 media="print"
@@ -52,29 +56,19 @@ frame-src https://googleads.g.doubleclick.net https://fundingchoicesmessages.goo
 connect-src 'self' https:;
 ">
 
+<!-- Google AdSense -->
 <script async
 src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7094776728416254"
 crossorigin="anonymous"></script>
 
 </head>
 
+
 <body>
 
-<header class="navbar">
+<!-- Navbar -->
+<div id="navbar"></div>
 
-<div class="logo">
-<a href="index.html">📘 KhataSetu</a>
-</div>
-
-<nav>
-<a href="index.html">Home</a>
-<a href="features.html">Features</a>
-<a href="blog.html">Blog</a>
-<a href="about.html">About</a>
-<a href="contact.html">Contact</a>
-</nav>
-
-</header>
 
 <main>
 
@@ -120,6 +114,7 @@ decoding="async">
 
 </div>
 
+
 <div class="hero-image">
 
 <picture>
@@ -141,6 +136,7 @@ decoding="async">
 </div>
 
 </section>
+
 
 <section class="section">
 
@@ -167,6 +163,7 @@ decoding="async">
 
 </section>
 
+
 <section class="cta">
 
 <h2>Start Managing Your Business Smarter Today</h2>
@@ -182,17 +179,29 @@ Download KhataSetu Free
 
 </main>
 
-<footer>
 
-<p>
-© 2026 KhataSetu |
-<a href="privacy-policy.html">Privacy Policy</a> |
-<a href="terms.html">Terms & Conditions</a>
-</p>
+<!-- Footer -->
+<div id="footer"></div>
 
-</footer>
+
+<script>
+
+function loadComponent(id,file){
+fetch(file)
+.then(res => res.text())
+.then(data => {
+document.getElementById(id).innerHTML = data;
+});
+}
+
+loadComponent("navbar","/navbar.html");
+loadComponent("footer","/footer.html");
+
+</script>
+
 
 <script src="script.js" defer></script>
+
 
 </body>
 </html>

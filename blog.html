@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
@@ -9,40 +10,49 @@
 
 <meta name="description" content="Learn about digital ledger apps, small business bookkeeping, cloud accounting and financial management tips worldwide.">
 
+<meta name="robots" content="index, follow">
+
 <link rel="canonical" href="https://khatasetu.com/blog.html">
 
 <meta property="og:title" content="KhataSetu Blog – Accounting & Ledger Guides">
 <meta property="og:description" content="Guides and insights on digital ledger apps and small business accounting.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://khatasetu.com/blog.html">
+<meta property="og:image" content="https://khatasetu.com/hero.png">
 
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="/style.css">
 <link rel="icon" href="/logo.png">
-<!-- ✅ Google AdSense -->
+
+<!-- Google AdSense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7094776728416254"
-     crossorigin="anonymous"></script>
+crossorigin="anonymous"></script>
 
 </head>
 
 <body>
 
-<header class="navbar">
-  <div class="logo">📘 KhataSetu</div>
-  <nav>
-    <a href="/">Home</a>
-    <a href="features.html">Features</a>
-    <a href="blog.html">Blog</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-</header>
+<!-- Navbar -->
+<div id="navbar"></div>
 
 <section class="section">
+
 <h1>KhataSetu Blog</h1>
+
 <p class="center">
 Expert insights on digital ledger apps, bookkeeping, and small business accounting worldwide.
 </p>
+
 </section>
 
 <section class="section light">
+
 <div class="grid">
+
+<div class="card">
+<h3>Complete Bookkeeping Guide</h3>
+<p>The ultimate guide to small business bookkeeping, accounting basics and digital ledger tools.</p>
+<a href="/blog/bookkeeping-guide.html" class="btn">Read Guide</a>
+</div>
 
 <div class="card">
 <h3>Best Digital Ledger App for Small Businesses</h3>
@@ -68,13 +78,47 @@ Expert insights on digital ledger apps, bookkeeping, and small business accounti
 <a href="/blog/paper-ledger-vs-digital-ledger.html" class="btn">Read More</a>
 </div>
 
-
 </div>
+
 </section>
 
-<footer>
-<p>© 2026 KhataSetu</p>
-</footer>
+<!-- Footer -->
+<div id="footer"></div>
+
+<script>
+
+function loadComponent(id,file){
+fetch(file)
+.then(res => res.text())
+.then(data => {
+document.getElementById(id).innerHTML = data;
+});
+}
+
+loadComponent("navbar","/navbar.html");
+loadComponent("footer","/footer.html");
+
+</script>
+
+<!-- Blog Structured Data -->
+
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Blog",
+ "name": "KhataSetu Blog",
+ "url": "https://khatasetu.com/blog.html",
+ "description": "Guides about digital ledger apps, bookkeeping and small business accounting.",
+ "publisher": {
+   "@type": "Organization",
+   "name": "KhataSetu",
+   "logo": {
+     "@type": "ImageObject",
+     "url": "https://khatasetu.com/logo.png"
+   }
+ }
+}
+</script>
 
 </body>
 </html>

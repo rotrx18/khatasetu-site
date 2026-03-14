@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
@@ -10,6 +11,7 @@
 <meta name="description" content="Contact KhataSetu for support, business inquiries or assistance with our digital ledger app. Get help from our global support team.">
 
 <meta name="robots" content="index, follow">
+
 <link rel="canonical" href="https://khatasetu.com/contact.html">
 
 <meta property="og:title" content="Contact KhataSetu">
@@ -18,24 +20,20 @@
 <meta property="og:url" content="https://khatasetu.com/contact.html">
 <meta property="og:image" content="https://www.khatasetu.com/hero.png">
 
-<link rel="stylesheet" href="style.css">
-<!-- ✅ Google AdSense -->
+<link rel="stylesheet" href="/style.css">
+<link rel="icon" href="/logo.png">
+
+<!-- Google AdSense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7094776728416254"
-     crossorigin="anonymous"></script>
+crossorigin="anonymous"></script>
 
 </head>
 
 <body>
 
-<header class="navbar">
-  <div class="logo">📘 KhataSetu</div>
-  <nav>
-    <a href="/">Home</a>
-    <a href="features.html">Features</a>
-    <a href="blog.html">Blog</a>
-    <a href="about.html">About</a>
-  </nav>
-</header>
+<!-- Navbar -->
+<div id="navbar"></div>
+
 
 <section class="section">
 
@@ -51,86 +49,102 @@ please reach out to us.
 
 <div class="grid">
 
-  <div class="card">
-    <h3>📧 Email Support</h3>
-    <p>For app support and general inquiries:</p>
-    <p><strong>support@rotrxitsolution.com</strong></p>
-  </div>
+<div class="card">
+<h3>📧 Email Support</h3>
+<p>For app support and general inquiries:</p>
+<p><strong>support@rotrxitsolution.com</strong></p>
+</div>
 
-  <div class="card">
-    <h3>🤝 Business & Partnerships</h3>
-    <p>For collaboration or business discussions:</p>
-    <p><strong>support@rotrxitsolution.com</strong></p>
-  </div>
+<div class="card">
+<h3>🤝 Business & Partnerships</h3>
+<p>For collaboration or business discussions:</p>
+<p><strong>support@rotrxitsolution.com</strong></p>
+</div>
 
-  <div class="card">
-    <h3>🌍 Global Assistance</h3>
-    <p>
-      KhataSetu supports small businesses worldwide.
-      We aim to respond within 24–48 business hours.
-    </p>
-  </div>
+<div class="card">
+<h3>🌍 Global Assistance</h3>
+<p>
+KhataSetu supports small businesses worldwide.
+We aim to respond within 24–48 business hours.
+</p>
+</div>
 
 </div>
 
+</section>
+
+
 <section class="section light">
 
-  <div class="contact-wrapper">
+<div class="contact-wrapper">
 
-    <h1>Send Us a Message</h1>
+<h2>Send Us a Message</h2>
 
-    <form action="https://formspree.io/f/maqdzgzk"
-          method="POST"
-          class="contact-form-modern">
+<form action="https://formspree.io/f/maqdzgzk"
+method="POST"
+class="contact-form-modern">
 
-      <div class="form-row">
-        <input type="text"
-               name="name"
-               placeholder="Full Name"
-               required>
-      </div>
+<div class="form-row">
+<input type="text"
+name="name"
+placeholder="Full Name"
+required>
+</div>
 
-      <div class="form-row">
-        <input type="tel"
-               name="mobile"
-               placeholder="Mobile Number"
-               required
-               pattern="[0-9]{10,15}">
-      </div>
+<div class="form-row">
+<input type="tel"
+name="mobile"
+placeholder="Mobile Number"
+required
+pattern="[0-9]{10,15}">
+</div>
 
-      <div class="form-row">
-        <input type="email"
-               name="email"
-               placeholder="Email Address"
-               required>
-      </div>
+<div class="form-row">
+<input type="email"
+name="email"
+placeholder="Email Address"
+required>
+</div>
 
-      <div class="form-row">
-        <textarea name="message"
-                  placeholder="Your Message"
-                  rows="6"
-                  required></textarea>
-      </div>
+<div class="form-row">
+<textarea name="message"
+placeholder="Your Message"
+rows="6"
+required></textarea>
+</div>
 
-      <input type="text" name="_gotcha" style="display:none">
+<input type="text" name="_gotcha" style="display:none">
 
-      <button type="submit" class="btn-submit">
-        Send Message
-      </button>
+<button type="submit" class="btn-submit">
+Send Message
+</button>
 
-    </form>
+</form>
 
-  </div>
+</div>
 
 </section>
 
-<footer>
-  <p>
-    © 2026 KhataSetu |
-    <a href="privacy-policy.html">Privacy Policy</a> |
-    <a href="terms.html">Terms & Conditions</a>
-  </p>
-</footer>
+
+<!-- Footer -->
+<div id="footer"></div>
+
+
+<script>
+
+function loadComponent(id,file){
+fetch(file)
+.then(res=>res.text())
+.then(data=>{
+document.getElementById(id).innerHTML=data;
+});
+}
+
+loadComponent("navbar","/navbar.html");
+loadComponent("footer","/footer.html");
+
+</script>
+
 
 <script type="application/ld+json">
 {

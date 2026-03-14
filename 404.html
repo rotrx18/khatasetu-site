@@ -104,9 +104,24 @@ p {
   <a href="/" class="btn">Go Back Home</a>
 </div>
 
-<div class="footer">
-  © 2026 KhataSetu. All Rights Reserved.
-</div>
+<!-- Footer -->
+<div id="footer"></div>
+
+
+<script>
+
+function loadComponent(id,file){
+fetch(file)
+.then(res=>res.text())
+.then(data=>{
+document.getElementById(id).innerHTML=data;
+});
+}
+
+loadComponent("navbar","navbar.html");
+loadComponent("footer","footer.html");
+
+</script>
 
 </body>
 </html>

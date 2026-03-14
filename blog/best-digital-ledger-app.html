@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
@@ -20,23 +21,18 @@
 
 <link rel="stylesheet" href="/style.css">
 <link rel="icon" href="/logo.png">
-<!-- ✅ Google AdSense -->
+
+<!-- Google AdSense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7094776728416254"
-     crossorigin="anonymous"></script>
+crossorigin="anonymous"></script>
 
 </head>
 
 <body>
 
-<header class="navbar">
-  <div class="logo">📘 KhataSetu</div>
-  <nav>
-    <a href="/">Home</a>
-    <a href="/features.html">Features</a>
-    <a href="/blog.html">Blog</a>
-    <a href="/contact.html">Contact</a>
-  </nav>
-</header>
+<!-- Navbar -->
+<div id="navbar"></div>
+
 
 <section class="section">
 
@@ -129,12 +125,13 @@ modern bookkeeping becomes faster and more reliable.
 </p>
 
 <a href="https://play.google.com/store/apps/details?id=com.rotrxitsolution.khatasetu"
-   target="_blank"
-   class="btn">
-   Download KhataSetu Now
+target="_blank"
+class="btn">
+Download KhataSetu Now
 </a>
 
 </section>
+
 
 <section class="section light">
 
@@ -160,15 +157,29 @@ by entrepreneurs and small business owners.
 
 </section>
 
-<footer>
-  <p>
-    © 2026 KhataSetu |
-    <a href="/privacy-policy.html">Privacy Policy</a> |
-    <a href="/terms.html">Terms</a>
-  </p>
-</footer>
+
+<!-- Footer -->
+<div id="footer"></div>
+
+
+<script>
+
+function loadComponent(id,file){
+fetch(file)
+.then(res=>res.text())
+.then(data=>{
+document.getElementById(id).innerHTML=data;
+});
+}
+
+loadComponent("navbar","/navbar.html");
+loadComponent("footer","/footer.html");
+
+</script>
+
 
 <!-- FAQ Schema -->
+
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -192,11 +203,12 @@ by entrepreneurs and small business owners.
    "name": "Can I use a digital ledger app worldwide?",
    "acceptedAnswer": {
      "@type": "Answer",
-     "text": "Yes. Cloud-based digital ledger apps can be used globally by entrepreneurs and small business owners."
+     "text": "Cloud-based digital ledger apps can be used globally by entrepreneurs and small business owners."
    }
  }]
 }
 </script>
+
 
 </body>
 </html>

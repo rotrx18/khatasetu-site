@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -10,9 +12,22 @@
 
 <meta name="keywords" content="paper ledger vs digital ledger, digital ledger app, khata book app, bookkeeping for small business, digital accounting software">
 
+<meta name="robots" content="index, follow">
+
 <link rel="canonical" href="https://www.khatasetu.com/blog/paper-ledger-vs-digital-ledger.html">
 
+<link rel="stylesheet" href="/style.css">
+
+<link rel="icon" href="/logo.png">
+
+<meta property="og:title" content="Paper Ledger vs Digital Ledger">
+<meta property="og:description" content="Compare traditional paper ledger and modern digital ledger apps for small businesses.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.khatasetu.com/blog/paper-ledger-vs-digital-ledger.html">
+<meta property="og:image" content="https://www.khatasetu.com/hero.png">
+
 <style>
+
 body{
 font-family: Arial, Helvetica, sans-serif;
 margin:0;
@@ -92,16 +107,22 @@ padding:10px 20px;
 text-decoration:none;
 border-radius:6px;
 }
+
 </style>
 
 </head>
 
 <body>
 
+<!-- Navbar -->
+<div id="navbar"></div>
+
+
 <header class="blog-header">
 <h1>Paper Ledger vs Digital Ledger</h1>
 <p>Which is Better for Small Businesses?</p>
 </header>
+
 
 <div class="container">
 
@@ -243,9 +264,49 @@ Visit KhataSetu
 
 </div>
 
-<footer class="blog-footer">
-© 2026 KhataSetu. All Rights Reserved.
-</footer>
+
+<!-- Footer -->
+<div id="footer"></div>
+
+
+<script>
+
+function loadComponent(id,file){
+fetch(file)
+.then(res=>res.text())
+.then(data=>{
+document.getElementById(id).innerHTML=data;
+});
+}
+
+loadComponent("navbar","/navbar.html");
+loadComponent("footer","/footer.html");
+
+</script>
+
+
+<!-- Article Schema -->
+
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Article",
+ "headline": "Paper Ledger vs Digital Ledger",
+ "author": {
+   "@type": "Person",
+   "name": "Rejabul Sk"
+ },
+ "publisher": {
+   "@type": "Organization",
+   "name": "KhataSetu",
+   "logo": {
+     "@type": "ImageObject",
+     "url": "https://www.khatasetu.com/logo.png"
+   }
+ },
+ "mainEntityOfPage": "https://www.khatasetu.com/blog/paper-ledger-vs-digital-ledger.html"
+}
+</script>
 
 </body>
 </html>
