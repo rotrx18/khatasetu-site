@@ -11,21 +11,35 @@
 <meta name="description" content="Learn about KhataSetu – a smart digital ledger app helping small businesses worldwide manage bookkeeping, credit and debit records securely with cloud technology.">
 
 <meta name="robots" content="index, follow">
+<meta name="author" content="Rejabul Sk">
+<meta name="theme-color" content="#2563eb">
 
-<link rel="canonical" href="https://khatasetu.com/about.html">
+<link rel="canonical" href="https://khatasetu.com/about/">
+
+<!-- Open Graph -->
 
 <meta property="og:title" content="About KhataSetu">
 <meta property="og:description" content="Discover the mission behind KhataSetu and how we help small businesses manage digital bookkeeping globally.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://khatasetu.com/about.html">
-<meta property="og:image" content="https://www.khatasetu.com/hero.png">
+<meta property="og:url" content="https://khatasetu.com/about/">
+<meta property="og:image" content="https://khatasetu.com/hero.png">
+
+<!-- Twitter -->
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="About KhataSetu">
+<meta name="twitter:description" content="Discover the mission behind KhataSetu digital ledger app.">
+<meta name="twitter:image" content="https://khatasetu.com/hero.png">
 
 <link rel="stylesheet" href="/style.css">
 <link rel="icon" href="/logo.png">
 
 <!-- Google AdSense -->
+
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7094776728416254"
 crossorigin="anonymous"></script>
+
+<meta name="google-adsense-account" content="ca-pub-7094776728416254">
 
 </head>
 
@@ -35,7 +49,11 @@ crossorigin="anonymous"></script>
 <div id="navbar"></div>
 
 
+<main>
+
 <section class="section">
+
+<div class="container">
 
 <h1>About KhataSetu</h1>
 
@@ -104,14 +122,18 @@ Our goal is to empower businesses globally with
 simple yet powerful digital bookkeeping solutions.
 </p>
 
+</div>
+
 </section>
 
 
 <section class="section light">
 
+<div class="container">
+
 <h2>Start Managing Your Business Smarter</h2>
 
-<p style="max-width:600px;margin:auto;">
+<p class="center">
 Join thousands of business owners using KhataSetu to 
 simplify accounting and grow confidently.
 </p>
@@ -125,7 +147,11 @@ class="btn">
 Download KhataSetu
 </a>
 
+</div>
+
 </section>
+
+</main>
 
 
 <!-- Footer -->
@@ -148,20 +174,47 @@ loadComponent("footer","/footer.html");
 </script>
 
 
-<!-- Organization Structured Data -->
+<!-- Organization Schema -->
 
 <script type="application/ld+json">
 {
-"@context": "https://schema.org",
-"@type": "Organization",
-"name": "KhataSetu",
-"url": "https://khatasetu.com",
-"logo": "https://khatasetu.com/logo.png",
-"description": "KhataSetu is a digital ledger app helping small businesses manage bookkeeping and financial records securely worldwide.",
-"founder": {
-"@type": "Person",
-"name": "Rejabul Sk"
+ "@context": "https://schema.org",
+ "@type": "Organization",
+ "name": "KhataSetu",
+ "url": "https://khatasetu.com",
+ "logo": "https://khatasetu.com/logo.png",
+ "description": "KhataSetu is a digital ledger app helping small businesses manage bookkeeping and financial records securely worldwide.",
+ "founder": {
+   "@type": "Person",
+   "name": "Rejabul Sk"
+ },
+ "sameAs": [
+   "https://play.google.com/store/apps/details?id=com.rotrxitsolution.khatasetu"
+ ]
 }
+</script>
+
+
+<!-- Breadcrumb Schema -->
+
+<script type="application/ld+json">
+{
+ "@context":"https://schema.org",
+ "@type":"BreadcrumbList",
+ "itemListElement":[
+ {
+ "@type":"ListItem",
+ "position":1,
+ "name":"Home",
+ "item":"https://khatasetu.com"
+ },
+ {
+ "@type":"ListItem",
+ "position":2,
+ "name":"About",
+ "item":"https://khatasetu.com/about/"
+ }
+ ]
 }
 </script>
 

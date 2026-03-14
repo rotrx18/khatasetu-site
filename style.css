@@ -86,10 +86,9 @@ transform:translateY(-2px);
 opacity:.85;
 }
 
-.navbar a:focus,
-.btn:focus{
-outline:2px solid #2563eb;
-outline-offset:3px;
+.active-link{
+color:#2563eb;
+font-weight:600;
 }
 
 /* ================= HERO ================= */
@@ -160,18 +159,6 @@ transition:.3s;
 transform:translateY(-3px);
 }
 
-.ios-coming{
-display:flex;
-flex-direction:column;
-align-items:center;
-}
-
-.coming-text{
-margin-top:6px;
-font-size:13px;
-color:#ff6b6b;
-}
-
 /* ================= BUTTON ================= */
 
 .btn{
@@ -180,7 +167,6 @@ padding:14px 32px;
 border-radius:999px;
 background:#fff;
 color:#2563eb;
-text-decoration:none;
 font-weight:600;
 transition:all .3s ease;
 }
@@ -206,6 +192,46 @@ font-size:36px;
 margin-bottom:45px;
 font-weight:700;
 letter-spacing:-0.3px;
+}
+
+/* ================= ARTICLE / BLOG LAYOUT ================= */
+
+.article{
+max-width:760px;
+margin:auto;
+text-align:left;
+}
+
+.article h1{
+font-size:42px;
+margin-bottom:20px;
+text-align:center;
+}
+
+.article h2{
+font-size:28px;
+margin-top:40px;
+margin-bottom:15px;
+}
+
+.article h3{
+font-size:22px;
+margin-top:25px;
+margin-bottom:10px;
+}
+
+.article p{
+margin-bottom:18px;
+color:#333;
+}
+
+.article ul{
+margin:20px 0;
+padding-left:24px;
+}
+
+.article li{
+margin-bottom:10px;
 }
 
 /* ================= GRID ================= */
@@ -266,59 +292,11 @@ font-size:14px;
 
 footer a{
 color:#ccc;
-text-decoration:none;
 margin:0 8px;
 }
 
 footer a:hover{
 color:#fff;
-}
-
-/* ================= LEGAL PAGES ================= */
-
-.container h1{
-font-size:34px;
-margin-bottom:20px;
-color:#0f172a;
-text-align:center;
-}
-
-.container h2{
-font-size:22px;
-margin-top:35px;
-margin-bottom:12px;
-color:#111827;
-}
-
-.container h3{
-font-size:18px;
-margin-top:25px;
-margin-bottom:10px;
-}
-
-.container p{
-margin-bottom:16px;
-}
-
-.container ul{
-margin:15px 0 20px 22px;
-}
-
-.container li{
-margin-bottom:8px;
-}
-
-.container hr{
-margin:40px 0;
-border:none;
-border-top:1px solid #e5e7eb;
-}
-
-.footer-note{
-margin-top:40px;
-font-size:14px;
-color:#6b7280;
-line-height:1.6;
 }
 
 /* ================= CONTACT ================= */
@@ -331,67 +309,6 @@ padding:50px 40px;
 border-radius:20px;
 box-shadow:0 15px 40px rgba(0,0,0,.08);
 text-align:center;
-}
-
-.contact-wrapper h1{
-margin-bottom:30px;
-font-size:30px;
-}
-
-.contact-form-modern{
-display:flex;
-flex-direction:column;
-gap:20px;
-}
-
-.form-row input,
-.form-row textarea{
-width:100%;
-padding:14px 16px;
-border-radius:10px;
-border:1px solid #ddd;
-font-size:15px;
-transition:.3s;
-}
-
-.form-row input:focus,
-.form-row textarea:focus{
-border-color:#2563eb;
-outline:none;
-box-shadow:0 0 0 3px rgba(37,99,235,.15);
-}
-
-.btn-submit{
-padding:14px;
-border-radius:50px;
-background:#2563eb;
-color:#fff;
-font-weight:600;
-border:none;
-cursor:pointer;
-transition:.3s;
-}
-
-.btn-submit:hover{
-background:#1e40af;
-transform:translateY(-3px);
-}
-
-/* ================= LINK STYLE ================= */
-
-a{
-text-decoration:none;
-color:inherit;
-transition:.25s ease;
-}
-
-a:hover{
-opacity:.85;
-}
-
-.active-link{
-color:#2563eb;
-font-weight:600;
 }
 
 /* ================= ANIMATION ================= */
@@ -409,12 +326,6 @@ transform:translateY(0);
 
 /* ================= RESPONSIVE ================= */
 
-@media(max-width:1024px){
-.hero{
-padding:90px 6%;
-}
-}
-
 @media(max-width:900px){
 
 .hero{
@@ -426,10 +337,6 @@ text-align:center;
 font-size:34px;
 }
 
-.hero-image img{
-max-width:420px;
-}
-
 }
 
 @media(max-width:600px){
@@ -437,14 +344,6 @@ max-width:420px;
 .navbar{
 flex-direction:column;
 gap:12px;
-}
-
-.navbar nav{
-justify-content:center;
-}
-
-.navbar a{
-margin:6px 10px;
 }
 
 .hero{
@@ -455,21 +354,9 @@ padding:70px 20px;
 font-size:26px;
 }
 
-.hero p{
-font-size:15px;
-}
-
 .card{
 width:100%;
 max-width:340px;
-}
-
-.store-buttons{
-justify-content:center;
-}
-
-.contact-wrapper{
-padding:35px 20px;
 }
 
 }

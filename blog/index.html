@@ -11,8 +11,12 @@
 <meta name="description" content="Learn about digital ledger apps, small business bookkeeping, cloud accounting and financial management tips worldwide.">
 
 <meta name="robots" content="index, follow">
+<meta name="author" content="Rejabul Sk">
+<meta name="theme-color" content="#2563eb">
 
 <link rel="canonical" href="https://khatasetu.com/blog/">
+
+<!-- Open Graph -->
 
 <meta property="og:title" content="KhataSetu Blog – Accounting & Ledger Guides">
 <meta property="og:description" content="Guides and insights on digital ledger apps and small business accounting.">
@@ -20,18 +24,28 @@
 <meta property="og:url" content="https://khatasetu.com/blog/">
 <meta property="og:image" content="https://khatasetu.com/hero.png">
 
+<!-- Twitter -->
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="KhataSetu Blog – Accounting Guides">
+<meta name="twitter:description" content="Learn digital ledger and bookkeeping strategies for small businesses.">
+<meta name="twitter:image" content="https://khatasetu.com/hero.png">
+
 <link rel="stylesheet" href="/style.css">
 <link rel="icon" href="/logo.png">
 
 <!-- Google AdSense -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7094776728416254"
+
+<script async
+src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7094776728416254"
 crossorigin="anonymous"></script>
+
+<meta name="google-adsense-account" content="ca-pub-7094776728416254">
 
 </head>
 
 <body>
 
-<!-- Navbar -->
 <div id="navbar"></div>
 
 <main>
@@ -46,39 +60,54 @@ Expert insights on digital ledger apps, bookkeeping, and small business accounti
 
 </section>
 
+
 <section class="section light">
 
 <div class="grid">
 
-<div class="card">
+<article class="card">
 <h3>Complete Bookkeeping Guide</h3>
 <p>The ultimate guide to small business bookkeeping, accounting basics and digital ledger tools.</p>
 <a href="/blog/bookkeeping-guide/" class="btn">Read Guide</a>
-</div>
+</article>
 
-<div class="card">
+<article class="card">
 <h3>Best Digital Ledger App for Small Businesses</h3>
 <p>Discover how digital ledger apps simplify business accounting.</p>
 <a href="/blog/best-digital-ledger-app/" class="btn">Read More</a>
-</div>
+</article>
 
-<div class="card">
+<article class="card">
 <h3>How to Manage Small Business Bookkeeping</h3>
 <p>Complete guide to managing business finances efficiently.</p>
 <a href="/blog/small-business-bookkeeping-guide/" class="btn">Read More</a>
-</div>
+</article>
 
-<div class="card">
+<!-- AdSense Between Articles -->
+
+<ins class="adsbygoogle"
+style="display:block"
+data-ad-client="ca-pub-7094776728416254"
+data-ad-slot="AD_SLOT_ID"
+data-ad-format="auto"
+data-full-width-responsive="true"></ins>
+
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+<article class="card">
 <h3>Benefits of Cloud Accounting Software</h3>
 <p>Why cloud-based accounting is the future of business management.</p>
 <a href="/blog/cloud-accounting-benefits/" class="btn">Read More</a>
-</div>
+</article>
 
-<div class="card">
+<article class="card">
 <h3>Paper Ledger vs Digital Ledger</h3>
 <p>Compare traditional khata books and modern digital ledger apps for small businesses.</p>
 <a href="/blog/paper-ledger-vs-digital-ledger/" class="btn">Read More</a>
-</div>
+</article>
 
 </div>
 
@@ -86,16 +115,16 @@ Expert insights on digital ledger apps, bookkeeping, and small business accounti
 
 </main>
 
-<!-- Footer -->
+
 <div id="footer"></div>
 
 <script>
 
 function loadComponent(id,file){
 fetch(file)
-.then(res => res.text())
-.then(data => {
-document.getElementById(id).innerHTML = data;
+.then(res=>res.text())
+.then(data=>{
+document.getElementById(id).innerHTML=data;
 });
 }
 
@@ -106,45 +135,91 @@ loadComponent("footer","/footer.html");
 
 <script src="/script.js" defer></script>
 
+
+
 <!-- Blog Structured Data -->
 
 <script type="application/ld+json">
 {
- "@context": "https://schema.org",
- "@type": "Blog",
- "name": "KhataSetu Blog",
- "url": "https://khatasetu.com/blog/",
- "description": "Guides about digital ledger apps, bookkeeping and small business accounting.",
- "publisher": {
-   "@type": "Organization",
-   "name": "KhataSetu",
-   "logo": {
-     "@type": "ImageObject",
-     "url": "https://khatasetu.com/logo.png"
-   }
+ "@context":"https://schema.org",
+ "@type":"Blog",
+ "name":"KhataSetu Blog",
+ "url":"https://khatasetu.com/blog/",
+ "description":"Guides about digital ledger apps, bookkeeping and small business accounting.",
+ "publisher":{
+ "@type":"Organization",
+ "name":"KhataSetu",
+ "logo":{
+ "@type":"ImageObject",
+ "url":"https://khatasetu.com/logo.png"
+ }
  }
 }
 </script>
 
-<!-- Breadcrumb Structured Data -->
+
+
+<!-- Breadcrumb -->
 
 <script type="application/ld+json">
 {
- "@context": "https://schema.org",
- "@type": "BreadcrumbList",
- "itemListElement": [{
-   "@type": "ListItem",
-   "position": 1,
-   "name": "Home",
-   "item": "https://khatasetu.com"
- },{
-   "@type": "ListItem",
-   "position": 2,
-   "name": "Blog",
-   "item": "https://khatasetu.com/blog/"
- }]
+ "@context":"https://schema.org",
+ "@type":"BreadcrumbList",
+ "itemListElement":[
+ {
+ "@type":"ListItem",
+ "position":1,
+ "name":"Home",
+ "item":"https://khatasetu.com"
+ },
+ {
+ "@type":"ListItem",
+ "position":2,
+ "name":"Blog",
+ "item":"https://khatasetu.com/blog/"
+ }
+ ]
 }
 </script>
+
+
+
+<!-- ItemList Schema (helps Google index blog posts faster) -->
+
+<script type="application/ld+json">
+{
+ "@context":"https://schema.org",
+ "@type":"ItemList",
+ "itemListElement":[
+ {
+ "@type":"ListItem",
+ "position":1,
+ "url":"https://khatasetu.com/blog/bookkeeping-guide/"
+ },
+ {
+ "@type":"ListItem",
+ "position":2,
+ "url":"https://khatasetu.com/blog/best-digital-ledger-app/"
+ },
+ {
+ "@type":"ListItem",
+ "position":3,
+ "url":"https://khatasetu.com/blog/small-business-bookkeeping-guide/"
+ },
+ {
+ "@type":"ListItem",
+ "position":4,
+ "url":"https://khatasetu.com/blog/cloud-accounting-benefits/"
+ },
+ {
+ "@type":"ListItem",
+ "position":5,
+ "url":"https://khatasetu.com/blog/paper-ledger-vs-digital-ledger/"
+ }
+ ]
+}
+</script>
+
 
 </body>
 </html>
