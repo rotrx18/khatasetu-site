@@ -11,8 +11,6 @@
 
 <meta name="description" content="KhataSetu is a powerful digital ledger app for small businesses worldwide. Manage credit, debit, customer balances and bookkeeping securely with cloud sync.">
 
-<link rel="author" href="/humans.txt">
-
 <meta name="robots" content="index, follow">
 <meta name="author" content="KhataSetu Team">
 <meta name="theme-color" content="#2563eb">
@@ -27,7 +25,7 @@
 <meta property="og:url" content="https://khatasetu.com/">
 <meta property="og:image" content="https://khatasetu.com/hero-devices.webp">
 
-<!-- Twitter Card -->
+<!-- Twitter -->
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="KhataSetu – Smart Digital Ledger App">
@@ -43,42 +41,17 @@
 <link rel="icon" href="/logo.png" type="image/png">
 <link rel="apple-touch-icon" href="/logo-192.png">
 
-<!-- Performance -->
-
-<link rel="preload" as="image" href="/hero-devices.webp" fetchpriority="high">
+<!-- Fonts -->
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link rel="preload"
-href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
-as="style">
-
 <link rel="stylesheet"
-href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
-media="print"
-onload="this.media='all'">
+href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap">
 
-<link rel="preload" href="/style.css" as="style">
 <link rel="stylesheet" href="/style.css">
 
-<link rel="preconnect" href="https://pagead2.googlesyndication.com">
-<link rel="preconnect" href="https://googleads.g.doubleclick.net">
-
-<!-- Content Security Policy -->
-
-<meta http-equiv="Content-Security-Policy"
-content="
-default-src 'self' https:;
-img-src 'self' https: data:;
-script-src 'self' https://pagead2.googlesyndication.com https://fundingchoicesmessages.google.com https://www.googletagmanager.com 'unsafe-inline';
-style-src 'self' https://fonts.googleapis.com 'unsafe-inline';
-font-src https://fonts.gstatic.com;
-frame-src https://googleads.g.doubleclick.net https://fundingchoicesmessages.google.com;
-connect-src 'self' https:;
-">
-
-<!-- Google AdSense -->
+<!-- AdSense script (load once per page) -->
 
 <script async
 src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7094776728416254"
@@ -110,30 +83,14 @@ Built for small businesses worldwide.
 
 <a href="https://play.google.com/store/apps/details?id=com.rotrxitsolution.khatasetu"
 target="_blank"
-rel="noopener noreferrer"
-aria-label="Download KhataSetu on Google Play">
+rel="noopener">
 
-<img
-src="/play-badge.webp"
+<img src="/play-badge.webp"
 alt="Get KhataSetu on Google Play"
 width="180"
-height="54"
-loading="lazy"
-decoding="async">
+height="54">
 
 </a>
-
-<div class="ios-coming">
-
-<img
-src="/appstore-badge.webp"
-alt="Download on the App Store"
-width="180"
-height="54"
-loading="lazy"
-decoding="async">
-
-</div>
 
 </div>
 
@@ -141,21 +98,32 @@ decoding="async">
 
 <div class="hero-image">
 
-<picture>
-
-<source srcset="/hero-devices.webp" type="image/webp">
-
 <img
 src="/hero-devices.webp"
 alt="KhataSetu digital ledger mobile and desktop app interface"
 width="500"
-height="600"
-sizes="(max-width:768px) 90vw, 500px"
-loading="eager"
-fetchpriority="high"
-decoding="async">
+height="600">
 
-</picture>
+</div>
+
+</section>
+
+<!-- SINGLE AD SECTION -->
+
+<section class="section">
+
+<div class="container">
+
+<ins class="adsbygoogle"
+style="display:block"
+data-ad-client="ca-pub-7094776728416254"
+data-ad-slot="2562895484"
+data-ad-format="auto"
+data-full-width-responsive="true"></ins>
+
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 
 </div>
 
@@ -196,7 +164,7 @@ decoding="async">
 
 <a href="https://play.google.com/store/apps/details?id=com.rotrxitsolution.khatasetu"
 target="_blank"
-rel="noopener noreferrer"
+rel="noopener"
 class="btn">
 Download KhataSetu Free
 </a>
@@ -206,7 +174,6 @@ Download KhataSetu Free
 </main>
 
 <!-- Footer -->
-
 <div id="footer"></div>
 
 <!-- Navbar + Footer Loader -->
@@ -217,7 +184,7 @@ function loadComponent(id,file){
 fetch(file)
 .then(res => res.text())
 .then(data => {
-document.getElementById(id).innerHTML = data;
+document.getElementById(id).innerHTML=data;
 });
 }
 
@@ -225,8 +192,6 @@ loadComponent("navbar","/navbar.html");
 loadComponent("footer","/footer.html");
 
 </script>
-
-<script src="/script.js" defer></script>
 
 <!-- Organization Structured Data -->
 
@@ -237,11 +202,7 @@ loadComponent("footer","/footer.html");
 "name": "KhataSetu",
 "url": "https://khatasetu.com",
 "logo": "https://khatasetu.com/logo.png",
-"description": "KhataSetu is a cloud based digital ledger app helping small businesses manage bookkeeping and financial records worldwide.",
-"founder": {
-"@type": "Person",
-"name": "Rejabul Sk"
-}
+"description": "KhataSetu is a cloud based digital ledger app helping small businesses manage bookkeeping worldwide."
 }
 </script>
 
