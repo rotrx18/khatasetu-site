@@ -10,21 +10,31 @@ html{
 scroll-behavior:smooth;
 }
 
-body{
-font-family:'Poppins',sans-serif;
-background:#f9fafb;
-color:#111;
-line-height:1.7;
-letter-spacing:.2px;
--webkit-font-smoothing:antialiased;
-text-rendering:optimizeLegibility;
-overflow-x:hidden;
-}
-
 img{
 max-width:100%;
 height:auto;
 display:block;
+}
+
+/* ================= BODY ================= */
+
+body{
+font-family:'Poppins',sans-serif;
+
+background:
+radial-gradient(circle at 20% 20%, #4f46e5 0%, transparent 40%),
+radial-gradient(circle at 80% 30%, #7c3aed 0%, transparent 40%),
+radial-gradient(circle at 50% 80%, #2563eb 0%, transparent 40%),
+#0f172a;
+
+color:#fff;
+line-height:1.7;
+letter-spacing:.2px;
+
+-webkit-font-smoothing:antialiased;
+text-rendering:optimizeLegibility;
+
+overflow-x:hidden;
 }
 
 /* ================= LINKS ================= */
@@ -60,12 +70,14 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 padding:18px 20px;
+
 position:sticky;
 top:0;
 z-index:1000;
 
 background:rgba(255,255,255,0.92);
 backdrop-filter:blur(12px);
+
 border-bottom:1px solid rgba(0,0,0,.05);
 box-shadow:0 3px 12px rgba(0,0,0,.05);
 }
@@ -73,6 +85,7 @@ box-shadow:0 3px 12px rgba(0,0,0,.05);
 .logo{
 font-size:22px;
 font-weight:600;
+color:#111;
 }
 
 .navbar nav{
@@ -100,7 +113,6 @@ padding:100px 20px;
 gap:60px;
 
 background:linear-gradient(135deg,#2563eb,#7c3aed);
-color:#fff;
 border-radius:20px;
 }
 
@@ -132,15 +144,48 @@ max-width:520px;
 margin:auto;
 }
 
+/* ================= GLASS CARD ================= */
+
+.glass-card{
+
+background:rgba(255,255,255,0.12);
+
+backdrop-filter:blur(14px);
+-webkit-backdrop-filter:blur(14px);
+
+border:1px solid rgba(255,255,255,0.25);
+
+border-radius:18px;
+
+padding:40px;
+
+box-shadow:
+0 10px 40px rgba(0,0,0,0.15),
+inset 0 1px 0 rgba(255,255,255,0.3);
+
+transition:.3s ease;
+
+}
+
+.glass-card:hover{
+transform:translateY(-6px);
+box-shadow:0 25px 60px rgba(0,0,0,0.25);
+}
+
 /* ================= BUTTON ================= */
 
 .btn{
 display:inline-block;
+
 padding:14px 32px;
+
 border-radius:999px;
+
 background:#fff;
 color:#2563eb;
+
 font-weight:600;
+
 transition:.3s;
 }
 
@@ -161,12 +206,26 @@ margin:auto;
 .section.light{
 background:#f1f5f9;
 border-radius:20px;
+color:#111;
 }
 
 .section h2{
 font-size:36px;
 margin-bottom:35px;
 font-weight:700;
+}
+
+/* ================= ARTICLE ================= */
+
+.article{
+max-width:760px;
+margin:auto;
+text-align:left;
+}
+
+.article p{
+margin-bottom:18px;
+color:#ddd;
 }
 
 /* ================= FEATURE LIST ================= */
@@ -193,13 +252,21 @@ max-width:1100px;
 margin:auto;
 }
 
+/* ================= CARD ================= */
+
 .card{
 background:#fff;
+color:#111;
+
 padding:35px;
 width:300px;
+
 border-radius:20px;
+
 border:1px solid rgba(0,0,0,.04);
+
 box-shadow:0 10px 40px rgba(0,0,0,.06);
+
 transition:.35s;
 }
 
@@ -212,10 +279,13 @@ box-shadow:0 25px 60px rgba(0,0,0,.12);
 
 .cta{
 padding:90px 20px;
+
 text-align:center;
+
 background:#0f172a;
-color:#fff;
+
 border-radius:20px;
+
 max-width:1200px;
 margin:80px auto;
 }
@@ -229,16 +299,22 @@ margin-bottom:25px;
 .site-footer{
 background:#020617;
 color:#fff;
+
 padding:60px 20px;
+
 margin-top:80px;
 }
 
 .footer-note{
 max-width:800px;
 margin:auto;
+
 font-size:14px;
+
 line-height:1.6;
+
 color:#cbd5f5;
+
 margin-bottom:25px;
 }
 
@@ -254,19 +330,6 @@ margin:0 6px;
 
 .footer-links a:hover{
 color:#fff;
-}
-
-/* ================= ANIMATION ================= */
-
-@keyframes fadeUp{
-from{
-opacity:0;
-transform:translateY(20px);
-}
-to{
-opacity:1;
-transform:translateY(0);
-}
 }
 
 /* ================= RESPONSIVE ================= */

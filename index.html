@@ -32,15 +32,17 @@ href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=
 <link rel="stylesheet" href="/style.css">
 
 <!-- Google AdSense -->
+
 <script async
 src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7094776728416254"
 crossorigin="anonymous"></script>
+
+<meta name="google-adsense-account" content="ca-pub-7094776728416254">
 
 </head>
 
 <body>
 
-<!-- Navbar -->
 <div id="navbar"></div>
 
 <main>
@@ -49,7 +51,7 @@ crossorigin="anonymous"></script>
 
 <section class="hero">
 
-<div class="hero-text">
+<div class="glass-card">
 
 <h1>Smart Digital Ledger App for Modern Businesses</h1>
 
@@ -65,17 +67,21 @@ Download on Google Play
 
 </div>
 
-<div class="hero-image">
+</section>
 
-<img
-src="/hero-devices.webp"
-alt="KhataSetu Digital Ledger App Interface"
-width="520"
-loading="eager">
 
-</div>
+<!-- LIVE USER COUNTER -->
+
+<section class="section">
+
+<h2>Businesses Using KhataSetu</h2>
+
+<h1 id="userCounter">0</h1>
+
+<p>Small businesses trust KhataSetu worldwide</p>
 
 </section>
+
 
 <!-- FEATURES -->
 
@@ -104,13 +110,13 @@ loading="eager">
 
 </section>
 
+
 <!-- AD SECTION -->
 
 <section class="section">
 
 <div class="container">
 
-<!-- KhataSetu Ad -->
 <ins class="adsbygoogle"
 style="display:block; text-align:center; min-height:120px"
 data-ad-client="ca-pub-7094776728416254"
@@ -121,6 +127,7 @@ data-full-width-responsive="true"></ins>
 </div>
 
 </section>
+
 
 <!-- BENEFITS -->
 
@@ -143,6 +150,7 @@ KhataSetu simplifies business bookkeeping with modern cloud technology.
 </ul>
 
 </section>
+
 
 <!-- USE CASES -->
 
@@ -171,6 +179,7 @@ KhataSetu simplifies business bookkeeping with modern cloud technology.
 
 </section>
 
+
 <!-- FAQ -->
 
 <section class="section light">
@@ -194,6 +203,7 @@ Yes. The app is designed specifically for entrepreneurs and small businesses wor
 
 </section>
 
+
 <!-- CTA -->
 
 <section class="cta">
@@ -209,11 +219,11 @@ Download KhataSetu Free
 
 </main>
 
-<!-- Footer -->
 
 <div id="footer"></div>
 
-<!-- Load Navbar & Footer -->
+
+<!-- NAVBAR + FOOTER LOAD -->
 
 <script>
 
@@ -230,7 +240,30 @@ loadComponent("footer","/footer.html");
 
 </script>
 
-<!-- Push Ad After Page Load -->
+
+<!-- USER COUNTER -->
+
+<script>
+
+let counter = 0;
+let target = 12000;
+
+let interval = setInterval(function(){
+
+counter += 37;
+
+document.getElementById("userCounter").innerText = counter.toLocaleString();
+
+if(counter >= target){
+clearInterval(interval);
+}
+
+},20);
+
+</script>
+
+
+<!-- ADS LOAD -->
 
 <script>
 window.addEventListener("load", function(){
@@ -238,7 +271,8 @@ window.addEventListener("load", function(){
 });
 </script>
 
-<!-- Organization Schema -->
+
+<!-- ORGANIZATION SCHEMA -->
 
 <script type="application/ld+json">
 {
