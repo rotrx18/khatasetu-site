@@ -4,7 +4,6 @@
 <head>
 
 <!-- SAFE REDIRECT -->
-
 <script>
 if (location.hostname === "www.khatasetu.com") {
 location.href = "https://khatasetu.com" + location.pathname + location.search;
@@ -40,7 +39,6 @@ location.href = "https://khatasetu.com" + location.pathname + location.search;
 <link rel="preload" as="image" href="/hero-devices.webp">
 
 <!-- ADSENSE -->
-
 <meta name="google-adsense-account" content="ca-pub-7094776728416254">
 
 <script async
@@ -62,97 +60,54 @@ transition: all 0.3s ease;
 <main>
 
 <!-- HERO -->
-
 <section class="hero">
-
 <div class="hero-container">
 
 <div class="glass-card hero-text">
-
 <h1>Smart Digital Ledger App for Modern Businesses</h1>
-
 <p>
 Track credit, debit and customer balances with secure cloud bookkeeping.
 Built for entrepreneurs and small businesses worldwide.
 </p>
 
 <a href="https://play.google.com/store/apps/details?id=com.rotrxitsolution.khatasetu"
-class="btn"
-target="_blank"
-rel="noopener">
-
-Download on Google Play
-
-</a>
-
+class="btn" target="_blank">Download on Google Play</a>
 </div>
 
 <div class="hero-image">
-
-<img
-src="/hero-devices.webp"
-alt="KhataSetu digital ledger dashboard"
+<img src="/hero-devices.webp"
+alt="KhataSetu dashboard"
 width="520"
 height="600"
 loading="eager">
-
 </div>
 
 </div>
-
 </section>
 
 <!-- TRUST -->
-
 <section class="trust-section">
-
 <div class="trust-container">
-
-<div class="trust-item">⭐ 4.8 rating on Google Play</div>
-
-<div class="trust-item">
-⬇️ <strong id="downloadCounter">0</strong>+ downloads
+<div class="trust-item">⭐ 4.8 rating</div>
+<div class="trust-item">⬇️ <strong id="downloadCounter">0</strong>+ downloads</div>
+<div class="trust-item">🌍 18+ countries</div>
 </div>
-
-<div class="trust-item">🌍 Used in 18+ countries</div>
-
-</div>
-
 </section>
 
 <!-- FEATURES -->
-
 <section class="section">
-
 <h2>Why Businesses Choose KhataSetu</h2>
 
 <div class="grid">
-
-<div class="card">
-<h3>Smart Ledger Tracking</h3>
-<p>Track credit and debit transactions instantly.</p>
+<div class="card"><h3>Smart Ledger Tracking</h3></div>
+<div class="card"><h3>Secure Cloud Sync</h3></div>
+<div class="card"><h3>Customer Balance Tracking</h3></div>
 </div>
-
-<div class="card">
-<h3>Secure Cloud Sync</h3>
-<p>Your financial records stay safe with cloud backup.</p>
-</div>
-
-<div class="card">
-<h3>Customer Balance Tracking</h3>
-<p>Monitor outstanding payments easily.</p>
-</div>
-
-</div>
-
 </section>
 
 <!-- AD 1 -->
-
 <section id="adSection1" class="section" style="display:none">
-
 <div class="container">
-
 <ins id="adsenseBlock1"
 class="adsbygoogle"
 style="display:block;min-height:120px"
@@ -160,54 +115,18 @@ data-ad-client="ca-pub-7094776728416254"
 data-ad-slot="2562895484"
 data-ad-format="auto"
 data-full-width-responsive="true"></ins>
-
 </div>
-
 </section>
 
 <!-- BENEFITS -->
-
 <section class="section light">
-
 <h2>Powerful Accounting Tools</h2>
-
-<p class="center">
-KhataSetu simplifies bookkeeping using cloud technology.
-</p>
-
-<ul class="feature-list">
-
-<li>Customer ledger management</li>
-<li>Credit & debit tracking</li>
-<li>Cloud-based bookkeeping</li>
-<li>Secure data protection</li>
-
-</ul>
-
-</section>
-
-<!-- USE CASES -->
-
-<section class="section">
-
-<h2>Who Uses KhataSetu</h2>
-
-<div class="grid">
-
-<div class="card"><h3>Retail Shops</h3></div>
-<div class="card"><h3>Freelancers</h3></div>
-<div class="card"><h3>Small Businesses</h3></div>
-
-</div>
-
+<p>Cloud-based bookkeeping for small businesses.</p>
 </section>
 
 <!-- AD 2 -->
-
 <section id="adSection2" class="section" style="display:none">
-
 <div class="container">
-
 <ins id="adsenseBlock2"
 class="adsbygoogle"
 style="display:block;min-height:120px"
@@ -215,20 +134,14 @@ data-ad-client="ca-pub-7094776728416254"
 data-ad-slot="2562895484"
 data-ad-format="auto"
 data-full-width-responsive="true"></ins>
-
 </div>
-
 </section>
 
 <!-- CTA -->
-
 <section class="cta">
-
 <h2>Start Managing Smarter</h2>
-
 <a href="https://play.google.com/store/apps/details?id=com.rotrxitsolution.khatasetu"
 class="btn">Download Now</a>
-
 </section>
 
 </main>
@@ -236,119 +149,81 @@ class="btn">Download Now</a>
 <div id="footer"></div>
 
 <!-- NAVBAR / FOOTER -->
-
 <script>
-
 function loadComponent(id,file){
-
 fetch(file)
-.then(res=>{
-if(!res.ok) throw new Error()
-return res.text()
-})
+.then(res=>res.text())
 .then(data=>{
 document.getElementById(id).innerHTML=data
 })
 .catch(()=>{
 document.getElementById(id).innerHTML=""
 })
-
 }
-
 loadComponent("navbar","/navbar.html")
 loadComponent("footer","/footer.html")
-
 </script>
 
 <!-- DOWNLOAD COUNTER -->
-
 <script>
-
-const base=10000
-const start=new Date("2026-03-03")
-const now=new Date()
-
-const days=Math.floor((now-start)/(1000*60*60*24))
-const total=base + days*(500+Math.random()*500)
-
 let c=0
-const speed=Math.ceil(total/120)
+const total=12000
+const speed=100
 
 function run(){
-
 c+=speed
-
 if(c>=total) c=total
-
-document.getElementById("downloadCounter").innerText=
-Math.floor(c).toLocaleString()
-
+document.getElementById("downloadCounter").innerText=c.toLocaleString()
 if(c<total) requestAnimationFrame(run)
-
 }
-
 run()
-
 </script>
 
-<!-- ADS LOAD -->
-
+<!-- FINAL ADS + MONITOR -->
 <script>
 
-window.addEventListener("load",function(){
+window.addEventListener("load", function(){
 
 try{
 (adsbygoogle = window.adsbygoogle || []).push({});
 (adsbygoogle = window.adsbygoogle || []).push({});
 }catch(e){}
 
-})
+function monitor(sectionId, adId){
 
-</script>
+const ad = document.getElementById(adId)
+const section = document.getElementById(sectionId)
 
-<!-- AD AUTO HEIGHT -->
+let tries = 0
 
-<script>
+const timer = setInterval(function(){
 
-function monitor(id,adid){
+tries++
 
-const ad=document.getElementById(adid)
-const sec=document.getElementById(id)
-
-let t=0
-
-const i=setInterval(()=>{
-
-t++
-
-if(ad && ad.offsetHeight>50){
-
-sec.style.display="block"
-sec.style.minHeight=ad.offsetHeight+"px"
-
-clearInterval(i)
-
+if(ad && ad.offsetHeight > 30){
+section.style.display = "block"
+section.style.minHeight = ad.offsetHeight + "px"
+clearInterval(timer)
 }
 
-if(t>20) clearInterval(i)
-
-},700)
-
+if(tries > 20){
+section.style.display = "none"
+clearInterval(timer)
 }
 
-window.onload=()=>{
+},800)
+
+}
 
 monitor("adSection1","adsenseBlock1")
 monitor("adSection2","adsenseBlock2")
 
-}
+})
 
 </script>
 
 <!-- SCHEMA -->
-
 <script type="application/ld+json">
-
 {
 "@context":"https://schema.org",
 "@type":"SoftwareApplication",
@@ -358,7 +233,6 @@ monitor("adSection2","adsenseBlock2")
 "offers":{"@type":"Offer","price":"0"},
 "aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8"}
 }
-
 </script>
 
 </body>
