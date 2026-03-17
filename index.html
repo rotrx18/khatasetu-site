@@ -1,23 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
-<!-- SAFE REDIRECT -->
+<!-- SAFE REDIRECT (www → non-www) -->
 <script>
-if (location.hostname === "www.khatasetu.com") {
-location.href = "https://khatasetu.com" + location.pathname + location.search;
-}
+(function() {
+  var host = window.location.hostname;
+  if (host === "www.khatasetu.com") {
+    window.location.replace("https://khatasetu.com" + window.location.pathname + window.location.search);
+  }
+})();
 </script>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>KhataSetu – Smart Digital Ledger App for Small Businesses</title>
+<title>KhataSetu – Smart Digital Ledger App for Small Businesses Worldwide</title>
 
 <meta name="description" content="KhataSetu digital ledger app helps businesses track credit, debit and customer balances with secure cloud bookkeeping.">
+<meta name="keywords" content="
+digital ledger app,
+best ledger app for small business,
+business bookkeeping app,
+online accounting app,
+credit and debit tracking app,
+customer ledger management app,
+expense tracker for business,
+cloud accounting app,
+mobile bookkeeping software,
+
+best khata app India,
+khata book app,
+free khata book app for business,
+udhaar khata app India,
+kirana store khata app,
+shopkeeper ledger app India,
+GST friendly ledger app India,
+small business accounting app India,
+bookkeeping app India,
+
+khatabook alternative,
+khatabook alternative app India,
+okcredit alternative app,
+best khata app alternative,
+
+ledger app worldwide,
+small business accounting app global,
+free bookkeeping app worldwide,
+secure cloud ledger app,
+
+khatasetu,
+khatasetu app,
+khata setu ledger app,
+khatasetu bookkeeping app
+">
+<meta name="keywords" content="
+digital ledger app,
+khata app,
+khata book app,
+khatabook alternative,
+khatabook app alternative India,
+best khata app for small business,
+bookkeeping app India,
+credit debit ledger app,
+udhaar khata app,
+business ledger app,
+khata management app,
+free khata app India,
+khata book online app,
+small business accounting app India,
+customer ledger app,
+khatasetu,
+Khata Setu,
+khata,
+khatabook,
+khata book,
+in india,
+">
 
 <meta name="robots" content="index, follow">
+<meta name="author" content="KhataSetu Team">
 <meta name="theme-color" content="#2563eb">
 
 <link rel="canonical" href="https://khatasetu.com/">
@@ -36,20 +98,10 @@ location.href = "https://khatasetu.com" + location.pathname + location.search;
 
 <link rel="stylesheet" href="/style.css">
 
-<link rel="preload" as="image" href="/hero-devices.webp">
-
-<!-- ADSENSE -->
 <meta name="google-adsense-account" content="ca-pub-7094776728416254">
 
-<script async
-src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7094776728416254"
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7094776728416254"
 crossorigin="anonymous"></script>
-
-<style>
-.adsbygoogle{
-transition: all 0.3s ease;
-}
-</style>
 
 </head>
 
@@ -65,21 +117,27 @@ transition: all 0.3s ease;
 
 <div class="glass-card hero-text">
 <h1>Smart Digital Ledger App for Modern Businesses</h1>
+
 <p>
 Track credit, debit and customer balances with secure cloud bookkeeping.
 Built for entrepreneurs and small businesses worldwide.
 </p>
 
 <a href="https://play.google.com/store/apps/details?id=com.rotrxitsolution.khatasetu"
-class="btn" target="_blank">Download on Google Play</a>
+class="btn" target="_blank" rel="noopener">
+Download on Google Play
+</a>
+
 </div>
 
 <div class="hero-image">
-<img src="/hero-devices.webp"
-alt="KhataSetu dashboard"
+<img
+src="/hero-devices.webp"
+alt="KhataSetu digital ledger app dashboard"
 width="520"
 height="600"
-loading="eager">
+loading="eager"
+fetchpriority="high">
 </div>
 
 </div>
@@ -88,9 +146,15 @@ loading="eager">
 <!-- TRUST -->
 <section class="trust-section">
 <div class="trust-container">
-<div class="trust-item">⭐ 4.8 rating</div>
-<div class="trust-item">⬇️ <strong id="downloadCounter">0</strong>+ downloads</div>
-<div class="trust-item">🌍 18+ countries</div>
+
+<div class="trust-item">⭐ 4.8 rating on Google Play</div>
+
+<div class="trust-item">
+⬇️ <strong id="downloadCounter">0</strong>+ downloads
+</div>
+
+<div class="trust-item">🌍 Used in 18+ countries</div>
+
 </div>
 </section>
 
@@ -99,127 +163,170 @@ loading="eager">
 <h2>Why Businesses Choose KhataSetu</h2>
 
 <div class="grid">
-<div class="card"><h3>Smart Ledger Tracking</h3></div>
-<div class="card"><h3>Secure Cloud Sync</h3></div>
-<div class="card"><h3>Customer Balance Tracking</h3></div>
+<div class="card">
+<h3>Smart Ledger Tracking</h3>
+<p>Track every credit and debit transaction instantly.</p>
 </div>
+
+<div class="card">
+<h3>Secure Cloud Sync</h3>
+<p>Your financial records stay safe with cloud backup.</p>
+</div>
+
+<div class="card">
+<h3>Customer Balance Tracking</h3>
+<p>Monitor outstanding payments and transaction history.</p>
+</div>
+</div>
+
 </section>
 
 <!-- AD 1 -->
-<section id="adSection1" class="section" style="display:none">
+<section class="section">
 <div class="container">
-<ins id="adsenseBlock1"
-class="adsbygoogle"
-style="display:block;min-height:120px"
+
+<ins class="adsbygoogle"
+style="display:block"
 data-ad-client="ca-pub-7094776728416254"
 data-ad-slot="2562895484"
 data-ad-format="auto"
 data-full-width-responsive="true"></ins>
+
 </div>
 </section>
 
 <!-- BENEFITS -->
 <section class="section light">
-<h2>Powerful Accounting Tools</h2>
-<p>Cloud-based bookkeeping for small businesses.</p>
+<h2>Powerful Accounting Tools for Small Businesses</h2>
+
+<p class="center">
+KhataSetu simplifies business bookkeeping with modern cloud technology.
+</p>
+
+<ul class="feature-list">
+<li>Customer ledger management</li>
+<li>Credit and debit tracking</li>
+<li>Cloud based bookkeeping</li>
+<li>Secure financial data protection</li>
+<li>Business transaction history</li>
+</ul>
+
+</section>
+
+<!-- USE CASES -->
+<section class="section">
+<h2>Who Uses KhataSetu</h2>
+
+<div class="grid">
+<div class="card">
+<h3>Retail Shop Owners</h3>
+<p>Track customer credit and payments easily.</p>
+</div>
+
+<div class="card">
+<h3>Freelancers</h3>
+<p>Monitor invoices and income records.</p>
+</div>
+
+<div class="card">
+<h3>Small Businesses</h3>
+<p>Organize financial transactions efficiently.</p>
+</div>
+</div>
+
 </section>
 
 <!-- AD 2 -->
-<section id="adSection2" class="section" style="display:none">
+<section class="section">
 <div class="container">
-<ins id="adsenseBlock2"
-class="adsbygoogle"
-style="display:block;min-height:120px"
+
+<ins class="adsbygoogle"
+style="display:block"
 data-ad-client="ca-pub-7094776728416254"
 data-ad-slot="2562895484"
 data-ad-format="auto"
 data-full-width-responsive="true"></ins>
+
 </div>
+</section>
+
+<!-- FAQ -->
+<section class="section light">
+<h2>Frequently Asked Questions</h2>
+
+<h3>What is a digital ledger app?</h3>
+<p>A digital ledger app helps businesses track credit and debit transactions electronically.</p>
+
+<h3>Is KhataSetu secure?</h3>
+<p>Yes. KhataSetu uses secure cloud infrastructure and encryption.</p>
+
+<h3>Can small businesses use KhataSetu?</h3>
+<p>Yes. It is designed for entrepreneurs worldwide.</p>
+
 </section>
 
 <!-- CTA -->
 <section class="cta">
-<h2>Start Managing Smarter</h2>
+<h2>Start Managing Your Business Smarter</h2>
+
 <a href="https://play.google.com/store/apps/details?id=com.rotrxitsolution.khatasetu"
-class="btn">Download Now</a>
+class="btn" target="_blank">
+Download KhataSetu Free
+</a>
+
 </section>
 
 </main>
 
 <div id="footer"></div>
 
-<!-- NAVBAR / FOOTER -->
+<!-- NAVBAR + FOOTER -->
 <script>
 function loadComponent(id,file){
 fetch(file)
-.then(res=>res.text())
-.then(data=>{
-document.getElementById(id).innerHTML=data
+.then(res => res.text())
+.then(data => {
+document.getElementById(id).innerHTML=data;
 })
 .catch(()=>{
-document.getElementById(id).innerHTML=""
-})
+document.getElementById(id).innerHTML="";
+});
 }
+
 loadComponent("navbar","/navbar.html")
 loadComponent("footer","/footer.html")
 </script>
 
 <!-- DOWNLOAD COUNTER -->
 <script>
-let c=0
-const total=12000
-const speed=100
+const base = 10000
+const start = new Date("2026-03-03")
+const now = new Date()
+
+const days = Math.floor((now-start)/(1000*60*60*24))
+const total = base + days*(500+Math.random()*500)
+
+let c = 0
+const speed = Math.ceil(total/120)
 
 function run(){
-c+=speed
-if(c>=total) c=total
-document.getElementById("downloadCounter").innerText=c.toLocaleString()
-if(c<total) requestAnimationFrame(run)
+c += speed
+if(c >= total) c = total
+
+document.getElementById("downloadCounter").innerText =
+Math.floor(c).toLocaleString()
+
+if(c < total) requestAnimationFrame(run)
 }
 run()
 </script>
 
-<!-- FINAL ADS + MONITOR -->
+<!-- ADS LOAD -->
 <script>
-
-window.addEventListener("load", function(){
-
-try{
+window.addEventListener("load",function(){
 (adsbygoogle = window.adsbygoogle || []).push({});
 (adsbygoogle = window.adsbygoogle || []).push({});
-}catch(e){}
-
-function monitor(sectionId, adId){
-
-const ad = document.getElementById(adId)
-const section = document.getElementById(sectionId)
-
-let tries = 0
-
-const timer = setInterval(function(){
-
-tries++
-
-if(ad && ad.offsetHeight > 30){
-section.style.display = "block"
-section.style.minHeight = ad.offsetHeight + "px"
-clearInterval(timer)
-}
-
-if(tries > 20){
-section.style.display = "none"
-clearInterval(timer)
-}
-
-},800)
-
-}
-
-monitor("adSection1","adsenseBlock1")
-monitor("adSection2","adsenseBlock2")
-
-})
-
+});
 </script>
 
 <!-- SCHEMA -->
