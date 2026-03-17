@@ -3,9 +3,11 @@
 
 <head>
 
+<!-- SAFE REDIRECT -->
+
 <script>
-if (location.protocol !== 'https:' || location.hostname === 'www.khatasetu.com') {
-location.replace('https://khatasetu.com' + location.pathname + location.search);
+if (location.hostname === "www.khatasetu.com") {
+location.href = "https://khatasetu.com" + location.pathname + location.search;
 }
 </script>
 
@@ -37,11 +39,19 @@ location.replace('https://khatasetu.com' + location.pathname + location.search);
 
 <link rel="preload" as="image" href="/hero-devices.webp">
 
+<!-- ADSENSE -->
+
 <meta name="google-adsense-account" content="ca-pub-7094776728416254">
 
 <script async
 src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7094776728416254"
 crossorigin="anonymous"></script>
+
+<style>
+.adsbygoogle{
+transition: all 0.3s ease;
+}
+</style>
 
 </head>
 
@@ -98,17 +108,13 @@ loading="eager">
 
 <div class="trust-container">
 
-<div class="trust-item">
-⭐ 4.8 rating on Google Play
-</div>
+<div class="trust-item">⭐ 4.8 rating on Google Play</div>
 
 <div class="trust-item">
 ⬇️ <strong id="downloadCounter">0</strong>+ downloads
 </div>
 
-<div class="trust-item">
-🌍 Used in 18+ countries
-</div>
+<div class="trust-item">🌍 Used in 18+ countries</div>
 
 </div>
 
@@ -143,14 +149,13 @@ loading="eager">
 
 <!-- AD 1 -->
 
-<section id="adSection1" class="section">
+<section id="adSection1" class="section" style="display:none">
 
 <div class="container">
 
-<ins
-id="adsenseBlock1"
+<ins id="adsenseBlock1"
 class="adsbygoogle"
-style="display:block"
+style="display:block;min-height:120px"
 data-ad-client="ca-pub-7094776728416254"
 data-ad-slot="2562895484"
 data-ad-format="auto"
@@ -164,10 +169,10 @@ data-full-width-responsive="true"></ins>
 
 <section class="section light">
 
-<h2>Powerful Accounting Tools for Small Businesses</h2>
+<h2>Powerful Accounting Tools</h2>
 
 <p class="center">
-KhataSetu simplifies bookkeeping using modern cloud technology.
+KhataSetu simplifies bookkeeping using cloud technology.
 </p>
 
 <ul class="feature-list">
@@ -175,8 +180,7 @@ KhataSetu simplifies bookkeeping using modern cloud technology.
 <li>Customer ledger management</li>
 <li>Credit & debit tracking</li>
 <li>Cloud-based bookkeeping</li>
-<li>Secure financial data protection</li>
-<li>Full transaction history</li>
+<li>Secure data protection</li>
 
 </ul>
 
@@ -190,20 +194,9 @@ KhataSetu simplifies bookkeeping using modern cloud technology.
 
 <div class="grid">
 
-<div class="card">
-<h3>Retail Shops</h3>
-<p>Track customer credit and payments easily.</p>
-</div>
-
-<div class="card">
-<h3>Freelancers</h3>
-<p>Monitor invoices and income records.</p>
-</div>
-
-<div class="card">
-<h3>Small Businesses</h3>
-<p>Organize financial transactions efficiently.</p>
-</div>
+<div class="card"><h3>Retail Shops</h3></div>
+<div class="card"><h3>Freelancers</h3></div>
+<div class="card"><h3>Small Businesses</h3></div>
 
 </div>
 
@@ -211,14 +204,13 @@ KhataSetu simplifies bookkeeping using modern cloud technology.
 
 <!-- AD 2 -->
 
-<section id="adSection2" class="section">
+<section id="adSection2" class="section" style="display:none">
 
 <div class="container">
 
-<ins
-id="adsenseBlock2"
+<ins id="adsenseBlock2"
 class="adsbygoogle"
-style="display:block"
+style="display:block;min-height:120px"
 data-ad-client="ca-pub-7094776728416254"
 data-ad-slot="2562895484"
 data-ad-format="auto"
@@ -228,53 +220,14 @@ data-full-width-responsive="true"></ins>
 
 </section>
 
-<!-- FAQ -->
-
-<section class="section light">
-
-<h2>Frequently Asked Questions</h2>
-
-<h3>What is a digital ledger app?</h3>
-<p>A digital ledger app helps businesses track credit and debit transactions electronically.</p>
-
-<h3>Is KhataSetu secure?</h3>
-<p>Yes. KhataSetu uses cloud infrastructure and encryption to protect financial records.</p>
-
-<h3>Can small businesses use KhataSetu?</h3>
-<p>Yes. It is designed for entrepreneurs and small businesses worldwide.</p>
-
-</section>
-
-<!-- INTERNAL SEO LINKS -->
-
-<section class="section">
-
-<h2>Learn More</h2>
-
-<p class="center">
-
-<a href="/features/">Features</a> |
-<a href="/about/">About</a> |
-<a href="/contact.html">Contact</a>
-
-</p>
-
-</section>
-
 <!-- CTA -->
 
 <section class="cta">
 
-<h2>Start Managing Your Business Smarter</h2>
+<h2>Start Managing Smarter</h2>
 
 <a href="https://play.google.com/store/apps/details?id=com.rotrxitsolution.khatasetu"
-class="btn"
-target="_blank"
-rel="noopener">
-
-Download KhataSetu Free
-
-</a>
+class="btn">Download Now</a>
 
 </section>
 
@@ -282,14 +235,24 @@ Download KhataSetu Free
 
 <div id="footer"></div>
 
+<!-- NAVBAR / FOOTER -->
+
 <script>
 
 function loadComponent(id,file){
+
 fetch(file)
-.then(res=>res.text())
+.then(res=>{
+if(!res.ok) throw new Error()
+return res.text()
+})
 .then(data=>{
-document.getElementById(id).innerHTML=data;
-});
+document.getElementById(id).innerHTML=data
+})
+.catch(()=>{
+document.getElementById(id).innerHTML=""
+})
+
 }
 
 loadComponent("navbar","/navbar.html")
@@ -297,100 +260,92 @@ loadComponent("footer","/footer.html")
 
 </script>
 
-<!-- Download Counter -->
+<!-- DOWNLOAD COUNTER -->
 
 <script>
 
-const baseDownloads=10000
-const startDate=new Date("2026-03-03")
-const today=new Date()
+const base=10000
+const start=new Date("2026-03-03")
+const now=new Date()
 
-const daysPassed=Math.floor((today-startDate)/(1000*60*60*24))
+const days=Math.floor((now-start)/(1000*60*60*24))
+const total=base + days*(500+Math.random()*500)
 
-const growthPerDay=500+Math.floor(Math.random()*500)
+let c=0
+const speed=Math.ceil(total/120)
 
-const totalDownloads=baseDownloads+daysPassed*growthPerDay
+function run(){
 
-let current=0
-const speed=Math.ceil(totalDownloads/120)
+c+=speed
 
-function animateDownloads(){
+if(c>=total) c=total
 
-current+=speed
+document.getElementById("downloadCounter").innerText=
+Math.floor(c).toLocaleString()
 
-if(current>=totalDownloads){
-current=totalDownloads
-}
-
-document.getElementById("downloadCounter").innerText=current.toLocaleString()
-
-if(current<totalDownloads){
-requestAnimationFrame(animateDownloads)
-}
+if(c<total) requestAnimationFrame(run)
 
 }
 
-animateDownloads()
+run()
 
 </script>
 
-<!-- Load Ads -->
+<!-- ADS LOAD -->
 
 <script>
 
 window.addEventListener("load",function(){
 
+try{
 (adsbygoogle = window.adsbygoogle || []).push({});
 (adsbygoogle = window.adsbygoogle || []).push({});
+}catch(e){}
 
 })
 
 </script>
 
-<!-- Dynamic Ad Detection -->
+<!-- AD AUTO HEIGHT -->
 
 <script>
 
-function monitorAd(sectionId,adId){
+function monitor(id,adid){
 
-const ad=document.getElementById(adId)
-const section=document.getElementById(sectionId)
+const ad=document.getElementById(adid)
+const sec=document.getElementById(id)
 
-let attempts=0
+let t=0
 
-const check=setInterval(function(){
+const i=setInterval(()=>{
 
-attempts++
+t++
 
-if(ad && ad.offsetHeight>20){
+if(ad && ad.offsetHeight>50){
 
-section.style.display="block"
-clearInterval(check)
+sec.style.display="block"
+sec.style.minHeight=ad.offsetHeight+"px"
 
-}
-
-if(attempts>=20){
-
-if(!ad || ad.offsetHeight===0){
-section.style.display="none"
-}
-
-clearInterval(check)
+clearInterval(i)
 
 }
 
-},1000)
+if(t>20) clearInterval(i)
+
+},700)
 
 }
 
-window.addEventListener("load",function(){
+window.onload=()=>{
 
-monitorAd("adSection1","adsenseBlock1")
-monitorAd("adSection2","adsenseBlock2")
+monitor("adSection1","adsenseBlock1")
+monitor("adSection2","adsenseBlock2")
 
-})
+}
 
 </script>
+
+<!-- SCHEMA -->
 
 <script type="application/ld+json">
 
@@ -398,20 +353,10 @@ monitorAd("adSection2","adsenseBlock2")
 "@context":"https://schema.org",
 "@type":"SoftwareApplication",
 "name":"KhataSetu",
-"operatingSystem":"Android",
 "applicationCategory":"BusinessApplication",
-"offers":{
-"@type":"Offer",
-"price":"0",
-"priceCurrency":"USD"
-},
-"aggregateRating":{
-"@type":"AggregateRating",
-"ratingValue":"4.8",
-"ratingCount":"120"
-},
-"downloadUrl":"https://play.google.com/store/apps/details?id=com.rotrxitsolution.khatasetu",
-"image":"https://khatasetu.com/hero-devices.webp"
+"operatingSystem":"Android",
+"offers":{"@type":"Offer","price":"0"},
+"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8"}
 }
 
 </script>
