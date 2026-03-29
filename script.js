@@ -1,18 +1,19 @@
 // ============================================
-// KhataSetu Production Script (FULL SYSTEM)
+// KhataSetu Production Script (ULTIMATE FINAL)
 // ============================================
+
+// ✅ AUTO BASE URL (WORKS EVERYWHERE)
+const BASE_URL = window.location.origin + "/";
 
 // ================= COMPONENT LOADER =================
 function loadComponent(id, file, callback){
   const el = document.getElementById(id);
   if(!el) return;
 
-  fetch(file)
+  fetch(BASE_URL + file)
     .then(res => res.text())
     .then(data => {
       el.innerHTML = data;
-
-      // run callback after load
       if(callback) callback();
     })
     .catch(err => console.error("Component load error:", err));
@@ -21,8 +22,12 @@ function loadComponent(id, file, callback){
 // ================= AUTO YEAR =================
 function setYear(){
   const yearEl = document.getElementById("year");
+
   if(yearEl){
     yearEl.textContent = new Date().getFullYear();
+  } else {
+    // retry if footer loads late
+    setTimeout(setYear, 200);
   }
 }
 
@@ -31,7 +36,7 @@ function lazyLoadImages(){
   const images = document.querySelectorAll("img[data-src]");
 
   if("IntersectionObserver" in window){
-    const observer = new IntersectionObserver((entries, observer)=>{
+    const observer = new IntersectionObserver(entries=>{
       entries.forEach(entry=>{
         if(entry.isIntersecting){
           const img = entry.target;
@@ -44,8 +49,8 @@ function lazyLoadImages(){
 
     images.forEach(img => observer.observe(img));
   } else {
-    // fallback for old browsers
-    images.forEach(img => {
+    // fallback
+    images.forEach(img=>{
       img.src = img.dataset.src;
       img.removeAttribute("data-src");
     });
@@ -54,43 +59,36 @@ function lazyLoadImages(){
 
 // ================= DARK MODE =================
 function initDarkMode(){
-
   const themeToggle = document.getElementById("themeToggle");
   const savedTheme = localStorage.getItem("theme");
 
-  // load saved theme
+  // Load saved theme
   if(savedTheme === "dark"){
     document.body.classList.add("dark");
   }
 
   if(themeToggle){
-
-    // set icon
     themeToggle.textContent =
       document.body.classList.contains("dark") ? "☀️" : "🌙";
 
     themeToggle.addEventListener("click", ()=>{
-
       document.body.classList.toggle("dark");
 
       if(document.body.classList.contains("dark")){
-        localStorage.setItem("theme", "dark");
+        localStorage.setItem("theme","dark");
         themeToggle.textContent = "☀️";
-      }else{
-        localStorage.setItem("theme", "light");
+      } else {
+        localStorage.setItem("theme","light");
         themeToggle.textContent = "🌙";
       }
-
     });
-
   }
 }
 
 // ================= SMOOTH SCROLL =================
 function smoothScroll(){
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
     anchor.addEventListener("click", function(e){
-
       const targetID = this.getAttribute("href");
 
       if(targetID.length > 1){
@@ -104,7 +102,6 @@ function smoothScroll(){
           });
         }
       }
-
     });
   });
 }
@@ -112,21 +109,20 @@ function smoothScroll(){
 // ================= INIT =================
 document.addEventListener("DOMContentLoaded", ()=>{
 
-  // Load Navbar
-  loadComponent("navbar", "/navbar.html");
+  // 🔥 GLOBAL COMPONENT LOAD (NO PATH ISSUE)
+  loadComponent("navbar", "navbar.html");
 
-  // Load Footer + Fix Year AFTER LOAD
-  loadComponent("footer", "/footer.html", ()=>{
-    setYear();
+  loadComponent("footer", "footer.html", ()=>{
+    setYear(); // ensure year works after footer load
   });
 
-  // Features
+  // FEATURES
   lazyLoadImages();
   smoothScroll();
 
-  // Delay dark mode init (after navbar loads)
+  // Delay dark mode (navbar loads first)
   setTimeout(()=>{
     initDarkMode();
-  }, 150);
+  },150);
 
 });
