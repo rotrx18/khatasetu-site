@@ -94,16 +94,7 @@ data-full-width-responsive="true"></ins>
 
     <div id="footer"></div>
 
-    <script>
-    function loadComponent(id,file){
-    fetch(file)
-    .then(res=>res.text())
-    .then(data=>{document.getElementById(id).innerHTML=data;});
-    }
-
-    loadComponent("navbar","/navbar.html");
-    loadComponent("footer","/footer.html");
-    </script>
+  <script src="script.js"></script>
 
     </body>
     </html>
