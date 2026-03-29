@@ -1,16 +1,41 @@
 // ============================================
-// KhataSetu Production Script (ULTIMATE FINAL)
+// KhataSetu Production Script (FINAL UNIVERSAL FIX)
 // ============================================
+
+// ================= GET BASE PATH =================
+function getBasePath(){
+  const path = window.location.pathname;
+
+  // Split path
+  const segments = path.split("/").filter(Boolean);
+
+  let depth = segments.length;
+
+  // If ends with index.html → reduce depth
+  if(path.endsWith("index.html")){
+    depth -= 1;
+  }
+
+  let base = "";
+
+  for(let i = 1; i < depth; i++){
+    base += "../";
+  }
+
+  return base;
+}
 
 // ================= COMPONENT LOADER =================
 function loadComponent(id, file, callback){
   const el = document.getElementById(id);
   if(!el) return;
 
-  fetch(file)
+  const base = getBasePath();
+
+  fetch(base + file)
     .then(res => {
       if(!res.ok){
-        console.error("❌ File not found:", file);
+        console.error("❌ Not found:", base + file);
         return "";
       }
       return res.text();
@@ -25,34 +50,10 @@ function loadComponent(id, file, callback){
 
 // ================= AUTO YEAR =================
 function setYear(){
-  const yearEl = document.getElementById("year");
-
-  if(yearEl){
-    yearEl.textContent = new Date().getFullYear();
+  const el = document.getElementById("year");
+  if(el){
+    el.textContent = new Date().getFullYear();
   }
-}
-
-// ================= BASE PATH DETECTOR =================
-function getBasePath(){
-  const path = window.location.pathname;
-
-  // remove empty values
-  const segments = path.split("/").filter(Boolean);
-
-  let depth = segments.length;
-
-  // remove index.html from depth
-  if(path.endsWith("index.html")){
-    depth -= 1;
-  }
-
-  let base = "";
-
-  for(let i = 1; i < depth; i++){
-    base += "../";
-  }
-
-  return base;
 }
 
 // ================= LAZY LOAD =================
@@ -119,8 +120,7 @@ function smoothScroll(){
         if(target){
           e.preventDefault();
           target.scrollIntoView({
-            behavior: "smooth",
-            block: "start"
+            behavior: "smooth"
           });
         }
       }
@@ -131,16 +131,15 @@ function smoothScroll(){
 // ================= INIT =================
 document.addEventListener("DOMContentLoaded", ()=>{
 
-  const base = getBasePath();
+  console.log("📍 Base:", getBasePath());
 
-  console.log("✅ Base path:", base);
-
-  // Load components
-  loadComponent("navbar", base + "navbar.html", ()=>{
-    initDarkMode(); // after navbar loads
+  // Navbar
+  loadComponent("navbar", "navbar.html", ()=>{
+    initDarkMode();
   });
 
-  loadComponent("footer", base + "footer.html", ()=>{
+  // Footer
+  loadComponent("footer", "footer.html", ()=>{
     setYear();
   });
 
