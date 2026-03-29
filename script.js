@@ -2,21 +2,25 @@
 // KhataSetu Production Script (ULTIMATE FINAL)
 // ============================================
 
-// ✅ AUTO BASE URL (WORKS EVERYWHERE)
-const BASE_URL = window.location.origin + "/";
-
 // ================= COMPONENT LOADER =================
 function loadComponent(id, file, callback){
   const el = document.getElementById(id);
   if(!el) return;
 
-  fetch(BASE_URL + file)
-    .then(res => res.text())
+  fetch(file)
+    .then(res => {
+      if(!res.ok){
+        console.error("❌ File not found:", file);
+        return "";
+      }
+      return res.text();
+    })
     .then(data => {
       el.innerHTML = data;
+
       if(callback) callback();
     })
-    .catch(err => console.error("Component load error:", err));
+    .catch(err => console.error("❌ Load error:", err));
 }
 
 // ================= AUTO YEAR =================
@@ -25,13 +29,33 @@ function setYear(){
 
   if(yearEl){
     yearEl.textContent = new Date().getFullYear();
-  } else {
-    // retry if footer loads late
-    setTimeout(setYear, 200);
   }
 }
 
-// ================= LAZY LOAD IMAGES =================
+// ================= BASE PATH DETECTOR =================
+function getBasePath(){
+  const path = window.location.pathname;
+
+  // remove empty values
+  const segments = path.split("/").filter(Boolean);
+
+  let depth = segments.length;
+
+  // remove index.html from depth
+  if(path.endsWith("index.html")){
+    depth -= 1;
+  }
+
+  let base = "";
+
+  for(let i = 1; i < depth; i++){
+    base += "../";
+  }
+
+  return base;
+}
+
+// ================= LAZY LOAD =================
 function lazyLoadImages(){
   const images = document.querySelectorAll("img[data-src]");
 
@@ -49,7 +73,6 @@ function lazyLoadImages(){
 
     images.forEach(img => observer.observe(img));
   } else {
-    // fallback
     images.forEach(img=>{
       img.src = img.dataset.src;
       img.removeAttribute("data-src");
@@ -59,27 +82,26 @@ function lazyLoadImages(){
 
 // ================= DARK MODE =================
 function initDarkMode(){
-  const themeToggle = document.getElementById("themeToggle");
-  const savedTheme = localStorage.getItem("theme");
+  const toggle = document.getElementById("themeToggle");
+  const saved = localStorage.getItem("theme");
 
-  // Load saved theme
-  if(savedTheme === "dark"){
+  if(saved === "dark"){
     document.body.classList.add("dark");
   }
 
-  if(themeToggle){
-    themeToggle.textContent =
+  if(toggle){
+    toggle.textContent =
       document.body.classList.contains("dark") ? "☀️" : "🌙";
 
-    themeToggle.addEventListener("click", ()=>{
+    toggle.addEventListener("click", ()=>{
       document.body.classList.toggle("dark");
 
       if(document.body.classList.contains("dark")){
         localStorage.setItem("theme","dark");
-        themeToggle.textContent = "☀️";
+        toggle.textContent = "☀️";
       } else {
         localStorage.setItem("theme","light");
-        themeToggle.textContent = "🌙";
+        toggle.textContent = "🌙";
       }
     });
   }
@@ -89,10 +111,10 @@ function initDarkMode(){
 function smoothScroll(){
   document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
     anchor.addEventListener("click", function(e){
-      const targetID = this.getAttribute("href");
+      const id = this.getAttribute("href");
 
-      if(targetID.length > 1){
-        const target = document.querySelector(targetID);
+      if(id.length > 1){
+        const target = document.querySelector(id);
 
         if(target){
           e.preventDefault();
@@ -109,20 +131,21 @@ function smoothScroll(){
 // ================= INIT =================
 document.addEventListener("DOMContentLoaded", ()=>{
 
-  // 🔥 GLOBAL COMPONENT LOAD (NO PATH ISSUE)
-  loadComponent("navbar", "navbar.html");
+  const base = getBasePath();
 
-  loadComponent("footer", "footer.html", ()=>{
-    setYear(); // ensure year works after footer load
+  console.log("✅ Base path:", base);
+
+  // Load components
+  loadComponent("navbar", base + "navbar.html", ()=>{
+    initDarkMode(); // after navbar loads
   });
 
-  // FEATURES
+  loadComponent("footer", base + "footer.html", ()=>{
+    setYear();
+  });
+
+  // Features
   lazyLoadImages();
   smoothScroll();
-
-  // Delay dark mode (navbar loads first)
-  setTimeout(()=>{
-    initDarkMode();
-  },150);
 
 });
