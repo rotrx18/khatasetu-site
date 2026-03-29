@@ -2,60 +2,30 @@
 // KhataSetu Production Script (FINAL UNIVERSAL FIX)
 // ============================================
 
-// ================= COMPONENT LOADER (IMPROVED) =================
+// ================= COMPONENT LOADER =================
 function loadComponent(id, file, callback){
   const el = document.getElementById(id);
   if(!el) return;
 
-  // Use a leading slash to fetch from the root of the domain
+  // Force absolute path so it works from /blog/folder/index.html
   const path = file.startsWith('/') ? file : '/' + file;
 
   fetch(path)
     .then(res => {
-      if(!res.ok){
-        console.error("❌ Not found:", path);
-        return "";
-      }
+      if(!res.ok) throw new Error("File not found");
       return res.text();
     })
     .then(data => {
       el.innerHTML = data;
       if(callback) callback();
     })
-    .catch(err => console.error("❌ Load error:", err));
+    .catch(err => console.error("❌ Load error for " + path, err));
 }
 
 // ================= AUTO YEAR =================
 function setYear(){
   const el = document.getElementById("year");
-  if(el){
-    el.textContent = new Date().getFullYear();
-  }
-}
-
-// ================= LAZY LOAD =================
-function lazyLoadImages(){
-  const images = document.querySelectorAll("img[data-src]");
-
-  if("IntersectionObserver" in window){
-    const observer = new IntersectionObserver(entries=>{
-      entries.forEach(entry=>{
-        if(entry.isIntersecting){
-          const img = entry.target;
-          img.src = img.dataset.src;
-          img.removeAttribute("data-src");
-          observer.unobserve(img);
-        }
-      });
-    });
-
-    images.forEach(img => observer.observe(img));
-  } else {
-    images.forEach(img=>{
-      img.src = img.dataset.src;
-      img.removeAttribute("data-src");
-    });
-  }
+  if(el) el.textContent = new Date().getFullYear();
 }
 
 // ================= DARK MODE =================
@@ -63,65 +33,42 @@ function initDarkMode(){
   const toggle = document.getElementById("themeToggle");
   const saved = localStorage.getItem("theme");
 
-  if(saved === "dark"){
-    document.body.classList.add("dark");
-  }
+  if(saved === "dark") document.body.classList.add("dark");
 
   if(toggle){
-    toggle.textContent =
-      document.body.classList.contains("dark") ? "☀️" : "🌙";
-
-    toggle.addEventListener("click", ()=>{
+    toggle.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
+    toggle.onclick = () => {
       document.body.classList.toggle("dark");
-
-      if(document.body.classList.contains("dark")){
-        localStorage.setItem("theme","dark");
-        toggle.textContent = "☀️";
-      } else {
-        localStorage.setItem("theme","light");
-        toggle.textContent = "🌙";
-      }
-    });
+      const isDark = document.body.classList.contains("dark");
+      localStorage.setItem("theme", isDark ? "dark" : "light");
+      toggle.textContent = isDark ? "☀️" : "🌙";
+    };
   }
 }
 
-// ================= SMOOTH SCROLL =================
-function smoothScroll(){
-  document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
-    anchor.addEventListener("click", function(e){
-      const id = this.getAttribute("href");
+// ================= LAZY LOAD & SCROLL =================
+function initUIHelpers(){
+  // Lazy Load
+  const images = document.querySelectorAll("img[data-src]");
+  images.forEach(img => { img.src = img.dataset.src; });
 
-      if(id.length > 1){
-        const target = document.querySelector(id);
-
-        if(target){
-          e.preventDefault();
-          target.scrollIntoView({
-            behavior: "smooth"
-          });
-        }
+  // Smooth Scroll
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener("click", function(e) {
+      const target = document.querySelector(this.getAttribute("href"));
+      if(target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: "smooth" });
       }
     });
   });
 }
 
 // ================= INIT =================
-document.addEventListener("DOMContentLoaded", ()=>{
-
-  console.log("📍 Base:", getBasePath());
-
-  // Navbar
-  loadComponent("navbar", "navbar.html", ()=>{
-    initDarkMode();
-  });
-
-  // Footer
-  loadComponent("footer", "footer.html", ()=>{
-    setYear();
-  });
-
-  // Features
-  lazyLoadImages();
-  smoothScroll();
-
+document.addEventListener("DOMContentLoaded", () => {
+  // Use absolute paths with leading slashes
+  loadComponent("navbar", "/navbar.html", initDarkMode);
+  loadComponent("footer", "/footer.html", setYear);
+  
+  initUIHelpers();
 });
