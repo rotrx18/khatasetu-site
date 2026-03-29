@@ -166,33 +166,6 @@ With features like automatic balance calculation, secure data storage, real-time
 
 </section>
 
-<!-- 🔥 SEO CONTENT -->
-<!-- COMPETITOR -->
-<section class="section light">
-
-<h2>Khatabook Alternative for Modern Businesses</h2>
-
-<p>
-KhataSetu is a powerful and modern alternative to traditional khata apps like Khatabook and OkCredit, built for today’s fast-moving businesses and individuals. While older khata apps focus mainly on basic credit and debit tracking, KhataSetu offers a complete digital ledger experience with better performance, smarter features, and a clean user interface.
-</p>
-
-<p>
-Unlike traditional apps, KhataSetu provides secure cloud synchronization, ensuring that your financial data is always safe and accessible from anywhere in the world. Whether you are managing a small shop, handling multiple customers, or tracking personal expenses, the app allows you to manage everything in one place without confusion.
-</p>
-
-<p>
-KhataSetu is optimized for speed and simplicity, making it work smoothly even on low-end devices. It also supports offline functionality, allowing users to record transactions without internet and automatically sync data once connected.
-</p>
-
-<p>
-Compared to Khatabook and OkCredit, KhataSetu offers a more flexible and globally accessible solution. It is designed for users worldwide, not limited to a specific region, making it ideal for modern businesses looking to scale.
-</p>
-
-<p>
-With features like automatic balance calculation, secure data storage, real-time updates, and easy customer management, KhataSetu helps reduce errors, save time, and improve financial accuracy. It transforms traditional bookkeeping into a seamless digital experience, making it one of the best alternatives available today.
-</p>
-
-</section>
 
 <!-- 🔥 SEO CONTENT -->
 <section class="section">
@@ -494,9 +467,18 @@ class="btn">Download Free</a>
 
 <!-- NAVBAR -->
 <script>
-fetch("/navbar.html")
-.then(res => res.text())
-.then(data => document.getElementById("navbar").innerHTML = data);
+
+function loadComponent(id,file){
+fetch(file)
+.then(res=>res.text())
+.then(data=>{
+document.getElementById(id).innerHTML=data;
+});
+}
+
+loadComponent("navbar","/navbar.html");
+loadComponent("footer","/footer.html");
+
 </script>
 
 <!-- DOWNLOAD COUNTER -->
