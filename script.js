@@ -2,47 +2,24 @@
 // KhataSetu Production Script (FINAL UNIVERSAL FIX)
 // ============================================
 
-// ================= GET BASE PATH =================
-function getBasePath(){
-  const path = window.location.pathname;
-
-  // Split path
-  const segments = path.split("/").filter(Boolean);
-
-  let depth = segments.length;
-
-  // If ends with index.html → reduce depth
-  if(path.endsWith("index.html")){
-    depth -= 1;
-  }
-
-  let base = "";
-
-  for(let i = 1; i < depth; i++){
-    base += "../";
-  }
-
-  return base;
-}
-
-// ================= COMPONENT LOADER =================
+// ================= COMPONENT LOADER (IMPROVED) =================
 function loadComponent(id, file, callback){
   const el = document.getElementById(id);
   if(!el) return;
 
-  const base = getBasePath();
+  // Use a leading slash to fetch from the root of the domain
+  const path = file.startsWith('/') ? file : '/' + file;
 
-  fetch(base + file)
+  fetch(path)
     .then(res => {
       if(!res.ok){
-        console.error("❌ Not found:", base + file);
+        console.error("❌ Not found:", path);
         return "";
       }
       return res.text();
     })
     .then(data => {
       el.innerHTML = data;
-
       if(callback) callback();
     })
     .catch(err => console.error("❌ Load error:", err));
