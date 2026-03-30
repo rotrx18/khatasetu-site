@@ -7,16 +7,170 @@
     <title>KhataSetu Blog | Small Business Bookkeeping & Ledger Guides</title>
     <meta name="description" content="Master small business accounting in 2026. 21 expert guides on digital ledgers, credit management, and financial automation.">
     <link rel="canonical" href="https://khatasetu.com/blog/">
-    <meta name="author" content="Rejabul Sk">
-
-    <link rel="stylesheet" href="/style.css">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 
+    <style>
+        /* 1. MODERN VARIABLES */
+        :root {
+            --primary: #2563eb;
+            --accent: #7c3aed;
+            --dark-bg: #0f172a;
+            --card-bg: rgba(255, 255, 255, 0.98);
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --glass: rgba(255, 255, 255, 0.03);
+        }
+
+        /* 2. CORE LAYOUT & ANIMATED BG */
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            background: 
+                radial-gradient(circle at 20% 20%, #4f46e5 0%, transparent 40%),
+                radial-gradient(circle at 80% 30%, #7c3aed 0%, transparent 40%),
+                radial-gradient(circle at 50% 80%, #2563eb 0%, transparent 40%),
+                var(--dark-bg);
+            background-attachment: fixed;
+            color: #ffffff;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        /* 3. HERO SECTION */
+        .blog-hero {
+            text-align: center;
+            padding: 120px 20px 60px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .blog-hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 800;
+            letter-spacing: -3px;
+            margin-bottom: 20px;
+            background: linear-gradient(to bottom right, #ffffff, #94a3b8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .blog-hero p {
+            font-size: 1.25rem;
+            color: #94a3b8;
+            line-height: 1.6;
+        }
+
+        /* 4. MODERN GRID SYSTEM */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 30px;
+            padding: 20px;
+            max-width: 1300px;
+            margin: 0 auto 100px;
+        }
+
+        /* 5. PREMIUM ARTICLE CARDS */
+        .article-card {
+            background: var(--card-bg);
+            border-radius: 28px;
+            padding: 35px;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            height: 100%;
+            box-sizing: border-box;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .article-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 6px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .article-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+            background: #ffffff;
+        }
+
+        .article-card:hover::before {
+            opacity: 1;
+        }
+
+        .card-meta {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--primary);
+            font-weight: 800;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .article-card h2 {
+            font-size: 1.5rem;
+            color: var(--dark-bg);
+            line-height: 1.3;
+            margin: 0 0 15px 0;
+            font-weight: 700;
+        }
+
+        .article-card p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            flex-grow: 1;
+        }
+
+        .read-more {
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: gap 0.2s;
+        }
+
+        .read-more::after { content: '→'; }
+        .article-card:hover .read-more { gap: 12px; }
+
+        /* 6. AD SLOT DESIGN */
+        .ad-slot {
+            grid-column: 1 / -1;
+            background: var(--glass);
+            border: 1px dashed rgba(255, 255, 255, 0.1);
+            border-radius: 28px;
+            min-height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+
+        /* 7. RESPONSIVE FIXES */
+        @media (max-width: 768px) {
+            .blog-grid { grid-template-columns: 1fr; padding: 15px; }
+            .blog-hero { padding-top: 80px; }
+            .article-card { padding: 25px; }
+        }
+    </style>
+
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7094776728416254" crossorigin="anonymous"></script>
-    
-    <link rel="icon" href="/logo.png">
 </head>
 <body>
 
@@ -24,20 +178,20 @@
 
     <header class="blog-hero">
         <h1>Knowledge Hub</h1>
-        <p>Mastering business bookkeeping, credit tracking, and cash flow for the modern entrepreneur.</p>
+        <p>Mastering business bookkeeping, credit tracking, and cash flow for the modern entrepreneur in 2026.</p>
     </header>
 
     <main class="blog-grid">
 
         <a href="/blog/khatasetu-vs-khata-book/" class="article-card">
-            <div class="card-meta">Comparison</div>
+            <div class="card-meta"><span>•</span> Comparison</div>
             <h2>KhataSetu vs Khata Book</h2>
             <p>A deep dive into why KhataSetu offers better security and automation for high-volume traders.</p>
             <span class="read-more">Read Analysis</span>
         </a>
 
         <a href="/blog/bookkeeping-guide/" class="article-card">
-            <div class="card-meta">Masterclass</div>
+            <div class="card-meta"><span>•</span> Masterclass</div>
             <h2>Complete Bookkeeping Guide</h2>
             <p>From debit/credit basics to complex balance sheets: everything you need to know.</p>
             <span class="read-more">Start Learning</span>
@@ -49,35 +203,35 @@
         </div>
 
         <a href="/blog/best-digital-ledger-app/" class="article-card">
-            <div class="card-meta">Best Apps</div>
+            <div class="card-meta"><span>•</span> Best Apps</div>
             <h2>Best Digital Ledger App</h2>
             <p>Ranking the top 5 ledger solutions for 2026 based on cloud sync and UX.</p>
             <span class="read-more">View Rankings</span>
         </a>
 
         <a href="/blog/small-business-bookkeeping-guide/" class="article-card">
-            <div class="card-meta">Strategy</div>
+            <div class="card-meta"><span>•</span> Strategy</div>
             <h2>Small Biz Bookkeeping Guide</h2>
             <p>Organize daily transactions and eliminate tax-season stress with simple habits.</p>
             <span class="read-more">Read Guide</span>
         </a>
 
         <a href="/blog/cloud-accounting-benefits/" class="article-card">
-            <div class="card-meta">Cloud Tech</div>
+            <div class="card-meta"><span>•</span> Cloud Tech</div>
             <h2>Cloud Accounting Benefits</h2>
             <p>Why storing data in the cloud is 10x safer than keeping physical bahi-khatas.</p>
             <span class="read-more">See Benefits</span>
         </a>
 
         <a href="/blog/paper-ledger-vs-digital-ledger/" class="article-card">
-            <div class="card-meta">Analysis</div>
+            <div class="card-meta"><span>•</span> Analysis</div>
             <h2>Paper vs Digital Ledger</h2>
             <p>The real cost of manual errors and how digital tools save you time and money.</p>
             <span class="read-more">Compare Now</span>
         </a>
 
         <a href="/blog/best-bookkeeping-apps-for-small-business/" class="article-card">
-            <div class="card-meta">Reviews</div>
+            <div class="card-meta"><span>•</span> Reviews</div>
             <h2>Best Bookkeeping Apps 2026</h2>
             <p>Curated list of mobile tools designed specifically for micro-entrepreneurs.</p>
             <span class="read-more">View Top Picks</span>
@@ -89,42 +243,42 @@
         </div>
 
         <a href="/blog/how-to-track-credit-customers/" class="article-card">
-            <div class="card-meta">Credit Control</div>
+            <div class="card-meta"><span>•</span> Credit Control</div>
             <h2>Tracking Credit Customers</h2>
             <p>Professional Udhaar tracking techniques to ensure your business remains liquid.</p>
             <span class="read-more">Learn Tracking</span>
         </a>
 
         <a href="/blog/how-to-track-customer-balance/" class="article-card">
-            <div class="card-meta">Liquidity</div>
+            <div class="card-meta"><span>•</span> Liquidity</div>
             <h2>Track Customer Balance</h2>
             <p>Automate your statements and reduce payment disputes with digital receipts.</p>
             <span class="read-more">Read More</span>
         </a>
 
         <a href="/blog/ledger-accounting-basics/" class="article-card">
-            <div class="card-meta">Foundations</div>
+            <div class="card-meta"><span>•</span> Foundations</div>
             <h2>Ledger Accounting Basics</h2>
             <p>The "Golden Rules" of accounting simplified for the modern business owner.</p>
             <span class="read-more">Master Basics</span>
         </a>
 
         <a href="/blog/digital-accounting-for-shopkeepers/" class="article-card">
-            <div class="card-meta">Retail</div>
+            <div class="card-meta"><span>•</span> Retail</div>
             <h2>Accounting for Shopkeepers</h2>
             <p>How to balance high-traffic daily sales with accurate credit recording.</p>
             <span class="read-more">View Tips</span>
         </a>
 
         <a href="/blog/digital-ledger-vs-khata-book/" class="article-card">
-            <div class="card-meta">Comparison</div>
+            <div class="card-meta"><span>•</span> Comparison</div>
             <h2>Digital Ledger vs Physical</h2>
             <p>Financial experts weigh in on the transition from paper books to apps.</p>
             <span class="read-more">Read Deep Dive</span>
         </a>
 
         <a href="/blog/digital-ledger-for-freelancers/" class="article-card">
-            <div class="card-meta">Freelancing</div>
+            <div class="card-meta"><span>•</span> Freelancing</div>
             <h2>Ledger for Freelancers</h2>
             <p>Manage multiple clients and project expenses without losing your mind.</p>
             <span class="read-more">View Guide</span>
@@ -136,56 +290,56 @@
         </div>
 
         <a href="/blog/online-bookkeeping-tools/" class="article-card">
-            <div class="card-meta">Resources</div>
+            <div class="card-meta"><span>•</span> Resources</div>
             <h2>Online Bookkeeping Tools</h2>
             <p>A look at web-based accounting vs. mobile-first ledger applications.</p>
             <span class="read-more">Compare Tools</span>
         </a>
 
         <a href="/blog/business-accounting-for-beginners/" class="article-card">
-            <div class="card-meta">Beginners</div>
+            <div class="card-meta"><span>•</span> Beginners</div>
             <h2>Accounting for Beginners</h2>
             <p>Start your journey toward financial literacy with this jargon-free guide.</p>
             <span class="read-more">Learn Jargon</span>
         </a>
 
         <a href="/blog/customer-credit-management/" class="article-card">
-            <div class="card-meta">Management</div>
+            <div class="card-meta"><span>•</span> Management</div>
             <h2>Credit Management</h2>
             <p>Set credit limits that protect cash flow while keeping customers happy.</p>
             <span class="read-more">Manage Risk</span>
         </a>
 
         <a href="/blog/bookkeeping-tips-for-retail-shops/" class="article-card">
-            <div class="card-meta">Retail Tips</div>
+            <div class="card-meta"><span>•</span> Retail Tips</div>
             <h2>Bookkeeping for Retail</h2>
             <p>10 tips to keep your inventory and ledger perfectly in sync every day.</p>
             <span class="read-more">View Tips</span>
         </a>
 
         <a href="/blog/financial-record-keeping/" class="article-card">
-            <div class="card-meta">Compliance</div>
+            <div class="card-meta"><span>•</span> Compliance</div>
             <h2>Financial Record Keeping</h2>
             <p>The "why" and "how" of maintaining records that pass tax inspections.</p>
             <span class="read-more">Read Guide</span>
         </a>
 
         <a href="/blog/ledger-management-guide/" class="article-card">
-            <div class="card-meta">Admin</div>
+            <div class="card-meta"><span>•</span> Admin</div>
             <h2>Ledger Management Guide</h2>
             <p>A systematic approach to organizing your business finances for growth.</p>
             <span class="read-more">Master Management</span>
         </a>
 
         <a href="/blog/simple-accounting-methods/" class="article-card">
-            <div class="card-meta">Efficiency</div>
+            <div class="card-meta"><span>•</span> Efficiency</div>
             <h2>Simple Accounting Methods</h2>
             <p>Why simpler is better. How to choose the right method for your shop.</p>
             <span class="read-more">Explore Methods</span>
         </a>
 
         <a href="/blog/small-business-financial-tips/" class="article-card">
-            <div class="card-meta">Profitability</div>
+            <div class="card-meta"><span>•</span> Profitability</div>
             <h2>Small Biz Financial Tips</h2>
             <p>10 actionable tips to boost your bottom line through better financial awareness.</p>
             <span class="read-more">Boost Profit</span>
@@ -196,21 +350,6 @@
     <div id="footer"></div>
 
     <script src="/script.js" defer></script>
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Blog",
-      "name": "KhataSetu Blog",
-      "url": "https://khatasetu.com/blog/",
-      "description": "Expert guides on digital bookkeeping for entrepreneurs.",
-      "publisher": {
-        "@type": "Organization",
-        "name": "KhataSetu",
-        "logo": "https://khatasetu.com/logo.png"
-      }
-    }
-    </script>
 
 </body>
 </html>

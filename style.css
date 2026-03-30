@@ -345,4 +345,6 @@ a:focus-visible, .btn:focus-visible {
     .section h2 { font-size: 30px; }
     .hero { padding: 60px 20px; }
     .card { padding: 25px; }
+    .blog-grid { grid-template-columns: 1fr; padding: 15px; }
+    .blog-hero { padding-top: 80px; }
 }
