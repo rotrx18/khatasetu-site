@@ -27,7 +27,7 @@
 
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7094776728416254" crossorigin="anonymous"></script>
 
-  <style>
+ <style>
 /* Article specific styling to reach 100% PageSpeed & Modern UI */
 
 .article-container { 
@@ -37,7 +37,6 @@
   padding: 0 20px; 
 }
 
-/* Header */
 .article-header { 
   padding-top: 60px; 
   margin-bottom: 40px; 
@@ -45,13 +44,15 @@
 
 .article-header h1 { 
   font-size: 3rem; 
-  color: #f8fafc;  /* bright white */
+  color: #f8fafc; /* changed */
   line-height: 1.2; 
   margin-bottom: 20px; 
 }
 
-/* TOC Box */
+/* TOC Box (kept original design) */
 .toc-box { 
+  background: #f8fafc; 
+  border: 1px solid #e2e8f0; 
   border-radius: 16px; 
   padding: 30px; 
   margin: 30px 0; 
@@ -59,13 +60,13 @@
 
 .toc-box h4 { 
   margin-bottom: 15px; 
-  color: #f1f5f9;  /* soft white */
+  color: #1e293b; /* keep dark (box is light bg) */
   font-size: 1.2rem; 
 }
 
 .toc-box a { 
   display: block; 
-  color: #38bdf8;  /* light blue */
+  color: #2563eb; /* keep original blue */
   text-decoration: none; 
   margin-bottom: 10px; 
   font-weight: 500; 
@@ -73,13 +74,13 @@
 }
 
 .toc-box a:hover { 
-  color: #0ea5e9;  /* hover blue */
+  color: #1e40af; 
   transform: translateX(5px); 
 }
 
 /* Article Content */
 .article-body h2 { 
-  color: #f8fafc;  /* white heading */
+  color: #f8fafc; /* changed */
   margin-top: 50px; 
   font-size: 2.2rem; 
   margin-bottom: 20px; 
@@ -88,13 +89,14 @@
 .article-body p { 
   font-size: 1.15rem; 
   line-height: 1.9; 
-  color: #e2e8f0;  /* readable light gray */
+  color: #e2e8f0; /* changed */
   margin-bottom: 25px; 
 }
 
-/* Ads */
+/* Ads (kept original light bg, so dark text stays) */
 .ad-slot-wrapper { 
   min-height: 280px; 
+  background: #f1f5f9; 
   display: flex; 
   align-items: center; 
   justify-content: center; 
@@ -105,19 +107,20 @@
 
 .ad-label { 
   font-size: 10px; 
-  color: #94a3b8;  /* subtle gray */
+  color: #64748b; /* slightly darker for visibility */
   text-transform: uppercase; 
   position: absolute; 
   margin-top: -260px; 
 }
 
-/* Pro Tip */
+/* Pro Tip (light bg → keep dark text) */
 .pro-tip { 
-  border-left: 5px solid #38bdf8; 
+  background: #eff6ff; 
+  border-left: 5px solid #2563eb; 
   padding: 25px; 
   border-radius: 12px; 
   margin: 40px 0; 
-  color: #e2e8f0; 
+  color: #1e293b; /* readable on light bg */
 }
 
 /* Responsive */
