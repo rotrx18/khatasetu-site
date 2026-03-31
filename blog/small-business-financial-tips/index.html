@@ -27,7 +27,7 @@
 
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7094776728416254" crossorigin="anonymous"></script>
 
- <style>
+<style>
 /* Article specific styling to reach 100% PageSpeed & Modern UI */
 
 .article-container { 
@@ -44,12 +44,12 @@
 
 .article-header h1 { 
   font-size: 3rem; 
-  color: #f8fafc; /* changed */
+  color: #f8fafc;
   line-height: 1.2; 
   margin-bottom: 20px; 
 }
 
-/* TOC Box (kept original design) */
+/* TOC Box */
 .toc-box { 
   background: #f8fafc; 
   border: 1px solid #e2e8f0; 
@@ -60,13 +60,13 @@
 
 .toc-box h4 { 
   margin-bottom: 15px; 
-  color: #1e293b; /* keep dark (box is light bg) */
+  color: #1e293b; 
   font-size: 1.2rem; 
 }
 
 .toc-box a { 
   display: block; 
-  color: #2563eb; /* keep original blue */
+  color: #2563eb; 
   text-decoration: none; 
   margin-bottom: 10px; 
   font-weight: 500; 
@@ -80,7 +80,7 @@
 
 /* Article Content */
 .article-body h2 { 
-  color: #f8fafc; /* changed */
+  color: #f8fafc; 
   margin-top: 50px; 
   font-size: 2.2rem; 
   margin-bottom: 20px; 
@@ -89,11 +89,11 @@
 .article-body p { 
   font-size: 1.15rem; 
   line-height: 1.9; 
-  color: #e2e8f0; /* changed */
+  color: #e2e8f0; 
   margin-bottom: 25px; 
 }
 
-/* Ads (kept original light bg, so dark text stays) */
+/* Ads */
 .ad-slot-wrapper { 
   min-height: 280px; 
   background: #f1f5f9; 
@@ -107,21 +107,31 @@
 
 .ad-label { 
   font-size: 10px; 
-  color: #64748b; /* slightly darker for visibility */
+  color: #64748b; 
   text-transform: uppercase; 
   position: absolute; 
   margin-top: -260px; 
 }
 
-/* Pro Tip (light bg → keep dark text) */
+/* ✅ PRO TIP FIX (FINAL) */
 .pro-tip { 
   background: #eff6ff; 
   border-left: 5px solid #2563eb; 
   padding: 25px; 
   border-radius: 12px; 
   margin: 40px 0; 
-  color: #000000 !important;
-  opacity: 1 !important; /* readable on light bg */
+}
+
+/* FORCE ALL TEXT INSIDE */
+.pro-tip * {
+  color: #0f172a !important;
+  opacity: 1 !important;
+}
+
+/* Optional: better heading style */
+.pro-tip h4 {
+  color: #1e40af !important;
+  margin-bottom: 10px;
 }
 
 /* Responsive */
