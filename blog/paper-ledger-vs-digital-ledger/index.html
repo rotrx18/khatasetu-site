@@ -28,38 +28,146 @@
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7094776728416254" crossorigin="anonymous"></script>
 
     <style>
-        /* Shared Blog UI for Consistency */
-        .article-wrap { max-width: 850px; margin: 0 auto; text-align: left; padding: 0 20px; }
-        .article-header { padding-top: 60px; margin-bottom: 40px; }
-        .article-header h1 { font-size: 3.2rem; color: #0f172a; line-height: 1.1; margin-bottom: 20px; }
-        
-        .toc-box { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 16px; padding: 30px; margin: 30px 0; }
-        .toc-box h4 { margin-bottom: 15px; color: #1e293b; font-size: 1.25rem; }
-        .toc-box a { display: block; color: #2563eb; text-decoration: none; margin-bottom: 12px; font-weight: 500; transition: 0.2s; }
-        .toc-box a:hover { color: #1e40af; transform: translateX(6px); }
+/* Shared Blog UI for Consistency */
+.article-wrap { 
+  max-width: 850px; 
+  margin: 0 auto; 
+  text-align: left; 
+  padding: 0 20px; 
+}
 
-        .article-body h2 { color: #1e293b; margin-top: 55px; font-size: 2.2rem; margin-bottom: 20px; border-left: 6px solid #2563eb; padding-left: 20px; }
-        .article-body p { font-size: 1.15rem; line-height: 1.9; color: #334155; margin-bottom: 25px; }
-        
-        /* AD Container: Fixed height to prevent Layout Shift (CLS) */
-        .ad-stable-slot { min-height: 280px; background: #f1f5f9; display: flex; align-items: center; justify-content: center; margin: 45px 0; border-radius: 12px; position: relative; overflow: hidden; }
-        .ad-meta { position: absolute; top: 10px; font-size: 10px; color: #94a3b8; text-transform: uppercase; }
+.article-header { 
+  padding-top: 60px; 
+  margin-bottom: 40px; 
+}
 
-        /* Comparison Styling */
-        .comparison-table { width: 100%; border-collapse: collapse; margin: 30px 0; font-size: 1.1rem; }
-        .comparison-table th, .comparison-table td { padding: 15px; border: 1px solid #e2e8f0; text-align: left; }
-        .comparison-table th { background: #f8fafc; color: #2563eb; }
+.article-header h1 { 
+  font-size: 3.2rem; 
+  color: #ffffff; /* changed */
+  line-height: 1.1; 
+  margin-bottom: 20px; 
+}
 
-        .grid-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 30px 0; }
-        .card-pro { background: #f0fdf4; border-top: 4px solid #22c55e; padding: 25px; border-radius: 12px; }
-        .card-con { background: #fef2f2; border-top: 4px solid #ef4444; padding: 25px; border-radius: 12px; }
+/* TOC */
+.toc-box { 
+  background: #f8fafc; 
+  border: 1px solid #e2e8f0; 
+  border-radius: 16px; 
+  padding: 30px; 
+  margin: 30px 0; 
+}
 
-        @media (max-width: 768px) {
-            .article-header h1 { font-size: 2.4rem; }
-            .grid-cards { grid-template-columns: 1fr; }
-            .comparison-table { font-size: 0.9rem; }
-        }
-    </style>
+.toc-box h4 { 
+  margin-bottom: 15px; 
+  color: #0f172a; /* slightly darker */
+  font-size: 1.25rem; 
+}
+
+.toc-box a { 
+  display: block; 
+  color: #2563eb; 
+  text-decoration: none; 
+  margin-bottom: 12px; 
+  font-weight: 500; 
+  transition: 0.2s; 
+}
+
+.toc-box a:hover { 
+  color: #1e40af; 
+  transform: translateX(6px); 
+}
+
+/* ARTICLE BODY */
+.article-body h2 { 
+  color: #ffffff; /* changed */
+  margin-top: 55px; 
+  font-size: 2.2rem; 
+  margin-bottom: 20px; 
+  border-left: 6px solid #2563eb; 
+  padding-left: 20px; 
+}
+
+.article-body p { 
+  font-size: 1.15rem; 
+  line-height: 1.9; 
+  color: #cbd5f5; /* changed */
+  margin-bottom: 25px; 
+}
+
+/* AD Container */
+.ad-stable-slot { 
+  min-height: 280px; 
+  background: #f1f5f9; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  margin: 45px 0; 
+  border-radius: 12px; 
+  position: relative; 
+  overflow: hidden; 
+}
+
+.ad-meta { 
+  position: absolute; 
+  top: 10px; 
+  font-size: 10px; 
+  color: #94a3b8; 
+  text-transform: uppercase; 
+}
+
+/* TABLE */
+.comparison-table { 
+  width: 100%; 
+  border-collapse: collapse; 
+  margin: 30px 0; 
+  font-size: 1.1rem; 
+  color: #e2e8f0; /* added */
+}
+
+.comparison-table th, 
+.comparison-table td { 
+  padding: 15px; 
+  border: 1px solid #e2e8f0; 
+  text-align: left; 
+}
+
+.comparison-table th { 
+  background: #f8fafc; 
+  color: #2563eb; 
+}
+
+/* CARDS */
+.grid-cards { 
+  display: grid; 
+  grid-template-columns: 1fr 1fr; 
+  gap: 20px; 
+  margin: 30px 0; 
+}
+
+.card-pro { 
+  background: #f0fdf4; 
+  border-top: 4px solid #22c55e; 
+  padding: 25px; 
+  border-radius: 12px; 
+  color: #166534; /* ensured */
+}
+
+.card-con { 
+  background: #fef2f2; 
+  border-top: 4px solid #ef4444; 
+  padding: 25px; 
+  border-radius: 12px; 
+  color: #991b1b; /* ensured */
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .article-header h1 { font-size: 2.4rem; }
+  .grid-cards { grid-template-columns: 1fr; }
+  .comparison-table { font-size: 0.9rem; }
+}
+</style>
+
 </head>
 
 <body>
@@ -75,6 +183,10 @@
             </nav>
             <h1>Paper Ledger vs Digital Ledger: The Ultimate 2026 Comparison</h1>
             <p style="font-size: 1.2rem; color: #64748b;"><em>Is it time to retire the traditional Bahi Khata? Let's look at the facts.</em></p>
+            <p style="color: #64748b; font-weight: 500;">
+             By KhataSetu Finance Experts • Published: 26/03/2026
+            </p>
+        
         </header>
 
         <div class="ad-stable-slot">

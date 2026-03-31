@@ -28,33 +28,131 @@
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7094776728416254" crossorigin="anonymous"></script>
 
     <style>
-        /* Shared Blog UI for Consistency */
-        .article-wrap { max-width: 850px; margin: 0 auto; text-align: left; padding: 0 20px; }
-        .article-header { padding-top: 60px; margin-bottom: 40px; }
-        .article-header h1 { font-size: 3.2rem; color: #0f172a; line-height: 1.1; margin-bottom: 20px; }
-        
-        .toc-box { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 16px; padding: 30px; margin: 30px 0; }
-        .toc-box h4 { margin-bottom: 15px; color: #1e293b; font-size: 1.25rem; }
-        .toc-box a { display: block; color: #2563eb; text-decoration: none; margin-bottom: 12px; font-weight: 500; transition: 0.2s; }
-        .toc-box a:hover { color: #1e40af; transform: translateX(6px); }
+/* Shared Blog UI for Consistency */
+.article-wrap { 
+  max-width: 850px; 
+  margin: 0 auto; 
+  text-align: left; 
+  padding: 0 20px; 
+}
 
-        .article-body h2 { color: #1e293b; margin-top: 55px; font-size: 2.2rem; margin-bottom: 20px; border-left: 6px solid #2563eb; padding-left: 20px; }
-        .article-body h3 { color: #1e40af; font-size: 1.5rem; margin-top: 35px; }
-        .article-body p { font-size: 1.15rem; line-height: 1.9; color: #334155; margin-bottom: 25px; }
-        
-        /* AD Container: Fixed height to prevent Layout Shift (CLS) */
-        .ad-stable-slot { min-height: 280px; background: #f1f5f9; display: flex; align-items: center; justify-content: center; margin: 45px 0; border-radius: 12px; position: relative; overflow: hidden; }
-        .ad-meta { position: absolute; top: 10px; font-size: 10px; color: #94a3b8; text-transform: uppercase; }
+.article-header { 
+  padding-top: 60px; 
+  margin-bottom: 40px; 
+}
 
-        .tool-highlight { background: #f8fafc; border: 1px solid #e2e8f0; padding: 30px; border-radius: 16px; margin: 30px 0; }
-        .checklist-card { background: #fffbeb; border: 1px solid #fef3c7; padding: 30px; border-radius: 16px; margin: 40px 0; }
-        .checklist-card ul { list-style-type: '✔ '; padding-left: 20px; }
+.article-header h1 { 
+  font-size: 3.2rem; 
+  color: #ffffff; /* changed */
+  line-height: 1.1; 
+  margin-bottom: 20px; 
+}
 
-        @media (max-width: 768px) {
-            .article-header h1 { font-size: 2.4rem; }
-            .article-body h2 { font-size: 1.8rem; }
-        }
-    </style>
+/* TOC */
+.toc-box { 
+  background: #f8fafc; 
+  border: 1px solid #e2e8f0; 
+  border-radius: 16px; 
+  padding: 30px; 
+  margin: 30px 0; 
+}
+
+.toc-box h4 { 
+  margin-bottom: 15px; 
+  color: #0f172a; /* adjusted */
+  font-size: 1.25rem; 
+}
+
+.toc-box a { 
+  display: block; 
+  color: #2563eb; 
+  text-decoration: none; 
+  margin-bottom: 12px; 
+  font-weight: 500; 
+  transition: 0.2s; 
+}
+
+.toc-box a:hover { 
+  color: #1e40af; 
+  transform: translateX(6px); 
+}
+
+/* ARTICLE BODY */
+.article-body h2 { 
+  color: #ffffff; /* changed */
+  margin-top: 55px; 
+  font-size: 2.2rem; 
+  margin-bottom: 20px; 
+  border-left: 6px solid #2563eb; 
+  padding-left: 20px; 
+}
+
+.article-body h3 { 
+  color: #93c5fd; /* changed */
+  font-size: 1.5rem; 
+  margin-top: 35px; 
+}
+
+.article-body p { 
+  font-size: 1.15rem; 
+  line-height: 1.9; 
+  color: #cbd5f5; /* changed */
+  margin-bottom: 25px; 
+}
+
+/* AD Container */
+.ad-stable-slot { 
+  min-height: 280px; 
+  background: #f1f5f9; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  margin: 45px 0; 
+  border-radius: 12px; 
+  position: relative; 
+  overflow: hidden; 
+}
+
+.ad-meta { 
+  position: absolute; 
+  top: 10px; 
+  font-size: 10px; 
+  color: #94a3b8; 
+  text-transform: uppercase; 
+}
+
+/* TOOL HIGHLIGHT */
+.tool-highlight { 
+  background: #f8fafc; 
+  border: 1px solid #e2e8f0; 
+  padding: 30px; 
+  border-radius: 16px; 
+  margin: 30px 0; 
+  color: #1e293b; /* ensured readable */
+}
+
+/* CHECKLIST */
+.checklist-card { 
+  background: #fffbeb; 
+  border: 1px solid #fef3c7; 
+  padding: 30px; 
+  border-radius: 16px; 
+  margin: 40px 0; 
+  color: #1e293b; /* ensured readable */
+}
+
+.checklist-card ul { 
+  list-style-type: '✔ '; 
+  padding-left: 20px; 
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .article-header h1 { font-size: 2.4rem; }
+  .article-body h2 { font-size: 1.8rem; }
+}
+</style>
+
 </head>
 
 <body>
@@ -70,6 +168,10 @@
             </nav>
             <h1>Online Bookkeeping Tools: The Complete 2026 Small Business Guide</h1>
             <p style="font-size: 1.2rem; color: #64748b;"><em>Equipping modern entrepreneurs with the technology to master their finances.</em></p>
+            <p style="color: #64748b; font-weight: 500;">
+            By KhataSetu Finance Experts • Published: 25/03/2026
+             </p>
+        
         </header>
 
         <div class="ad-stable-slot">
