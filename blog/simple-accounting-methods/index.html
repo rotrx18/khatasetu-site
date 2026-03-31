@@ -28,35 +28,142 @@
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7094776728416254" crossorigin="anonymous"></script>
 
     <style>
-        /* Article UI consistency across all blogs */
-        .article-content { max-width: 850px; margin: 0 auto; text-align: left; padding: 0 20px; }
-        .article-head { padding: 60px 0 30px; }
-        .article-head h1 { font-size: 3.2rem; color: #0f172a; line-height: 1.1; margin-bottom: 20px; }
-        
-        .toc-aside { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 16px; padding: 30px; margin: 30px 0; }
-        .toc-aside h4 { margin-bottom: 15px; color: #1e293b; font-size: 1.25rem; }
-        .toc-aside a { display: block; color: #2563eb; text-decoration: none; margin-bottom: 12px; font-weight: 500; transition: 0.2s; }
-        .toc-aside a:hover { color: #1e40af; transform: translateX(6px); }
+/* Article UI consistency across all blogs */
+.article-content { 
+  max-width: 850px; 
+  margin: 0 auto; 
+  text-align: left; 
+  padding: 0 20px; 
+}
 
-        .article-body h2 { color: #1e293b; margin-top: 55px; font-size: 2.2rem; margin-bottom: 20px; border-left: 6px solid #2563eb; padding-left: 20px; }
-        .article-body h3 { color: #1e40af; font-size: 1.5rem; margin-top: 35px; }
-        .article-body p { font-size: 1.15rem; line-height: 1.9; color: #334155; margin-bottom: 25px; }
-        
-        /* AD Container: Fixed height to prevent Layout Shift (CLS) */
-        .ad-box-stable { min-height: 280px; background: #f1f5f9; display: flex; align-items: center; justify-content: center; margin: 45px 0; border-radius: 12px; position: relative; overflow: hidden; }
-        .ad-meta { position: absolute; top: 8px; font-size: 10px; color: #94a3b8; text-transform: uppercase; letter-spacing: 1px; }
+.article-head { 
+  padding: 60px 0 30px; 
+}
 
-        .method-card { background: #fff; border: 1px solid #e2e8f0; padding: 30px; border-radius: 16px; margin: 35px 0; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
-        .pros-cons { display: flex; gap: 15px; margin-top: 20px; }
-        .pros { flex: 1; color: #166534; background: #f0fdf4; padding: 15px; border-radius: 8px; font-size: 1rem; }
-        .cons { flex: 1; color: #991b1b; background: #fef2f2; padding: 15px; border-radius: 8px; font-size: 1rem; }
+.article-head h1 { 
+  font-size: 3.2rem; 
+  color: #ffffff; /* changed */
+  line-height: 1.1; 
+  margin-bottom: 20px; 
+}
 
-        @media (max-width: 768px) {
-            .article-head h1 { font-size: 2.4rem; }
-            .article-body h2 { font-size: 1.8rem; }
-            .pros-cons { flex-direction: column; }
-        }
-    </style>
+/* TOC */
+.toc-aside { 
+  background: #f8fafc; 
+  border: 1px solid #e2e8f0; 
+  border-radius: 16px; 
+  padding: 30px; 
+  margin: 30px 0; 
+}
+
+.toc-aside h4 { 
+  margin-bottom: 15px; 
+  color: #0f172a; /* slightly darker */
+  font-size: 1.25rem; 
+}
+
+.toc-aside a { 
+  display: block; 
+  color: #2563eb; 
+  text-decoration: none; 
+  margin-bottom: 12px; 
+  font-weight: 500; 
+  transition: 0.2s; 
+}
+
+.toc-aside a:hover { 
+  color: #1e40af; 
+  transform: translateX(6px); 
+}
+
+/* ARTICLE BODY */
+.article-body h2 { 
+  color: #ffffff; /* changed */
+  margin-top: 55px; 
+  font-size: 2.2rem; 
+  margin-bottom: 20px; 
+  border-left: 6px solid #2563eb; 
+  padding-left: 20px; 
+}
+
+.article-body h3 { 
+  color: #93c5fd; /* changed */
+  font-size: 1.5rem; 
+  margin-top: 35px; 
+}
+
+.article-body p { 
+  font-size: 1.15rem; 
+  line-height: 1.9; 
+  color: #cbd5f5; /* changed */
+  margin-bottom: 25px; 
+}
+
+/* AD Container */
+.ad-box-stable { 
+  min-height: 280px; 
+  background: #f1f5f9; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  margin: 45px 0; 
+  border-radius: 12px; 
+  position: relative; 
+  overflow: hidden; 
+}
+
+.ad-meta { 
+  position: absolute; 
+  top: 8px; 
+  font-size: 10px; 
+  color: #94a3b8; 
+  text-transform: uppercase; 
+  letter-spacing: 1px; 
+}
+
+/* METHOD CARD */
+.method-card { 
+  background: #fff; 
+  border: 1px solid #e2e8f0; 
+  padding: 30px; 
+  border-radius: 16px; 
+  margin: 35px 0; 
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05); 
+  color: #1e293b; /* added */
+}
+
+/* PROS / CONS */
+.pros-cons { 
+  display: flex; 
+  gap: 15px; 
+  margin-top: 20px; 
+}
+
+.pros { 
+  flex: 1; 
+  color: #166534; 
+  background: #f0fdf4; 
+  padding: 15px; 
+  border-radius: 8px; 
+  font-size: 1rem; 
+}
+
+.cons { 
+  flex: 1; 
+  color: #991b1b; 
+  background: #fef2f2; 
+  padding: 15px; 
+  border-radius: 8px; 
+  font-size: 1rem; 
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .article-head h1 { font-size: 2.4rem; }
+  .article-body h2 { font-size: 1.8rem; }
+  .pros-cons { flex-direction: column; }
+}
+</style>
 </head>
 
 <body>
