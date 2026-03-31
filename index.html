@@ -14,8 +14,8 @@ if (window.location.hostname === "www.khatasetu.com") {
 
 <!-- SEO -->
 <title>Best Digital Ledger App for Small Business in India – KhataSetu</title>
-<meta name="description" content="KhataSetu is a secure digital ledger app for small businesses. Track Udhaar, credit, debit, and customer balances with cloud sync.">
-<meta name="keywords" content="digital ledger app, khata book app India, udhaar app, bookkeeping app">
+<meta name="description" content="KhataSetu is a secure digital ledger app for small businesses. Track Udhaar, credit, debit, and customer balances with cloud sync and real-time reports.">
+<meta name="keywords" content="digital ledger app, khata book app India, udhaar app, bookkeeping app, business accounting app">
 <meta name="robots" content="index, follow">
 <meta name="author" content="KhataSetu Team">
 <meta name="theme-color" content="#2563eb">
@@ -26,6 +26,7 @@ if (window.location.hostname === "www.khatasetu.com") {
 <meta property="og:image" content="https://khatasetu.com/hero-devices.webp">
 <meta property="og:url" content="https://khatasetu.com/">
 <meta property="og:type" content="website">
+<link rel="stylesheet" href="/style.css" media="print" onload="this.media='all'">
 
 <!-- SPEED -->
 <link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -37,13 +38,17 @@ if (window.location.hostname === "www.khatasetu.com") {
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
 <!-- ICON -->
-<link rel="icon" href="/logo.webp">
+<link rel="icon" href="/logo.webp" type="image/webp">
 
 <!-- HERO PRELOAD -->
 <link rel="preload" as="image" href="/hero-devices.webp" fetchpriority="high">
 
 <style>
-:root { --primary:#2563eb; --dark:#0f172a; --light:#f8fafc; }
+:root {
+  --primary:#2563eb;
+  --dark:#0f172a;
+  --light:#f8fafc;
+}
 
 body {
   margin:0;
@@ -111,15 +116,29 @@ body {
   padding:25px;
   border:1px solid #e2e8f0;
   border-radius:16px;
+  background:#fff;
 }
 
-/* ADS (FIX CLS) */
+/* ADS FIX CLS */
 .ad-container {
   width:100%;
   height:280px;
   display:flex;
   align-items:center;
   justify-content:center;
+}
+
+/* FAQ */
+details {
+  margin-bottom:10px;
+  border:1px solid #e2e8f0;
+  padding:15px;
+  border-radius:10px;
+}
+
+summary {
+  font-weight:600;
+  cursor:pointer;
 }
 
 /* MOBILE */
@@ -140,13 +159,16 @@ body {
  "applicationCategory":"BusinessApplication",
  "operatingSystem":"Android",
  "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
- "aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","ratingCount":"1200"}
+ "aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","ratingCount":"1200"},
+ "description":"Smart digital ledger app for small businesses."
 }
 </script>
 
 </head>
 
 <body>
+
+ <div id="navbar"></div>
 
 <!-- HERO -->
 <section class="hero">
@@ -155,7 +177,7 @@ body {
 <div class="hero-text">
 <h1>Best Digital Ledger App for Small Business in India</h1>
 <p>Track Udhaar, credit, debit, and manage business accounts easily with secure cloud sync.</p>
-<a href="https://play.google.com/store/apps/details?id=com.rotrxitsolution.khatasetu" class="btn">Download App</a>
+<a href="https://play.google.com/store/apps/details?id=com.rotrxitsolution.khatasetu" class="btn" target="_blank" rel="noopener">Download App</a>
 </div>
 
 <div>
@@ -181,13 +203,14 @@ body {
  style="display:block"
  data-ad-client="ca-pub-7094776728416254"
  data-ad-slot="2562895484"
- data-ad-format="auto"></ins>
+ data-ad-format="auto"
+ data-full-width-responsive="true"></ins>
 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
 
 <!-- FEATURES -->
 <section class="section">
-<h2>Modern Features</h2>
+<h2>Modern Features for Professional Bookkeeping</h2>
 
 <div class="grid">
 <div class="card"><h3>Cloud Sync</h3><p>Access anywhere anytime.</p></div>
@@ -205,7 +228,7 @@ body {
 <details><summary>Is it free?</summary><p>Yes, free to use.</p></details>
 
 </section>
-
+<div id="footer"></div>
 <script src="script.js" defer></script>
 
 </body>
