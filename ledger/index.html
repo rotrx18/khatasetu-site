@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Open Ledger | KhataSetu</title>
+  <meta
+    name="description"
+    content="Open a shared KhataSetu ledger link in the app or continue to Google Play."
+  />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="icon" href="/logo.webp" type="image/webp" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="/deep-link.css" />
+  <script src="/deep-link.js" defer></script>
+</head>
+<body class="deep-link-page" data-link-kind="ledger">
+  <main class="deep-link-shell">
+    <img
+      class="deep-link-logo"
+      src="/logo.webp"
+      alt="KhataSetu logo"
+      width="72"
+      height="72"
+    />
+    <p class="deep-link-kicker">KhataSetu Ledger</p>
+    <h1 id="deepLinkTitle">Opening your ledger...</h1>
+    <p id="deepLinkDescription">
+      We are preparing the selected ledger for the KhataSetu app.
+    </p>
+
+    <div class="deep-link-summary">
+      <span class="deep-link-summary-label">Link details</span>
+      <code id="deepLinkSummaryValue">Checking ledger link...</code>
+    </div>
+
+    <div class="deep-link-actions">
+      <a
+        id="openAppButton"
+        class="deep-link-btn deep-link-btn-primary"
+        href="https://play.google.com/store/apps/details?id=com.rotrxitsolution.khatasetu"
+      >
+        Open KhataSetu
+      </a>
+      <a
+        id="installAppButton"
+        class="deep-link-btn deep-link-btn-secondary"
+        href="https://play.google.com/store/apps/details?id=com.rotrxitsolution.khatasetu"
+      >
+        Install from Google Play
+      </a>
+    </div>
+
+    <p id="deepLinkHint" class="deep-link-hint">
+      If nothing happens, use the buttons above.
+    </p>
+  </main>
+</body>
+</html>

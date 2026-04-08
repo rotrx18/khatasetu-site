@@ -1,0 +1,13 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.rotrxitsolution.khatasetu",
+      "sha256_cert_fingerprints": [
+        "9F:7E:84:B3:E8:02:59:BC:34:27:00:6D:67:71:DC:0C:2B:82:6D:2C:97:D7:82:A7:44:5F:25:6D:96:03:69:0D",
+        "6A:C6:28:C1:7A:73:80:35:67:AF:93:4E:2C:A2:3A:80:AB:44:28:9F:CE:37:7D:04:FE:95:A4:C3:01:E3:4A:0B"
+      ]
+    }
+  }
+]
