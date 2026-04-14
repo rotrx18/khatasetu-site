@@ -262,10 +262,10 @@
   <h2 style="text-align:center;">Explore UI Screens</h2>
 
   <div style="text-align:center;margin-bottom:20px;">
-    <span class="tag active" onclick="setTag('all',this)">All</span>
-    <span class="tag" onclick="setTag('ledger',this)">Ledger</span>
-    <span class="tag" onclick="setTag('reports',this)">Reports</span>
-    <span class="tag" onclick="setTag('customers',this)">Customers</span>
+    <span class="tag active" onclick="setTag('all', this)">All</span>
+    <span class="tag" onclick="setTag('ledger', this)">Ledger</span>
+    <span class="tag" onclick="setTag('reports', this)">Reports</span>
+    <span class="tag" onclick="setTag('customers', this)">Customers</span>
   </div>
 
   <div id="gallery" class="masonry"></div>
@@ -315,72 +315,85 @@
 
 <script>
 
-  /* DATA */
-  const data = [
-    {img:"/1.jpg", tag:"ledger", link:"/blog/ledger-accounting-basics/"},
-    {img:"/2.jpg", tag:"reports", link:"/blog/how-to-manage-business-cash-flow/"},
-    {img:"/3.jpg", tag:"customers", link:"/blog/customer-credit-management/"},
-    {img:"/4.jpg", tag:"ledger", link:"/blog/how-to-track-customer-balance/"},
-    {img:"/5.jpg", tag:"reports", link:"/blog/business-accounting-for-beginners/"},
-    {img:"/6.jpg", tag:"customers", link:"/blog/small-business-financial-tips/"}
-  ];
+  document.addEventListener("DOMContentLoaded", () => {
 
-  let index = 0;
-  let currentTag = "all";
+    /* DATA */
+    const data = [
+      {img:"/1.jpg", tag:"ledger", link:"/blog/ledger-accounting-basics/"},
+      {img:"/2.jpg", tag:"reports", link:"/blog/how-to-manage-business-cash-flow/"},
+      {img:"/3.jpg", tag:"customers", link:"/blog/customer-credit-management/"},
+      {img:"/4.jpg", tag:"ledger", link:"/blog/how-to-track-customer-balance/"},
+      {img:"/5.jpg", tag:"reports", link:"/blog/business-accounting-for-beginners/"},
+      {img:"/6.jpg", tag:"customers", link:"/blog/small-business-financial-tips/"}
+    ];
 
-  const gallery = document.getElementById("gallery");
+    let index = 0;
+    let currentTag = "all";
 
-  /* CREATE CARD */
-  function createCard(item){
-    const div = document.createElement("div");
-    div.className = "masonry-item";
+    const gallery = document.getElementById("gallery");
 
-    div.innerHTML = `
-      <a href="${item.link}">
-        <img src="${item.img}" loading="lazy">
-      </a>
-    `;
-    return div;
-  }
+    /* CREATE CARD */
+    function createCard(item){
+      const div = document.createElement("div");
+      div.className = "masonry-item";
 
-  /* MATCH FILTER */
-  function match(item){
-    return currentTag==="all" || item.tag===currentTag;
-  }
+      div.innerHTML = `
+        <a href="${item.link}">
+          <img src="${item.img}" loading="lazy" decoding="async">
+        </a>
+      `;
+      return div;
+    }
 
-  /* LOAD */
-  function load(n=6){
-    for(let i=0;i<n;i++){
-      const item = data[index % data.length];
+    /* MATCH */
+    function match(item){
+      return currentTag==="all" || item.tag===currentTag;
+    }
 
-      if(match(item)){
-        gallery.appendChild(createCard(item));
+    /* LOAD */
+    function load(n=6){
+      for(let i=0;i<n;i++){
+        const item = data[index % data.length];
+
+        if(match(item)){
+          gallery.appendChild(createCard(item));
+        }
+
+        index++;
       }
-
-      index++;
     }
-  }
 
-  /* FILTER */
-  function setTag(tag){
-    currentTag = tag;
-    gallery.innerHTML = "";
-    index = 0;
+    /* FILTER (FIXED) */
+    window.setTag = function(tag, el){
+      currentTag = tag;
+      gallery.innerHTML = "";
+      index = 0;
 
-    document.querySelectorAll(".tag").forEach(t=>t.classList.remove("active"));
-    event.target.classList.add("active");
+      document.querySelectorAll(".tag").forEach(t=>t.classList.remove("active"));
+      el.classList.add("active");
 
+      load();
+    };
+
+    /* INIT LOAD */
     load();
-  }
 
-  /* INIT */
-  load();
+    /* INFINITE SCROLL */
+    let loading = false;
 
-  /* INFINITE SCROLL */
-  window.addEventListener("scroll", ()=>{
-    if(window.innerHeight + window.scrollY >= document.body.offsetHeight - 200){
-      load(3);
-    }
+    window.addEventListener("scroll", ()=>{
+      if(loading) return;
+
+      if(window.innerHeight + window.scrollY >= document.body.offsetHeight - 200){
+        loading = true;
+
+        setTimeout(()=>{
+          load(3);
+          loading = false;
+        },300);
+      }
+    });
+
   });
 
 </script>
