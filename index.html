@@ -1,261 +1,264 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>KhataSetu – Digital Ledger App</title>
-  <meta name="description" content="Track Udhaar, manage accounts, and grow your business faster.">
-
-  <!-- META PIXEL -->
+  <link rel="canonical" href="https://khatasetu.com/">
   <script>
-    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){
-    n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;
-    s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s);
-    }(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init','1977327726189132');
-    fbq('track','PageView');
+    if (window.location.hostname === "www.khatasetu.com") {
+      window.location.replace("https://khatasetu.com" + window.location.pathname + window.location.search);
+    }
   </script>
 
-  <!-- ADSENSE -->
+  <title>Best Digital Ledger App for Small Business in India – KhataSetu</title>
+  <meta name="description" content="KhataSetu is a secure digital ledger app for small businesses. Track Udhaar, credit, debit, and customer balances with cloud sync and real-time reports.">
+  <meta name="keywords" content="digital ledger app, khata book app India, udhaar app, bookkeeping app, business accounting app">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="KhataSetu Team">
+  <meta name="theme-color" content="#2563eb">
+
+  <meta property="og:title" content="KhataSetu – Best Digital Ledger App">
+  <meta property="og:description" content="Track Udhaar, manage accounts, and grow your business faster.">
+  <meta property="og:image" content="https://khatasetu.com/hero-devices.webp">
+  <meta property="og:url" content="https://khatasetu.com/">
+  <meta property="og:type" content="website">
+
+  <script>
+    !function(f,b,e,v,n,t,s){
+    if(f.fbq)return;n=f.fbq=function(){
+    n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];
+    t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s);
+    }(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+
+    fbq('init', '1977327726189132');
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+         src="https://www.facebook.com/tr?id=1977327726189132&ev=PageView&noscript=1"/>
+  </noscript>
+
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7094776728416254" crossorigin="anonymous"></script>
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="dns-prefetch" href="//fonts.googleapis.com">
+  <link rel="dns-prefetch" href="//pagead2.googlesyndication.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="icon" href="/logo.webp" type="image/webp">
+  <link rel="preload" as="image" href="/hero-devices.webp" fetchpriority="high">
+
+  <link rel="stylesheet" href="/style.css" media="print" onload="this.media='all'">
 
   <style>
+    :root {
+      --primary: #2563eb;
+      --dark: #0f172a;
+      --light: #f8fafc;
+    }
 
-    /* GLOBAL */
     body {
-      margin:0;
-      font-family:Poppins,sans-serif;
-      background:#0D0D0D;
-      color:#fff;
-    }
-
-    /* NAV */
-    .nav {
-      position:sticky;
-      top:0;
-      background:rgba(0,0,0,0.6);
-      backdrop-filter:blur(10px);
-      padding:15px;
-      z-index:1000;
-    }
-    .nav-container {
-      max-width:1200px;
-      margin:auto;
-      display:flex;
-      justify-content:space-between;
+      margin: 0;
+      font-family: Poppins, sans-serif;
+      color: var(--dark);
+      line-height: 1.6;
     }
 
     /* HERO */
     .hero {
-      padding:80px 20px;
-      background:linear-gradient(135deg,#1e293b,#0f172a);
+      background: linear-gradient(135deg, #1e293b, #0f172a);
+      color: #fff;
+      padding: 60px 20px;
     }
 
-    /* SEARCH + TAGS */
-    .controls {
-      max-width:1200px;
-      margin:20px auto;
-    }
-    input {
-      padding:10px;
-      width:100%;
-      border-radius:8px;
-      border:none;
-      background:#1a1a1a;
-      color:#fff;
-    }
-    .tags {
-      margin-top:10px;
-    }
-    .tag {
-      display:inline-block;
-      padding:6px 12px;
-      margin:5px;
-      background:#111;
-      border-radius:20px;
-      cursor:pointer;
-    }
-    .tag.active {
-      background:#2563eb;
+    .hero-container {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
     }
 
-    /* MASONRY */
-    .masonry {
-      column-count:3;
-      column-gap:15px;
-      max-width:1200px;
-      margin:auto;
+    .hero-text h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      margin-bottom: 20px;
     }
-    @media(max-width:900px){.masonry{column-count:2}}
-    @media(max-width:600px){.masonry{column-count:1}}
+
+    .hero-text p {
+      margin-bottom: 25px;
+      opacity: 0.9;
+    }
+
+    .btn {
+      background: var(--primary);
+      color: #fff;
+      padding: 14px 28px;
+      border-radius: 10px;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    /* TRUST */
+    .trust-section {
+      background: #f1f5f9;
+      padding: 20px;
+      text-align: center;
+    }
+
+    /* SECTION */
+    .section {
+      padding: 70px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
 
     .card {
-      break-inside:avoid;
-      margin-bottom:15px;
-      border-radius:16px;
-      overflow:hidden;
-      background:#111;
-    }
-    .card img {
-      width:100%;
-      display:block;
+      padding: 25px;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      background: #fff;
     }
 
-    /* ADS */
-    .ad-box {
-      width:100%;
-      height:250px;
-      display:flex;
-      justify-content:center;
-      align-items:center;
+    /* ADS FIX CLS */
+    .ad-container {
+      width: 100%;
+      height: 280px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
-    /* FOOTER */
-    footer {
-      text-align:center;
-      padding:30px;
-      background:#111;
+    /* FAQ */
+    details {
+      margin-bottom: 10px;
+      border: 1px solid #e2e8f0;
+      padding: 15px;
+      border-radius: 10px;
     }
 
+    summary {
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    /* MOBILE */
+    @media(max-width: 768px) {
+      .hero-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+    }
   </style>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "KhataSetu",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Android",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "ratingCount": "1200" },
+      "description": "Smart digital ledger app for small businesses."
+    }
+  </script>
 
 </head>
 
 <body>
 
-<!-- NAVBAR -->
 <div id="navbar"></div>
 
-<!-- HERO -->
 <section class="hero">
-  <h1 style="text-align:center;">Explore UI Screens</h1>
+  <div class="hero-container">
+
+    <div class="hero-text">
+      <h1>Best Digital Ledger App for Small Business in India</h1>
+      <p>Track Udhaar, credit, debit, and manage business accounts easily with secure cloud sync.</p>
+      <a href="https://play.google.com/store/apps/details?id=com.rotrxitsolution.khatasetu" class="btn" target="_blank" rel="noopener">Download App</a>
+    </div>
+
+    <div>
+      <img src="/hero-devices.webp"
+           alt="KhataSetu digital ledger app interface"
+           width="520"
+           height="600"
+           fetchpriority="high"
+           decoding="async">
+    </div>
+
+  </div>
 </section>
 
-<!-- SEARCH + TAGS -->
-<div class="controls">
-  <input type="text" id="search" placeholder="Search UI...">
+<section class="trust-section">
+  ⭐ 4.8 Rating • 10,000+ Users • Secure Cloud
+</section>
 
-  <div class="tags">
-    <span class="tag active" onclick="setTag('all')">All</span>
-    <span class="tag" onclick="setTag('ledger')">Ledger</span>
-    <span class="tag" onclick="setTag('reports')">Reports</span>
-    <span class="tag" onclick="setTag('customers')">Customers</span>
-  </div>
-</div>
-
-<!-- AD TOP -->
-<div class="ad-box">
+<div class="ad-container">
   <ins class="adsbygoogle"
        style="display:block"
        data-ad-client="ca-pub-7094776728416254"
        data-ad-slot="2562895484"
-       data-ad-format="auto"></ins>
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
 </div>
 
-<!-- MASONRY -->
-<div id="gallery" class="masonry"></div>
+<section class="section" style="background-color: #0f172a; color: #ffffff; border-radius: 16px; margin-bottom: 40px;">
+  <h2 style="color: #ffffff; text-align: center; margin-bottom: 30px;">Modern Features for Professional Bookkeeping</h2>
+
+  <div class="grid">
+    <div class="card" style="background: #1e293b; border: 1px solid #334155; color: #ffffff;">
+      <h3 style="color: #ffffff;">Cloud Sync</h3>
+      <p style="opacity: 0.9;">Access anywhere anytime.</p>
+    </div>
+    <div class="card" style="background: #1e293b; border: 1px solid #334155; color: #ffffff;">
+      <h3 style="color: #ffffff;">Auto Calculation</h3>
+      <p style="opacity: 0.9;">No manual errors.</p>
+    </div>
+    <div class="card" style="background: #1e293b; border: 1px solid #334155; color: #ffffff;">
+      <h3 style="color: #ffffff;">Offline Mode</h3>
+      <p style="opacity: 0.9;">Works without internet.</p>
+    </div>
+    <div class="card" style="background: #1e293b; border: 1px solid #334155; color: #ffffff;">
+      <h3 style="color: #ffffff;">Secure Data</h3>
+      <p style="opacity: 0.9;">Encrypted storage.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background-color: #0f172a; color: #ffffff; border-radius: 16px;">
+  <h2 style="color: #ffffff; text-align: center; margin-bottom: 30px;">FAQs</h2>
+
+  <details style="background: #1e293b; border: 1px solid #334155; color: #ffffff;">
+    <summary style="color: #ffffff;">What is KhataSetu?</summary>
+    <p style="opacity: 0.9; margin-top: 10px;">Digital ledger app for business accounting.</p>
+  </details>
+
+  <details style="background: #1e293b; border: 1px solid #334155; color: #ffffff;">
+    <summary style="color: #ffffff;">Is it free?</summary>
+    <p style="opacity: 0.9; margin-top: 10px;">Yes, free to use.</p>
+  </details>
+
+</section>
 
 <div id="footer"></div>
-
-<script>
-
-  /* DATA */
-  const data=[
-  {img:"/1.jpg",tag:"ledger",title:"ledger"},
-  {img:"/2.jpg",tag:"reports",title:"reports"},
-  {img:"/3.jpg",tag:"customers",title:"customers"},
-  {img:"/4.jpg",tag:"ledger",title:"ledger"},
-  {img:"/5.jpg",tag:"reports",title:"reports"},
-  {img:"/6.jpg",tag:"customers",title:"customers"}
-  ];
-
-  let index=0;
-  let currentTag="all";
-  let searchText="";
-
-  const gallery=document.getElementById('gallery');
-
-  /* CREATE CARD */
-  function createCard(item){
-  const div=document.createElement('div');
-  div.className='card';
-
-  div.innerHTML=`
-  <a href="/blog/">
-  <img src="${item.img}" loading="lazy">
-  </a>
-  `;
-  return div;
-  }
-
-  /* FILTER */
-  function match(item){
-  return (currentTag==="all"||item.tag===currentTag) &&
-  item.title.includes(searchText);
-  }
-
-  /* LOAD */
-  function load(n=6){
-  for(let i=0;i<n;i++){
-  const item=data[index%data.length];
-
-  if(match(item)){
-  gallery.appendChild(createCard(item));
-  }
-
-  index++;
-  }
-
-  /* INSERT AD every 10 items */
-  if(index%10===0){
-  const ad=document.createElement('div');
-  ad.className='ad-box';
-  ad.innerHTML=`<ins class="adsbygoogle"
-  style="display:block"
-  data-ad-client="ca-pub-7094776728416254"
-  data-ad-slot="2562895484"
-  data-ad-format="auto"></ins>`;
-  gallery.appendChild(ad);
-  }
-  }
-
-  /* TAG */
-  function setTag(tag){
-  currentTag=tag;
-  gallery.innerHTML='';
-  index=0;
-
-  document.querySelectorAll('.tag').forEach(t=>t.classList.remove('active'));
-  event.target.classList.add('active');
-
-  load();
-  }
-
-  /* SEARCH */
-  document.getElementById('search').addEventListener('input',e=>{
-  searchText=e.target.value.toLowerCase();
-  gallery.innerHTML='';
-  index=0;
-  load();
-  });
-
-  /* INIT */
-  load();
-
-  /* INFINITE SCROLL */
-  window.addEventListener('scroll',()=>{
-  if(window.innerHeight+window.scrollY>=document.body.offsetHeight-200){
-  load(3);
-  }
-  });
-
-</script>
+<script src="script.js" defer></script>
 
 </body>
 </html>
