@@ -256,25 +256,18 @@
   </script>
 </div>
 
-<section class="section" style="padding-top:40px;">
+<!-- GALLERY -->
+<section style="padding:60px 20px;">
 
-  <h2 style="text-align:center; margin-bottom:30px;">
-    Explore App UI Screens
-  </h2>
+  <h2 style="text-align:center;">Explore UI Screens</h2>
 
-  <!-- SEARCH -->
-<!--  <input type="text" id="search" placeholder="Search UI..."-->
-<!--         style="width:100%; max-width:600px; display:block; margin:0 auto 20px; padding:12px; border-radius:10px; border:none; background:#1e293b; color:#fff;">-->
-
-  <!-- TAGS -->
-  <div style="text-align:center; margin-bottom:20px;">
-    <span class="tag active" onclick="setTag('all')">All</span>
-    <span class="tag" onclick="setTag('ledger')">Ledger</span>
-    <span class="tag" onclick="setTag('reports')">Reports</span>
-    <span class="tag" onclick="setTag('customers')">Customers</span>
+  <div style="text-align:center;margin-bottom:20px;">
+    <span class="tag active" onclick="setTag('all',this)">All</span>
+    <span class="tag" onclick="setTag('ledger',this)">Ledger</span>
+    <span class="tag" onclick="setTag('reports',this)">Reports</span>
+    <span class="tag" onclick="setTag('customers',this)">Customers</span>
   </div>
 
-  <!-- MASONRY -->
   <div id="gallery" class="masonry"></div>
 
 </section>
@@ -322,19 +315,18 @@
 
 <script>
 
-  /* DATA (CONNECT BLOG PAGES) */
+  /* DATA */
   const data = [
-    {img:"/1.jpg", tag:"ledger", title:"ledger", link:"/blog/ledger-accounting-basics/"},
-    {img:"/2.jpg", tag:"reports", title:"reports", link:"/blog/how-to-manage-business-cash-flow/"},
-    {img:"/3.jpg", tag:"customers", title:"customers", link:"/blog/customer-credit-management/"},
-    {img:"/4.jpg", tag:"ledger", title:"ledger", link:"/blog/how-to-track-customer-balance/"},
-    {img:"/5.jpg", tag:"reports", title:"reports", link:"/blog/business-accounting-for-beginners/"},
-    {img:"/6.jpg", tag:"customers", title:"customers", link:"/blog/small-business-financial-tips/"}
+    {img:"/1.jpg", tag:"ledger", link:"/blog/ledger-accounting-basics/"},
+    {img:"/2.jpg", tag:"reports", link:"/blog/how-to-manage-business-cash-flow/"},
+    {img:"/3.jpg", tag:"customers", link:"/blog/customer-credit-management/"},
+    {img:"/4.jpg", tag:"ledger", link:"/blog/how-to-track-customer-balance/"},
+    {img:"/5.jpg", tag:"reports", link:"/blog/business-accounting-for-beginners/"},
+    {img:"/6.jpg", tag:"customers", link:"/blog/small-business-financial-tips/"}
   ];
 
   let index = 0;
   let currentTag = "all";
-  let searchText = "";
 
   const gallery = document.getElementById("gallery");
 
@@ -353,8 +345,7 @@
 
   /* MATCH FILTER */
   function match(item){
-    return (currentTag==="all" || item.tag===currentTag) &&
-           item.title.includes(searchText);
+    return currentTag==="all" || item.tag===currentTag;
   }
 
   /* LOAD */
@@ -381,14 +372,6 @@
 
     load();
   }
-
-  /* SEARCH */
-  document.getElementById("search").addEventListener("input", e=>{
-    searchText = e.target.value.toLowerCase();
-    gallery.innerHTML = "";
-    index = 0;
-    load();
-  });
 
   /* INIT */
   load();
