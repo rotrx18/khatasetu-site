@@ -154,6 +154,43 @@
       cursor: pointer;
     }
 
+    /* TAG */
+.tag {
+  display:inline-block;
+  padding:6px 14px;
+  margin:5px;
+  background:#1e293b;
+  color:#fff;
+  border-radius:20px;
+  cursor:pointer;
+}
+.tag.active {
+  background:#2563eb;
+}
+
+/* MASONRY GRID */
+.masonry {
+  column-count:3;
+  column-gap:15px;
+  max-width:1200px;
+  margin:auto;
+}
+
+@media(max-width:900px){.masonry{column-count:2}}
+@media(max-width:600px){.masonry{column-count:1}}
+
+.masonry-item {
+  break-inside: avoid;
+  margin-bottom: 15px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.masonry-item img {
+  width: 100%;
+  display: block;
+}
+
     /* MOBILE */
     @media(max-width: 768px) {
       .hero-container {
@@ -219,6 +256,29 @@
   </script>
 </div>
 
+<section class="section" style="padding-top:40px;">
+
+  <h2 style="text-align:center; margin-bottom:30px;">
+    Explore App UI Screens
+  </h2>
+
+  <!-- SEARCH -->
+  <input type="text" id="search" placeholder="Search UI..."
+         style="width:100%; max-width:600px; display:block; margin:0 auto 20px; padding:12px; border-radius:10px; border:none; background:#1e293b; color:#fff;">
+
+  <!-- TAGS -->
+  <div style="text-align:center; margin-bottom:20px;">
+    <span class="tag active" onclick="setTag('all')">All</span>
+    <span class="tag" onclick="setTag('ledger')">Ledger</span>
+    <span class="tag" onclick="setTag('reports')">Reports</span>
+    <span class="tag" onclick="setTag('customers')">Customers</span>
+  </div>
+
+  <!-- MASONRY -->
+  <div id="gallery" class="masonry"></div>
+
+</section>
+
 <section class="section" style="background-color: #0f172a; color: #ffffff; border-radius: 16px; margin-bottom: 40px;">
   <h2 style="color: #ffffff; text-align: center; margin-bottom: 30px;">Modern Features for Professional Bookkeeping</h2>
 
@@ -259,6 +319,88 @@
 
 <div id="footer"></div>
 <script src="script.js" defer></script>
+
+<script>
+
+  /* DATA (CONNECT BLOG PAGES) */
+  const data = [
+    {img:"/1.jpg", tag:"ledger", title:"ledger", link:"/blog/ledger-accounting-basics/"},
+    {img:"/2.jpg", tag:"reports", title:"reports", link:"/blog/how-to-manage-business-cash-flow/"},
+    {img:"/3.jpg", tag:"customers", title:"customers", link:"/blog/customer-credit-management/"},
+    {img:"/4.jpg", tag:"ledger", title:"ledger", link:"/blog/how-to-track-customer-balance/"},
+    {img:"/5.jpg", tag:"reports", title:"reports", link:"/blog/business-accounting-for-beginners/"},
+    {img:"/6.jpg", tag:"customers", title:"customers", link:"/blog/small-business-financial-tips/"}
+  ];
+
+  let index = 0;
+  let currentTag = "all";
+  let searchText = "";
+
+  const gallery = document.getElementById("gallery");
+
+  /* CREATE CARD */
+  function createCard(item){
+    const div = document.createElement("div");
+    div.className = "masonry-item";
+
+    div.innerHTML = `
+      <a href="${item.link}">
+        <img src="${item.img}" loading="lazy">
+      </a>
+    `;
+    return div;
+  }
+
+  /* MATCH FILTER */
+  function match(item){
+    return (currentTag==="all" || item.tag===currentTag) &&
+           item.title.includes(searchText);
+  }
+
+  /* LOAD */
+  function load(n=6){
+    for(let i=0;i<n;i++){
+      const item = data[index % data.length];
+
+      if(match(item)){
+        gallery.appendChild(createCard(item));
+      }
+
+      index++;
+    }
+  }
+
+  /* FILTER */
+  function setTag(tag){
+    currentTag = tag;
+    gallery.innerHTML = "";
+    index = 0;
+
+    document.querySelectorAll(".tag").forEach(t=>t.classList.remove("active"));
+    event.target.classList.add("active");
+
+    load();
+  }
+
+  /* SEARCH */
+  document.getElementById("search").addEventListener("input", e=>{
+    searchText = e.target.value.toLowerCase();
+    gallery.innerHTML = "";
+    index = 0;
+    load();
+  });
+
+  /* INIT */
+  load();
+
+  /* INFINITE SCROLL */
+  window.addEventListener("scroll", ()=>{
+    if(window.innerHeight + window.scrollY >= document.body.offsetHeight - 200){
+      load(3);
+    }
+  });
+
+</script>
 
 </body>
 </html>
